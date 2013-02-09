@@ -1,0 +1,44 @@
+# If not running interactively, don't do anything
+[ -z "${PS1}" ] && return
+
+# better history logging
+HISTCONTROL=ignorespace:ignoreboth
+shopt -s histappend
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# Colored prompt
+USE_COLOR_PROMPT=yes
+MYPROMPT=" \$ "
+test `id -u` = 0 && MYPROMPT=" # "
+if [ "${USE_COLOR_PROMPT}" = yes ]; then
+	COLOR_A="\[\e[1;32m\]"
+	COLOR_B="\[\e[1;33m\]"
+	COLOR_C="\[\e[0m\]"
+	test -n "${SSH_CONNECTION}" && COLOR_A="\[\e[1;31m\]"
+	test `id -u` = 0 && COLOR_A="\[\e[1;35m\]"
+    PS1="${COLOR_A}\u@\h${COLOR_C}:${COLOR_B}\w${COLOR_C}${MYPROMPT}"
+	unset COLOR_A COLOR_B COLOR_C
+else
+    PS1="\u@\h:\w${MYPROMPT}"
+fi
+unset USE_COLOR_PROMPT MYPROMPT
+
+# Custim aliases
+test -f $HOME/.alias && . $HOME/.alias
+
+# Bash completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+## custom PATH
+test -d "$HOME/System/bin" && export PATH="$PATH:$HOME/System/bin"
+test -d "$HOME/Projects/script-utils/bin" && export PATH="$PATH:$HOME/Projects/script-utils/bin"

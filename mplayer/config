@@ -1,0 +1,47 @@
+# Write your default config options here!
+
+
+## Misc
+really-quiet="1"
+stop-xscreensaver="0"
+ontop="1"
+#vf-add=screenshot
+
+## VIdeo
+vo="xv,gl2,gl,x11"
+monitoraspect="16:10"
+geometry="50%:50%"
+
+## Audio
+#ao="pulse"
+ao="alsa"
+mixer-channel="Master"
+
+## Playing
+loop="0"
+#double="yes"
+framedrop="1"
+hardframedrop="0" 
+idx="1"
+
+## OSD
+subfont-osd-scale="2"
+osdlevel="1"
+
+## Subtitles
+font="/usr/share/fonts/truetype/freefont/FreeSans.ttf"
+subcp="UTF-8"
+#subcp="iso-8859-15"
+subfont-autoscale="3"
+# Size
+subfont-text-scale="3"
+# Style
+subfont-blur="5"
+subfont-outline="5"
+# Sub seek
+sub-fuzziness="1"
+
+## Post processing : This sets the postprocessing into overdrive using all possible spare cpu cycles to make the movie look better
+#autoq="90"
+#vf="pp=de,hqdn3d"
+cache=2048

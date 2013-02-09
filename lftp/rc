@@ -1,0 +1,10 @@
+alias du du -hs
+alias ll cls -lF
+alias llt ll -rt
+alias lll !ls -hl --color
+
+set cmd:save-cwd-history false
+set cmd:save-rl-history false
+set xfer:log no
+set xfer:clobber off
+set ssl:verify-certificate no

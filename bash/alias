@@ -1,0 +1,23 @@
+# Colors
+test "$LS_COLORS" = "" && which dircolors > /dev/null 2>&1 && eval `dircolors`
+
+# Aliases
+alias ls="ls --color=auto"
+alias ll="ls -hl"
+alias llt="ll -rt"
+alias la="ll -a"
+alias l="ls -CFa"
+alias du="du -hs"
+alias df="df -h"
+alias diff="diff -u -r"
+alias last="last -n10"
+alias fax="tar vfax"
+alias fac="tar vfac"
+alias vnc-start="vnc4server -geometry 1280x800 -depth 24 :7"
+alias vnc-stop="vnc4server -kill :7"
+
+# Editor and Pager
+which pydf > /dev/null 2>&1 && alias df=pydf
+which most > /dev/null 2>&1 && export PAGER=most
+which vim > /dev/null 2>&1 && export EDITOR=vim
+

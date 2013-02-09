@@ -1,0 +1,45 @@
+
+" File encoding
+set encoding=utf-8
+set fileencoding=utf-8 
+
+" Coloration
+syntax on
+colorscheme peachpuff
+
+" Tab parameters
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+"set cindent             " cindent
+"set autoindent          " indentation automatique avancée
+set smartindent         " indentation intelligente
+
+" General settings
+set nocompatible        " 1976 c'est loin...
+set showmatch           " verifications des {} () []
+set incsearch           " Recherche pendant la recherche
+set hlsearch            " Highlight search
+"set ignorecase
+set smartcase           " recherche selon la casse la plus approchante
+"set autowrite           " sauvegarder à chaque :make & :next
+set ruler               " afficher la position
+set number              " numéros de ligne
+"set mouse=a             " la souris, plus trop utile :P
+"set ttymouse=xterm2     " cf mouse
+set updatecount=0       " pas de fichier de secours
+"set backspace=indent,eol,start        " autorisation du retour arrière
+
+
+" plis/déplies du code
+"nnoremap <space> za
+"" Raccourcis à la firefox
+map <C-w><C-o>     :tabnew<cr>:E<cr>
+map <C-w><C-n>     :tabnext<cr>
+map <C-w><C-p>     :tabprevious<cr>
+map <C-w><C-d>     :tabclose<cr>
+map <C-w><C-l>     :tabs<cr>
+map <C-w><C-k>     :tabdo quit<cr>
+"map <C-w><C-w>     :tabs<cr>
+nnoremap <silent> <cr> :nohlsearch<Bar>:echo<CR>
+

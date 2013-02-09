@@ -1,0 +1,62 @@
+Package: *
+Pin: release o=apt-build
+Pin-Priority: 900
+
+
+; squeeze
+Package: *
+Pin: release a=stable, n=squeeze, o=Debian, l=Debian
+Pin-Priority: 800
+
+; squeeze-updates
+Package: *
+Pin: release a=stable-updates, n=squeeze-updates, o=Debian, l=Debian
+Pin-Priority: 800
+
+; squeeze-security
+Package: *
+Pin: release a=stable, n=squeeze, o=Debian, l=Debian-Security
+Pin-Priority: 800
+
+; squeeze-multimedia
+Package: *
+Pin: release a=stable, n=squeeze, o=Unofficial Multimedia Packages, l=Unofficial Multimedia Packages
+Pin-Priority: 800
+
+; squeeze-backports
+Package: *
+Pin: release a=squeeze-backports, n=squeeze-backports, o=Debian Backports, l=Debian Backports
+Pin-Priority: 799
+
+; mozilla.debian.net
+Package: *
+Pin: release a=squeeze-backports, n=squeeze-backports, o=Debian Mozilla Team, l=Debian Mozilla Team
+Pin-Priority: 800
+
+
+; testing
+Package: *
+Pin: release a=testing, n=wheezy, o=Debian, l=Debian
+Pin-Priority: 700
+
+; testing-security
+Package: *
+Pin: release a=testing, n=wheezy, o=Debian, l=Debian-Security
+Pin-Priority: 700
+
+; testing-multimedia
+Package: *
+Pin: release a=testing, n=wheezy, o=Unofficial Multimedia Packages, l=Unofficial Multimedia Packages
+Pin-Priority: 700
+
+
+; unstable
+Package: *
+Pin: release a=unstable, n=sid, o=Debian, l=Debian
+Pin-Priority: 600
+
+; unstable-multimedia
+Package: *
+Pin: release a=unstable, n=sid, o=Unofficial Multimedia Packages, l=Unofficial Multimedia Packages
+Pin-Priority: 600
+
