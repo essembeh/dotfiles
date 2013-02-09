@@ -41,4 +41,4 @@ fi
 
 ## custom PATH
 test -d "$HOME/System/bin" && export PATH="$PATH:$HOME/System/bin"
-test -d "$HOME/Projects/script-utils/bin" && export PATH="$PATH:$HOME/Projects/script-utils/bin"
+test -d "$HOME/System/script-utils/bin" && export PATH="$PATH:$HOME/System/script-utils/bin"
