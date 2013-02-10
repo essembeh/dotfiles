@@ -15,6 +15,8 @@ alias fax="tar vfax"
 alias fac="tar vfac"
 alias vnc-start="vnc4server -geometry 1280x800 -depth 24 :7"
 alias vnc-stop="vnc4server -kill :7"
+alias subdl="subdl.pl --force --noautosrt"
+alias subdl2="subdl --site=tvnet"
 
 # Editor and Pager
 which pydf > /dev/null 2>&1 && alias df=pydf
