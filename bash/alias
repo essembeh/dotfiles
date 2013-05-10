@@ -20,7 +20,7 @@ alias subdl2="subdl --site=tvnet"
 alias tt="(tmux list-sessions && tmux a) || tmux"
 
 # Editor and Pager
-which pydf > /dev/null 2>&1 && alias df=pydf
+which dfc > /dev/null 2>&1 && alias df=dfc
 which most > /dev/null 2>&1 && export PAGER=most
 which vim > /dev/null 2>&1 && export EDITOR=vim
 
