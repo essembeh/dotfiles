@@ -1,0 +1,4 @@
+# apt-get install pkg-mozilla-archive-keyring
+# gpg --check-sigs --fingerprint --keyring /etc/apt/trusted.gpg.d/pkg-mozilla-archive-keyring.gpg --keyring /usr/share/keyrings/debian-keyring.gpg pkg-mozilla-maintainers
+deb http://mozilla.debian.net/ wheezy-backports iceweasel-release
+
