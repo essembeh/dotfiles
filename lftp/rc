@@ -2,6 +2,7 @@ alias du du -hs
 alias ll cls -lF
 alias llt ll -rt
 alias lll !ls -hl --color
+alias console debug 4
 
 set cmd:save-cwd-history false
 set cmd:save-rl-history false
