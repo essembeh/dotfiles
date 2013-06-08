@@ -13,8 +13,8 @@ monitoraspect="16:10"
 geometry="50%:50%"
 
 ## Audio
-#ao="pulse"
-ao="alsa"
+ao="pulse"
+#ao="alsa"
 mixer-channel="Master"
 
 ## Playing
