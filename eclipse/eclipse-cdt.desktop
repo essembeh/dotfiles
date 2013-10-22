@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Eclipse CDT
+Type=Application
+Exec=/media/raid/Applications/eclipse-cdt/eclipse
+Terminal=false
+Icon=/media/raid/Applications/eclipse-cdt/icon.xpm
+Comment=Eclipse CDT
+NoDisplay=false
+Categories=Development;IDE
+Name[en]=eclipse-cdt.desktop

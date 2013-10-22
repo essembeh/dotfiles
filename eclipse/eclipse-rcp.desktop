@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Eclipse RCP
+Type=Application
+Exec=/media/raid/Applications/eclipse-rcp/eclipse
+Terminal=false
+Icon=/media/raid/Applications/eclipse-rcp/icon.xpm
+Comment=Eclipse RCP
+NoDisplay=false
+Categories=Development;IDE
+Name[en]=eclipse-rcp.desktop

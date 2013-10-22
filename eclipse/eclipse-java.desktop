@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Eclipse Java
+Type=Application
+Exec=/media/raid/Applications/eclipse-jdt/eclipse
+Terminal=false
+Icon=/media/raid/Applications/eclipse-jdt/icon.xpm
+Comment=Eclipse Java
+NoDisplay=false
+Categories=Development;IDE
+Name[en]=eclipse-jave.desktop
