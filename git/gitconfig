@@ -1,10 +1,32 @@
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = always
 [user]
-	name = Sébastien M-B
-	email = essembeh@gmail.com
+        name = Sébastien M-B
+        email = essembeh@gmail.com
 [http]
-	sslVerify = false
+        sslVerify = false
+[push]
+        default = simple
+[core]
+        pager = less
+        #autocrlf = input
+[alias]
+        history = log --follow
+        b = branch -a
+        co = checkout
+        s = status
+        f = fetch
+        cp = cherry-pick
+        ls = log --pretty=format:%C(yellow)%h\\ %C(blue)%cr\\ %C(cyan)[%cn]\\ %Creset%s\\ %Cred%d --decorate
+        ll = log --pretty=format:%C(yellow)%h\\ %C(blue)%ai\\ %C(cyan)[%cn]\\ %Creset%s\\ %Cred%d --decorate --stat
+        find = !git ls-files | grep -i
+        undo = reset --soft HEAD^
+        amend = commit --amend
+        commit-reusemessage = commit --reedit-message=HEAD
+        rebase-upstream = rebase -i @{u}
+[pull]
+        rebase = true
+
