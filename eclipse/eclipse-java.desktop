@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=Eclipse Java
 Type=Application
-Exec=/media/raid/Applications/eclipse-jdt/eclipse
+Exec=/media/raid/Applications/eclipse-java/eclipse
 Terminal=false
-Icon=/media/raid/Applications/eclipse-jdt/icon.xpm
+Icon=/media/raid/Applications/eclipse-java/icon.xpm
 Comment=Eclipse Java
 NoDisplay=false
 Categories=Development;IDE

@@ -8,8 +8,6 @@
         email = essembeh@gmail.com
 [http]
         sslVerify = false
-[push]
-        default = simple
 [core]
         pager = less
         #autocrlf = input
@@ -29,4 +27,3 @@
         rebase-upstream = rebase -i @{u}
 [pull]
         rebase = true
-
