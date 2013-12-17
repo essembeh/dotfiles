@@ -1,5 +1,5 @@
-test -d "$HOME/System/bin" && export PATH="$PATH:$HOME/System/bin"
-test -d "$HOME/System/script-utils/bin" && export PATH="$PATH:$HOME/System/script-utils/bin"
+## Custom path
+test -e "$HOME/.custompath" && eval `cat "$HOME/.custompath"`
 
 # Path to your oh-my-zsh configuration.
 ZSH="$HOME/.oh-my-zsh"
@@ -37,5 +37,5 @@ plugins=(git brew gnu-utils)
 
 test -e "$ZSH/oh-my-zsh.sh" && source "$ZSH/oh-my-zsh.sh"
 
-# Customize to your needs...
+## Customize to your needs...
 test -f "$HOME/.alias" && source "$HOME/.alias"

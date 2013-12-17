@@ -1,0 +1,1 @@
+export PATH=$PATH:$HOME/System/bin:$HOME/System/script-utils/bin:$HOME/System/dotfiles/custompath

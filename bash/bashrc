@@ -1,20 +1,28 @@
-# If not running interactively, don't do anything
+## If not running interactively, don't do anything
 [ -z "${PS1}" ] && return
 
-# better history logging
+## 256 colors
+export TERM=xterm-256color
+
+## Custom PATH
+test -f "$HOME/.custompath" && eval `cat "$HOME/.custompath"`
+
+## Custom aliases
+test -f $HOME/.alias && . $HOME/.alias
+
+## better history logging
 HISTCONTROL=ignorespace:ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+## check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
+## make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Colored prompt
+## Colored prompt
 USE_COLOR_PROMPT=yes
 MYPROMPT=" \$ "
 test `id -u` = 0 && MYPROMPT=" # "
@@ -31,14 +39,16 @@ else
 fi
 unset USE_COLOR_PROMPT MYPROMPT
 
-# Custim aliases
-test -f $HOME/.alias && . $HOME/.alias
-
-# Bash completion
+## Bash completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-## custom PATH
-test -d "$HOME/System/bin" && export PATH="$PATH:$HOME/System/bin"
-test -d "$HOME/System/script-utils/bin" && export PATH="$PATH:$HOME/System/script-utils/bin"
+## Raid status
+if test -f /proc/mdstat; then
+	echo "============================  Raid Status  ================================"
+	egrep --color -A1 "^md[0-9]+" /proc/mdstat
+	echo "==========================================================================="
+fi
+true
+
