@@ -5,7 +5,7 @@ set fileencoding=utf-8
 
 "" Coloration
 syntax on
-colorscheme sebseb
+colorscheme essembeh
 
 
 "" Tab parameters
@@ -46,3 +46,4 @@ map  <C-w><C-k>		:tabdo quit<cr>
 "" unhiglight search on ENTER
 nnoremap <silent> <cr> :nohlsearch<Bar>:echo<CR>
 
+map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'. synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
