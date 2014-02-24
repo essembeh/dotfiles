@@ -2,7 +2,7 @@
 [ -z "${PS1}" ] && return
 
 ## 256 colors
-export TERM=xterm-256color
+echo "$TERM" | grep -q "256color" || export TERM=xterm-256color
 
 ## Custom PATH
 test -f "$HOME/.custompath" && eval `cat "$HOME/.custompath"`
