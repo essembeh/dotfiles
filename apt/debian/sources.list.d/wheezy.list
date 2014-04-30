@@ -1,0 +1,21 @@
+## Debian Official
+deb http://ftp.fr.debian.org/debian/ wheezy main contrib non-free
+deb http://ftp.fr.debian.org/debian/ wheezy-updates main contrib non-free
+deb http://security.debian.org/ wheezy/updates main contrib non-free
+
+## Backports
+deb http://ftp.fr.debian.org/debian/ wheezy-backports main contrib non-free
+
+## Mozilla
+# gpg --check-sigs --fingerprint --keyring /etc/apt/trusted.gpg.d/pkg-mozilla-archive-keyring.gpg --keyring /usr/share/keyrings/debian-keyring.gpg pkg-mozilla-maintainers
+deb http://mozilla.debian.net/ wheezy-backports iceweasel-release
+
+## Multimedia
+# apt-get install deb-multimedia-keyring
+deb http://www.deb-multimedia.org wheezy main non-free
+deb http://www.deb-multimedia.org wheezy-backports main
+
+## Owncloud
+# wget http://download.opensuse.org/repositories/isv:ownCloud:devel/Debian_6.0/Release.key -O - | apt-key add -
+deb http://download.opensuse.org/repositories/isv:ownCloud:devel/Debian_7.0/ /
+
