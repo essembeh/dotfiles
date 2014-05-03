@@ -15,6 +15,7 @@ alias fac="tar vfac"
 alias genpass="apg -a 0 -n1 -m 16 -M NCLS"
 alias subdl="subdl.pl --force --noautosrt"
 alias subdl2="subdl --site=tvnet"
+alias freetv="vlc http://mafreebox.freebox.fr/freeboxtv/playlist.m3u"
 
 alias last="last -n10"
 alias tt="(tmux list-sessions && tmux a) || tmux"
