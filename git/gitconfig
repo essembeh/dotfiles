@@ -27,3 +27,5 @@
         rebase-upstream = rebase -i @{u}
 [pull]
         rebase = true
+[push]
+	default = simple
