@@ -36,3 +36,6 @@ test -e "$ZSH/oh-my-zsh.sh" && source "$ZSH/oh-my-zsh.sh"
 
 ## Customize to your needs...
 test -f "$HOME/.alias" && source "$HOME/.alias"
+
+# Colors for ls
+test -z "$LS_COLORS" && dircolors > /dev/null 2>&1 && eval `dircolors`
