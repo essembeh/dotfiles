@@ -5,7 +5,7 @@
         status = always
 [user]
         name = Sébastien M-B
-        email = essembeh@gmail.com
+        email = seb@essembeh.org
 [http]
         sslVerify = false
 [core]
