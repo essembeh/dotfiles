@@ -3,9 +3,8 @@
 
 CUSTOMPATH_EXPORT=".CUSTOMPATH"
 
-echo -n "export PATH=\$PATH"
-find ~ -name "$CUSTOMPATH_EXPORT" -type f -print | while read LINE; do 
-	echo -n ":`dirname "$LINE"`"
-done
-echo "" 
 
+
+find "$PWD" -name "$CUSTOMPATH_EXPORT" -type f -print 2> /dev/null | while read LINE; do
+	echo "`dirname "$LINE"`"
+done

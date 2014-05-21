@@ -5,7 +5,14 @@
 echo "$TERM" | grep -q "256color" || export TERM=xterm-256color
 
 ## Custom PATH
-test -f "$HOME/.custompath" && eval `cat "$HOME/.custompath"`
+if test -f "$HOME/.custompath"; then
+	while read CUSTOMPATH_LINE; do
+		CUSTOMPATH_FOLDER="$(eval echo "$CUSTOMPATH_LINE")"
+		test -n "$CUSTOMPATH_FOLDER" -a -d "$CUSTOMPATH_FOLDER" && export PATH="$PATH:$CUSTOMPATH_FOLDER"
+	done < "$HOME/.custompath"
+fi
+unset CUSTOMPATH_FOLDER
+unset CUSTOMPATH_LINE
 
 ## Raid statux
 if test -f /proc/mdstat; then
