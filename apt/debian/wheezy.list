@@ -16,6 +16,6 @@ deb http://www.deb-multimedia.org wheezy main non-free
 deb http://www.deb-multimedia.org wheezy-backports main
 
 ## Owncloud
-# wget http://download.opensuse.org/repositories/isv:ownCloud:devel/Debian_6.0/Release.key -O - | apt-key add -
-deb http://download.opensuse.org/repositories/isv:ownCloud:devel/Debian_7.0/ /
+# wget http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_6.0/Release.key -O - | apt-key add -
+deb http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/ /
 
