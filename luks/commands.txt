@@ -1,0 +1,5 @@
+cryptsetup --verify-passphrase --verbose --hash=sha256 --cipher=aes-cbc-essiv:sha256 --key-size=256 luksFormat /dev/sdb
+cryptsetup luksOpen /dev/sdb home
+mkfs.ext4 /dev/mapper/home
+mount /dev/mapper/home /home
+cryptsetup luksClose home

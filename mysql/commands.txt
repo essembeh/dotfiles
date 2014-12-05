@@ -1,0 +1,8 @@
+mysql -u root -p
+
+create user 'foo'@'localhost' identified by 'foo';
+
+create database foo;
+grant all privileges on foo.* to 'foo'@'localhost' identified by 'bar';
+flush privileges;
+exit;

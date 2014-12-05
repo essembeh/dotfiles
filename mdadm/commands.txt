@@ -1,0 +1,14 @@
+cat /proc/mdstat 
+mdadm --create /dev/md7 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1 /dev/sdd1
+mdadm --detail /dev/md7 
+mdadm --examine /dev/sdb1
+mdadm --manage /dev/md7 --fail --remove /dev/sdb1
+mdadm --manage /dev/md7 --add /dev/sde1
+mdadm --stop /dev/md7
+mdadm --detail --scan >> /etc/mdadm.conf
+mdadm --assemble --run /dev/md7 /dev/sdc1 /dev/sdd1
+mdadm --zero-superblock /dev/sdb1
+
+cat /proc/sys/dev/raid/speed_limit_max
+cat /proc/sys/dev/raid/speed_limit_min
+echo 100000 > /proc/sys/dev/raid/speed_limit_min
