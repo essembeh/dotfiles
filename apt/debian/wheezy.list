@@ -12,9 +12,9 @@ deb http://mozilla.debian.net/ wheezy-backports iceweasel-release
 
 ## Multimedia
 # apt-get install deb-multimedia-keyring
-deb http://www.deb-multimedia.org wheezy main non-free
-deb http://www.deb-multimedia.org wheezy-backports main
+#deb http://www.deb-multimedia.org wheezy main non-free
+#deb http://www.deb-multimedia.org wheezy-backports main
 
 ## Owncloud
 # wget http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_7.0/Release.key -O - | apt-key add -
-deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_7.0/ /
+#deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_7.0/ /
