@@ -1,31 +1,29 @@
-[color]
-        branch = auto
-        diff = auto
-        interactive = auto
-        status = always
 [user]
-        name = Sébastien M-B
-        email = seb@essembeh.org
-[http]
-        sslVerify = false
+	name = Sébastien M-B
+	email = seb@essembeh.org
 [core]
-        pager = less
-        #autocrlf = input
-[alias]
-        history = log --follow
-        b = branch -a
-        co = checkout
-        s = status
-        f = fetch
-        cp = cherry-pick
-        ls = log --pretty=format:%C(yellow)%h\\ %C(blue)%cr\\ %C(cyan)[%cn]\\ %Creset%s\\ %Cred%d --decorate
-        ll = log --pretty=format:%C(yellow)%h\\ %C(blue)%ai\\ %C(cyan)[%cn]\\ %Creset%s\\ %Cred%d --decorate --stat
-        find = !git ls-files | grep -i
-        undo = reset --soft HEAD^
-        amend = commit --amend
-        commit-reusemessage = commit --reedit-message=HEAD
-        rebase-upstream = rebase -i @{u}
+	editor = vim
+	pager = less
 [pull]
-        rebase = true
+	rebase = preserve
 [push]
 	default = simple
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	b = branch -a -vv
+	co = checkout
+	s = status
+	f = fetch
+	cp = cherry-pick
+	history = log --follow
+	ls = log --oneline --graph --decorate
+	ll = log --pretty=format:%C(yellow)%h\\ %C(blue)%ai\\ %C(cyan)[%cn]\\ %Creset%s\\ %Cred%d --decorate 
+	find = !git ls-files | grep -i
+	undo = reset --soft HEAD^
+	amend = commit --amend
+	commit-reusemessage = commit --reedit-message=HEAD
+	rebase-upstream = rebase -i @{u}
