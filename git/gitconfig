@@ -27,3 +27,5 @@
 	amend = commit --amend
 	commit-reusemessage = commit --reedit-message=HEAD
 	rebase-upstream = rebase -i @{u}
+[status]
+	showUntrackedFiles = all
