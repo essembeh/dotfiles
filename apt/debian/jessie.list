@@ -6,3 +6,7 @@ deb http://security.debian.org/ jessie/updates main contrib non-free
 ## Backports
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
 
+## Multimedia
+# apt-get install deb-multimedia-keyring
+#deb http://www.deb-multimedia.org jessie main non-free
+
