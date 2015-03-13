@@ -9,7 +9,7 @@ alias du="du -hsl"
 alias df="df -h"
 
 alias diff="diff -u -r"
-alias fax="tar vfax"
+#alias fax="tar vfax"
 alias fac="tar vfac"
 
 alias genpass="apg -a 0 -n1 -m 16 -M NCLS"
