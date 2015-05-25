@@ -23,7 +23,10 @@ alias g="git"
 alias gg="mgit.sh"
 
 # Editor and Pager
-which dfc > /dev/null 2>&1 && alias df=dfc
-which most > /dev/null 2>&1 && export PAGER=most
-which vim > /dev/null 2>&1 && export EDITOR=vim
-
+__which() {
+	which $1 > /dev/null 2>&1
+} 
+__which pydf && alias df=pydf
+__which most && export PAGER=most
+__which vim  && export EDITOR=vim
+__which docker || alias docker="boot2docker ssh docker"
