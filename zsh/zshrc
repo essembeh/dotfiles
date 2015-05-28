@@ -2,6 +2,9 @@
 ZSH="$HOME/.oh-my-zsh"
 test -e "$ZSH" || echo "Unable to find ZSH=$ZSH"
 
+## Options
+setopt HIST_IGNORE_SPACE
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
