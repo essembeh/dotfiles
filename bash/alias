@@ -9,7 +9,7 @@ alias du="du -hsl"
 alias df="df -h"
 
 alias diff="diff -u -r"
-#alias fax="tar vfax"
+alias fax="tar vfax"
 alias fac="tar vfac"
 
 alias genpass="apg -a 0 -n1 -m 16 -M NCLS"
@@ -21,6 +21,7 @@ alias last="last -n10"
 alias tt="(tmux list-sessions && tmux a) || tmux"
 alias g="git"
 alias gg="mgit.sh"
+alias f="fossil"
 
 # Editor and Pager
 __which() {
