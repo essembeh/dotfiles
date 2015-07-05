@@ -1,4 +1,4 @@
 echo "$PATH" | grep -q "/sbin" || export PATH="$PATH:/sbin:/usr/sbin"
+test -d /usr/local/opt/coreutils/libexec/gnubin && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 test -d "$HOME/System/bin" && export PATH="$PATH:$HOME/System/bin"
 test -d "$HOME/System/script-utils/bin" && export PATH="$PATH:$HOME/System/script-utils/bin"
-test -d "/usr/games/" && export PATH="$PATH:/usr/games/"
