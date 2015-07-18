@@ -1,0 +1,6 @@
+[submodule "3rdparty/oh-my-zsh"]
+	path = 3rdparty/oh-my-zsh
+	url = git@github.com:essembeh/oh-my-zsh
+[submodule "3rdparty/script-utils"]
+	path = 3rdparty/script-utils
+	url = git@github.com:essembeh/script-utils
