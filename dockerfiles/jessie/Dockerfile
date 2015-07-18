@@ -28,9 +28,8 @@ ENV HOME /root
 WORKDIR /root
 
 ## Checkout projects
-RUN git clone -b sebseb https://github.com/essembeh/oh-my-zsh $HOME/.oh-my-zsh
-RUN git clone https://github.com/essembeh/script-utils
 RUN git clone https://github.com/essembeh/dotfiles
+RUN cd dotfiles && git submodule init && git submodule update
 RUN ./dotfiles/setup.sh
 
 ## Default shell

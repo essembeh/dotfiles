@@ -8,5 +8,5 @@ __PATH_prepend () {
 __PATH_prepend "/usr/local/opt/coreutils/libexec/gnubin"
 __PATH_append "/sbin"
 __PATH_append "/usr/sbin"
-__PATH_append "$HOME/System/bin"
-__PATH_append "$HOME/System/3rdparty/script-utils/bin"
+__PATH_append "$HOME/dotfiles/bin"
+__PATH_append "$HOME/dotfiles/3rdparty/script-utils/bin"

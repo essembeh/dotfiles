@@ -20,6 +20,7 @@ function createLinks {
   done
 }
 
+createLinks 3rdparty/oh-my-zsh
 createLinks bash/bashrc bash/alias bash/profile bash/custompath
 createLinks zsh/zshrc zsh/zshenv
 createLinks git/gitconfig
