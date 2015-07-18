@@ -1,49 +1,56 @@
+set nocompatible
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+
+"" Color
+set background=dark 
+colorscheme essembeh
+syntax on
+
 "" File encoding
 set encoding=utf-8
 set fileencoding=utf-8 
-
-
-"" Coloration
-syntax on
-colorscheme essembeh
-
 
 "" Tab parameters
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
-"set cindent					" cindent
-"set autoindent					" indentation automatique avancée
-set smartindent					" indentation intelligente
 
+"" Indentation
+"set cindent
+"set autoindent
+set smartindent
 
 " General settings
-set nocompatible				" 1976 c'est loin...
-set showmatch					" verifications des {} () []
-set incsearch					" Recherche pendant la recherche
-set hlsearch					" Highlight search
-set smartcase					" recherche selon la casse la plus approchante
-"set autowrite					" sauvegarder à chaque :make & :next
-set ruler						" afficher la position
-"set number						" numéros de ligne
-"set mouse=a					" la souris, plus trop utile :P
-"set ttymouse=xterm2			" cf mouse
-set updatecount=0				" pas de fichier de secours
-"set backspace=indent,eol,start	" autorisation du retour arrière
+set showmatch                    " verifications des {} () []
+set incsearch                    " Recherche pendant la recherche
+set hlsearch                     " Highlight search
+set smartcase                    " recherche selon la casse la plus approchante
+set ruler                        " afficher la position
+set showcmd                      " affiche les commandes incomplète 
+set backspace=indent,eol,start   " autorisation du retour arrière
 
+"" Mouse
+"set mouse=a
+"set ttymouse=xterm2
+
+"" Saving
+"set autowrite                    " sauvegarder à chaque :make & :next
+set updatecount=0                " pas de fichier de secours
+
+
+"" VARIABLES
+let g:GPGPreferSymmetric=1
+let g:GPGUsePipes=1
+
+"" ALIAS
 
 "" CTRL+L to show line numbers
-imap <C-l>			<esc>:set nu<cr>i
-map  <C-l>			:set nu<cr>
-"" Tabs
-map  <C-w><C-o>		:tabnew<cr>:E<cr>
-map  <C-w><C-n>		:tabnext<cr>
-map  <C-w><C-p>		:tabprevious<cr>
-map  <C-w><C-d>		:tabclose<cr>
-map  <C-w><C-l>		:tabs<cr>
-map  <C-w><C-k>		:tabdo quit<cr>
+imap <C-l>  <esc>:set nu<cr>i
+map  <C-l>  :set nu<cr>
 
 "" unhiglight search on ENTER
-nnoremap <silent> <cr> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <cr>  :nohlsearch<Bar>:echo<CR>
 
-map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'. synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

@@ -7,3 +7,9 @@
 [submodule "3rdparty/bitpocket"]
 	path = 3rdparty/bitpocket
 	url = https://github.com/sickill/bitpocket
+[submodule "3rdparty/vim-pathogen"]
+	path = 3rdparty/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen/
+[submodule "vim/bundle/vim-gnupg"]
+	path = vim/bundle/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg
