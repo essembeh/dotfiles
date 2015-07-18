@@ -29,7 +29,6 @@ WORKDIR /root
 
 ## Checkout projects
 RUN git clone https://github.com/essembeh/dotfiles
-RUN cd dotfiles && git submodule init && git submodule update
 RUN ./dotfiles/setup.sh
 
 ## Default shell

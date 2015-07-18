@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
 
-ROOT=`dirname "$0"`
-[[ ! "$ROOT" = /* ]] && ROOT="$PWD/$ROOT"
-
 function createLinks {
   while test -n "$1"; do
     local SOURCE="$ROOT/$1"
@@ -19,6 +16,12 @@ function createLinks {
     shift
   done
 }
+
+
+ROOT=`dirname "$0"`
+[[ ! "$ROOT" = /* ]] && ROOT="$PWD/$ROOT"
+
+(cd "$ROOT" && git submodule init && git submodule update)
 
 createLinks 3rdparty/oh-my-zsh
 createLinks bash/bashrc bash/alias bash/profile bash/custompath
