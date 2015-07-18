@@ -4,3 +4,6 @@
 [submodule "3rdparty/script-utils"]
 	path = 3rdparty/script-utils
 	url = https://github.com/essembeh/script-utils
+[submodule "3rdparty/bitpocket"]
+	path = 3rdparty/bitpocket
+	url = https://github.com/sickill/bitpocket
