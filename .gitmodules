@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "3rdparty/base16-shell"]
+	path = 3rdparty/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git
