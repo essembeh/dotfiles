@@ -1,15 +1,15 @@
 [submodule "3rdparty/oh-my-zsh"]
 	path = 3rdparty/oh-my-zsh
-	url = https://github.com/essembeh/oh-my-zsh
+	url = git://github.com/essembeh/oh-my-zsh
 [submodule "3rdparty/script-utils"]
 	path = 3rdparty/script-utils
-	url = https://github.com/essembeh/script-utils
+	url = git://github.com/essembeh/script-utils
 [submodule "3rdparty/bitpocket"]
 	path = 3rdparty/bitpocket
-	url = https://github.com/sickill/bitpocket
+	url = git://github.com/sickill/bitpocket
 [submodule "3rdparty/vim-pathogen"]
 	path = 3rdparty/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen/
+	url = git://github.com/tpope/vim-pathogen/
 [submodule "vim/bundle/vim-gnupg"]
 	path = vim/bundle/vim-gnupg
-	url = https://github.com/jamessan/vim-gnupg
+	url = git://github.com/jamessan/vim-gnupg
