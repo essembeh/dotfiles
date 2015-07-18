@@ -54,3 +54,4 @@ map  <C-l>  :set nu<cr>
 "" unhiglight search on ENTER
 nnoremap <silent> <cr>  :nohlsearch<Bar>:echo<CR>
 
+map <C-n> :NERDTreeToggle<CR>
