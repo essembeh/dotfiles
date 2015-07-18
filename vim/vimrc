@@ -31,6 +31,7 @@ set smartcase                    " recherche selon la casse la plus approchante
 set ruler                        " afficher la position
 set showcmd                      " affiche les commandes incomplète 
 set backspace=indent,eol,start   " autorisation du retour arrière
+set laststatus=2
 
 "" Mouse
 "set mouse=a
@@ -44,6 +45,8 @@ set updatecount=0                " pas de fichier de secours
 "" VARIABLES
 let g:GPGPreferSymmetric=1
 let g:GPGUsePipes=1
+"let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='luna' 
 
 "" ALIAS
 
@@ -55,3 +58,4 @@ map  <C-l>  :set nu<cr>
 nnoremap <silent> <cr>  :nohlsearch<Bar>:echo<CR>
 
 map <C-n> :NERDTreeToggle<CR>
+

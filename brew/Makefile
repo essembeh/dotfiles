@@ -47,3 +47,4 @@ brew:
 	brew install tree
 	brew install tig
 	brew install gpg
+	brew install htop
