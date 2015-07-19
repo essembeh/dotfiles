@@ -45,7 +45,7 @@ set updatecount=0                " pas de fichier de secours
 "" VARIABLES
 let g:GPGPreferSymmetric=1
 let g:GPGUsePipes=1
-"let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='luna' 
 
 "" ALIAS
@@ -53,9 +53,12 @@ let g:airline_theme='luna'
 "" CTRL+L to show line numbers
 imap <C-l>  <esc>:set nu<cr>i
 map  <C-l>  :set nu<cr>
+map  <C-p>  :bprev<cr>
+map  <C-n>  :bnext<cr>
 
 "" unhiglight search on ENTER
 nnoremap <silent> <cr>  :nohlsearch<Bar>:echo<CR>
 
-map <C-n> :NERDTreeToggle<CR>
+"" Nerd Tree
+map <C-t> :NERDTreeToggle<CR>
 
