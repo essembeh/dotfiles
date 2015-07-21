@@ -30,3 +30,4 @@ createLinks git/gitconfig
 createLinks tmux/tmux.conf
 createLinks vim
 createLinks lftp
+createLinks mplayer
