@@ -24,22 +24,24 @@ set noexpandtab
 set smartindent
 
 " General settings
-set showmatch                    " verifications des {} () []
-set incsearch                    " Recherche pendant la recherche
-set hlsearch                     " Highlight search
-set smartcase                    " recherche selon la casse la plus approchante
-set ruler                        " afficher la position
-set showcmd                      " affiche les commandes incomplète 
-set backspace=indent,eol,start   " autorisation du retour arrière
+set showmatch " Verifications des {} () []
+set hlsearch " Highlight search
+set smartcase " recherche selon la casse la plus approchante
+set ruler " afficher la position
+set showcmd " affiche les commandes incomplète 
 set laststatus=2
+set virtualedit=onemore " Allow for cursor beyond last character
+set history=1000 " Store a ton of history (default is 20)
+set hidden " Allow buffer switching without saving
+"set spell " Spell checking on
 
 "" Mouse
 "set mouse=a
 "set ttymouse=xterm2
 
 "" Saving
-"set autowrite                    " sauvegarder à chaque :make & :next
-set updatecount=0                " pas de fichier de secours
+"set autowrite " sauvegarder à chaque :make & :next
+set updatecount=0 " pas de fichier de secours
 
 
 "" VARIABLES
@@ -51,14 +53,13 @@ let g:airline_theme='luna'
 "" ALIAS
 
 "" CTRL+L to show line numbers
-imap <C-l>  <esc>:set nu<cr>i
-map  <C-l>  :set nu<cr>
-map  <C-p>  :bprev<cr>
-map  <C-n>  :bnext<cr>
+imap <C-l> <esc>:set nu<cr>i
+map <C-l> :set nu<cr>
+map <C-p> :bprev<cr>
+map <C-n> :bnext<cr>
 
 "" unhiglight search on ENTER
-nnoremap <silent> <cr>  :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <cr> :nohlsearch<Bar>:echo<CR>
 
 "" Nerd Tree
 map <C-t> :NERDTreeToggle<CR>
-
