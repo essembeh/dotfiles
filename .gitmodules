@@ -28,3 +28,6 @@
 [submodule "vim/bundle/vim-sensible"]
 	path = vim/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible
+[submodule "vim/bundle/SearchComplete"]
+	path = vim/bundle/SearchComplete
+	url = https://github.com/vim-scripts/SearchComplete
