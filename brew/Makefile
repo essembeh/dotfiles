@@ -9,6 +9,9 @@ uninstall:
 cask:
 	brew install caskroom/cask/brew-cask
 	brew cask install atom
+	brew cask install freecad
+	brew cask install keeppassx
+	brew cask install vlc
 
 dupes:
 	brew tap homebrew/dupes
@@ -35,6 +38,8 @@ brew:
 	brew install git
 	brew install nmap
 	brew install tmux
+	brew install python3
+	brew install aria2
 	brew install irssi
 	brew install lftp
 	brew install bvi
@@ -48,3 +53,6 @@ brew:
 	brew install tig
 	brew install gpg
 	brew install htop
+	brew install subliminal
+
+
