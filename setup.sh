@@ -18,10 +18,10 @@ function createLinks {
 }
 
 ROOT=`dirname "$0"`
-[[ ! "$ROOT" = /* ]] && ROOT="$PWD/$ROOT"
+cd "$ROOT"
 
-git --work-tree="$ROOT/" --git-dir="$ROOT/.git" submodule sync --recursive
-git --work-tree="$ROOT/" --git-dir="$ROOT/.git" submodule update --init --recursive
+git submodule sync --recursive
+git submodule update --init --recursive
 
 createLinks 3rdparty/oh-my-zsh
 createLinks bash/bashrc bash/alias bash/profile bash/custompath
