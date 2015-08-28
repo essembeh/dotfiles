@@ -3,7 +3,7 @@ set -e
 
 function createLinks {
   while test -n "$1"; do
-    local SOURCE="$ROOT/$1"
+    local SOURCE="`pwd`/$1"
     local DESTINATION="$HOME/.`basename "$SOURCE"`"
 
     if test -L "$DESTINATION"; then
@@ -17,8 +17,7 @@ function createLinks {
   done
 }
 
-ROOT=`dirname "$0"`
-cd "$ROOT"
+cd `dirname "$0"`
 
 git submodule sync --recursive
 git submodule update --init --recursive
