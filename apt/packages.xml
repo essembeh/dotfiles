@@ -1,15 +1,13 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="packages.xsl"?>
 <content>
-  <!--
-       Multimedia
-  -->
+  <!--       Multimedia  -->
   <section name="Multimedia">
     <subsection name="Codecs">
-      <item>gstreamer0.10-ffmpeg</item>
-      <item>gstreamer0.10-fluendo-mp3</item>
-      <item>gstreamer0.10-plugins-bad</item>
-      <item>gstreamer0.10-plugins-ugly</item>
+      <item>gstreamer1.0-ffmpeg</item>
+      <item>gstreamer1.0-fluendo-mp3</item>
+      <item>gstreamer1.0-plugins-bad</item>
+      <item>gstreamer1.0-plugins-ugly</item>
       <item>lame</item>
       <item>libdvdcss2</item>
     </subsection>
@@ -37,19 +35,12 @@
       <item>exfalso</item>
       <item>mp3splt</item>
     </subsection>
-    <subsection name="iPod">
-      <item>gtkpod</item>
-      <item>gnupod-tools</item>
-    </subsection>
     <subsection name="Pictures">
       <item>gthumb</item>
       <item desc="un outil légal pour examiner les fichiers Thumbs.db">vinetto</item>
-      <item>geeqie</item>
     </subsection>
   </section>
-  <!--
-       Development
-  -->
+  <!--       Development  -->
   <section name="Development">
     <subsection name="Base">
       <item>build-essential</item>
@@ -66,40 +57,29 @@
       <item>doxygen doxygen-gui</item>
     </subsection>
     <subsection name="Web dev">
-      <item>bluefish</item>
-      <item>cssed</item>
-      <item>xmlcopyeditor</item>
-      <item>xmlstartlet</item>
+      <item desc="XML tools">xmlindent xmlstarlet</item>
       <item>xsltproc</item>
-      <item>xmlindent</item>
+      <item desc="JSON tools">jq libjson-pp-perl</item>
     </subsection>
     <subsection name="Editors">
-      <item>vim</item>
+      <item>vim vim-syntastic</item>
       <item>geany geany-plugins</item>
       <item>gedit-plugins</item>
       <item>most</item>
       <item>meld</item>
-    </subsection>
-    <subsection name="Tools">
-      <item>indent</item>
-      <item>liwc</item>
+      <item>bluefish</item>
+      <item>cssed</item>
+      <item>xmlcopyeditor</item>
     </subsection>
     <subsection name="Java">
       <item>openjdk-7-jre</item>
       <item>openjdk-7-jdk</item>
-      <item>openjdk-7-doc</item>
-      <item>openjdk-6-jre</item>
-      <item>openjdk-6-jdk</item>
-      <item>openjdk-6-doc</item>
       <item>eclipse</item>
-      <item>eclipse-cdt</item>
       <item>ant</item>
       <item>maven</item>
     </subsection>
   </section>
-  <!--
-       Networking
-  -->
+  <!--       Networking  -->
   <section name="Networking">
     <subsection name="FTP">
       <item>lftp</item>
@@ -123,9 +103,11 @@
     <subsection name="Servers">
       <item>openssh-server</item>
       <item>apache2</item>
-      <item>mysql-server mysql-client php5-mysql</item>
+      <item>nginx-full</item>
+      <item>mysql-server mysql-client</item>
+      <item>php5 php5-cli php5-mysql php5-sqlite php5-gd php5-curl php5-fpm php5-xsl</item>
       <item>phpmyadmin</item>
-      <item>php5 php5-cli php5-xsl php5-gd php5-curl</item>
+      <item>adminer</item>
       <item>slapd phpldapadmin libapache-authznetldap-perl</item>
     </subsection>
     <subsection name="VPN">
@@ -136,9 +118,7 @@
       <item>dnsmasq</item>
     </subsection>
   </section>
-  <!--
-       Desktop
-  -->
+  <!--       Desktop  -->
   <section name="Desktop">
     <subsection name="Office">
       <item>abiword-gnome abiword-plugins-gnome</item>
@@ -188,20 +168,23 @@
       <item>shiki-colors</item>
     </subsection>
   </section>
-  <!-- 
-       System
-  -->
+  <!--       System  -->
   <section name="System">
-	<subsection name="Shell">
-	  <item>zsh</item>
-      <item>screen</item>
+    <subsection name="Shell">
+      <item>bash bash-completion</item>
+      <item>zsh</item>
       <item>tmux</item>
+      <item>screen</item>
       <item>schroot</item>
-	</subsection>
+    </subsection>
     <subsection name="Administration">
-	  <item>dfc pydf</item>
+      <item>multitail</item>
+      <item>fail2ban</item>
+      <item>apt-file</item>
+      <item>unattended-upgrades</item>
+      <item>pydf</item>
       <item>htop</item>
-      <item>nmap iptraf nethogs iftop jnettop apachetop</item>
+      <item>nmap iptraf iftop</item>
       <item>moreutils</item>
       <item>galternatives</item>
       <item>secure-delete</item>
@@ -212,17 +195,18 @@
       <item>cryptkeeper</item>
     </subsection>
     <subsection name="FS">
+      <item>autofs</item>
       <item>smbfs</item>
       <item>sshfs</item>
       <item>mdadm</item>
       <item>lvm2</item>
       <item>gparted</item>
-      <item>autofs</item>
     </subsection>
     <subsection name="Virtualization">
       <item>wine</item>
-      <item>virtualbox-ose</item>
+      <item>virtualbox</item>
       <item>qemu</item>
+      <item>docker</item>
     </subsection>
     <subsection name="Remote controle">
       <item>xnest</item>
