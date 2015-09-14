@@ -1,3 +1,1 @@
-## Docker & co
-/bin/docker
-/bin/boot2docker
+/bin/local/*
