@@ -1,0 +1,2 @@
+xar -xf $PKG_FILE
+cat $PAYLOAD | gunzip -dc | cpio -i
