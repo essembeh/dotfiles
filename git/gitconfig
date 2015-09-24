@@ -4,6 +4,8 @@
 [core]
 	editor = vim
 	pager = less
+[fetch]
+	prune = true
 [pull]
 	rebase = preserve
 [push]

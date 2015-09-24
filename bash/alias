@@ -23,6 +23,10 @@ alias g="git"
 alias gg="mgit.sh"
 alias f="fossil"
 
+## APT
+alias ai="sudo apt install"
+alias au="sudo apt update && sudo apt full-upgrade"
+
 # Editor and Pager
 __which() {
 	which $1 > /dev/null 2>&1
