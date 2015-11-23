@@ -15,6 +15,7 @@ cask:
 
 dupes:
 	brew tap homebrew/dupes
+	brew install iterm2
 	brew install grep --with-default-names
 	brew install rsync --with-default-names
 	brew install diffutils
@@ -54,5 +55,3 @@ brew:
 	brew install gpg
 	brew install htop
 	brew install subliminal
-
-
