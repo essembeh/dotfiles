@@ -59,12 +59,12 @@ let g:colors_name="essembeh"
 "hi MoreMsg		
 "hi NonText		
 "hi Question	
-"hi Search		
+hi Search ctermbg=4 ctermfg=7
 "hi SpecialKey	
 "hi StatusLine	
 "hi StatusLineNC	
 "hi Title		
-"hi Visual		
+hi Visual ctermbg=235
 "hi VisualNOS	
 "hi WarningMsg	
 "hi WildMenu	
