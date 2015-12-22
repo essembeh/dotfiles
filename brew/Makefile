@@ -8,14 +8,12 @@ uninstall:
 
 cask:
 	brew install caskroom/cask/brew-cask
+	brew cask install iterm2
 	brew cask install atom
-	brew cask install freecad
-	brew cask install keeppassx
 	brew cask install vlc
 
 dupes:
 	brew tap homebrew/dupes
-	brew install iterm2
 	brew install grep --with-default-names
 	brew install rsync --with-default-names
 	brew install diffutils
