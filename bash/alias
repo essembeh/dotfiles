@@ -27,6 +27,11 @@ alias f="fossil"
 alias ai="sudo apt install"
 alias au="sudo apt update && sudo apt full-upgrade"
 
+## Docker
+dockertmp () {
+	docker run --rm -t -i --hostname DockerTmp --volume $HOME:/target/home --volume /tmp:/target/tmp --volume $PWD:/target/pwd --workdir /target/pwd essembeh/jessie
+}
+
 # Editor and Pager
 __which() {
 	which $1 > /dev/null 2>&1
@@ -34,4 +39,3 @@ __which() {
 __which pydf && alias df=pydf
 __which most && export PAGER=most
 __which vim  && export EDITOR=vim
-__which docker || alias docker="boot2docker ssh docker"
