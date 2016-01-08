@@ -2,6 +2,7 @@
 alias ls="ls --color=auto"
 alias ll="ls -hl"
 alias llt="ll -rt"
+alias lls="ll -rS"
 alias la="ll -a"
 alias l="ls -CFa"
 
