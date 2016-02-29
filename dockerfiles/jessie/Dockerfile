@@ -23,14 +23,19 @@ ENV LANGUAGE fr_FR.UTF-8
 ENV LANG fr_FR.UTF-8
 ENV LC_ALL fr_FR.UTF-8
 
-## Home folder
-ENV HOME /root
-WORKDIR /root
-
-## Checkout projects
-RUN git clone https://github.com/essembeh/dotfiles
-RUN ./dotfiles/setup.sh
-
 ## Default shell
 RUN chsh root -s /bin/zsh
+
+## New user
+RUN useradd -d /home/seb -m -s /bin/zsh -u 1000 seb
+RUN echo "seb ALL = NOPASSWD: ALL" >> /etc/sudoers
+
+## User custom
+USER seb
+WORKDIR /home/seb
+RUN git clone https://github.com/essembeh/dotfiles
+RUN ./dotfiles/setup.sh
+RUN sudo ln -s /home/seb/dotfiles /root/dotfiles
+RUN sudo /root/dotfiles/setup.sh
+
 CMD ["/bin/zsh"]
