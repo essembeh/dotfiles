@@ -19,7 +19,7 @@
 	b = branch -a -vv
 	co = checkout
 	s = status
-	f = fetch
+	f = fetch --tags
 	cp = cherry-pick
 	history = log --follow
 	ls = log --oneline --graph --decorate
