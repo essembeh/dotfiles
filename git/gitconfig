@@ -27,7 +27,7 @@
 	find = !git ls-files | grep -i
 	undo = reset --soft HEAD^
 	amend = commit --amend
-	commit-reusemessage = commit --reedit-message=HEAD
+	commit-reusemessage = commit --reedit-message=HEAD --reset-author
 	rebase-upstream = rebase -i @{u}
 	spull = !git stash && git pull && git stash pop
 [status]
