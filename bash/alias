@@ -30,7 +30,16 @@ alias au="sudo apt update && sudo apt full-upgrade"
 
 ## Docker
 dockertmp () {
-	docker run --rm -t -i --hostname DockerTmp --volume $HOME:/target/home --volume /tmp:/target/tmp --volume $PWD:/target/pwd --workdir /target/pwd ${2} ${1-essembeh/jessie}
+	local DOCKER_IMAGE=${1-essembeh/jessie}
+	docker run --rm -t -i \
+		--hostname $(echo $DOCKER_IMAGE | tr -cd '[[:alnum:]]') \
+		--volume $HOME:/target/home \
+		--volume /tmp:/target/tmp \
+		--volume $PWD:/target/pwd \
+		--volume /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 \
+		--env DISPLAY=:0 \
+		--workdir /target/pwd \
+		$DOCKER_IMAGE
 }
 
 # Editor and Pager
