@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
-function createLinks {
+createLinks () {
   while test -n "$1"; do
     local SOURCE="`pwd`/$1"
     local DESTINATION="$HOME/.`basename "$SOURCE"`"
