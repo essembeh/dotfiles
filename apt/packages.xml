@@ -12,23 +12,23 @@
       <item>libdvdcss2</item>
     </subsection>
     <subsection name="Video players">
-      <item>mplayer</item>
+      <item>mplayer2</item>
       <item>vlc</item>
+      <item>kodi</item>
     </subsection>
     <subsection name="Video utils">
       <item>avidemux</item>
       <item>ffmpeg</item>
-      <item>handbrake-gtk handbrake-cli</item>
-      <item>libimage-exiftool-perl</item>
+      <item>handbrake</item>
+      <item>openshot</item>
+      <item>libimage-exiftool-perl imagemagick</item>
       <item>subtitleeditor</item>
-      <item>gaupol</item>
-      <item>gnome-subtitles</item>
+      <item>gaupol gnome-subtitles</item>
     </subsection>
     <subsection name="Audio players">
       <item>audacious audacious-plugins</item>
       <item>quodlibet quodlibet-plugins</item>
       <item>decibel-audio-player</item>
-      <item>exaile exaile-plugin-ipod</item>
     </subsection>
     <subsection name="Audio utils">
       <item>eyed3</item>
@@ -37,7 +37,7 @@
     </subsection>
     <subsection name="Pictures">
       <item>gthumb</item>
-      <item desc="un outil légal pour examiner les fichiers Thumbs.db">vinetto</item>
+      <item desc="Thumbs.db viewer">vinetto</item>
     </subsection>
   </section>
   <!--       Development  -->
@@ -50,11 +50,6 @@
       <item>git tig</item>
       <item>git-gui gitk</item>
       <item>github-cli</item>
-      <item>subversion subversion-tools</item>
-      <item>rapidsvn</item>
-    </subsection>
-    <subsection name="Documentation">
-      <item>doxygen doxygen-gui</item>
     </subsection>
     <subsection name="Web dev">
       <item desc="XML tools">xmlindent xmlstarlet</item>
@@ -67,13 +62,11 @@
       <item>gedit-plugins</item>
       <item>most</item>
       <item>meld</item>
-      <item>bluefish</item>
-      <item>cssed</item>
-      <item>xmlcopyeditor</item>
+      <item>bvi</item>
     </subsection>
     <subsection name="Java">
-      <item>openjdk-7-jre</item>
-      <item>openjdk-7-jdk</item>
+      <item>openjdk-8-jre</item>
+      <item>openjdk-8-jdk openjdk-8-source</item>
       <item>eclipse</item>
       <item>ant</item>
       <item>maven</item>
@@ -86,7 +79,8 @@
       <item>filezilla</item>
     </subsection>
     <subsection name="Download">
-      <item>aria2c</item>
+      <item>aria2</item>
+      <item>youtube-dl</item>
       <item>curl</item>
       <item>pan</item>
       <item>rtorrent</item>
@@ -98,22 +92,27 @@
       <item>xchat-gnome</item>
     </subsection>
     <subsection name="Web browsers">
+      <item>chromium pepperflashplugin-nonfree</item>
+      <item>firefox firefox-l10n-fr</item>
       <item>flashplugin-nonfree</item>
     </subsection>
     <subsection name="Servers">
+      <item>nfs-kernel-server</item>
       <item>openssh-server</item>
+      <item>mosh</item>
       <item>apache2</item>
       <item>nginx-full</item>
-      <item>mysql-server mysql-client</item>
       <item>php5 php5-cli php5-mysql php5-sqlite php5-gd php5-curl php5-fpm php5-xsl</item>
+      <item>mysql-server mysql-client</item>
       <item>phpmyadmin</item>
       <item>adminer</item>
-      <item>slapd phpldapadmin libapache-authznetldap-perl</item>
     </subsection>
     <subsection name="VPN">
-      <item>vpnc network-manager-vpnc-gnome</item>
-      <item>openvpn</item>
       <item>network-manager-openvpn-gnome</item>
+      <item>network-manager-pptp-gnome</item>
+      <item>network-manager-openconnect-gnome</item>
+      <item>network-manager-vpnc-gnome</item>
+      <item>openvpn</item>
       <item>bind9</item>
       <item>dnsmasq</item>
     </subsection>
@@ -127,7 +126,8 @@
       <item>pdftk</item>
     </subsection>
     <subsection name="Mail">
-      <item>icedove iceowl-extension</item>
+      <item>icedove icedove-l10n-fr</item>
+      <item>iceowl-extension iceowl-l10n-fr</item>
     </subsection>
     <subsection name="LaTeX">
       <item>tetex-bin tetex-extra</item>
@@ -146,19 +146,17 @@
       <item>cabextract</item>
       <item>par2 gpar2</item>
       <item>cksfv</item>
+    </subsection>
+    <subsection name="Backup">
+      <item>borgbackup</item>
       <item>rdiff-backup</item>
       <item>deja-dup</item>
+      <item>git-annex</item>
     </subsection>
-    <subsection name="Games">
-      <item>ksokoban</item>
-      <item>kolf</item>
-      <item>openarena</item>
-    </subsection>
-    <subsection name="Misc">
+    <subsection name="Utils">
       <item>gnome-schedule</item>
       <item>pyrenamer gprename</item>
-      <item>xzoom</item>
-      <item>tree</item>
+      <item>galternatives</item>
     </subsection>
     <subsection name="Look">
       <item>gnome-tweak-tool</item>
@@ -177,39 +175,49 @@
       <item>screen</item>
       <item>schroot</item>
     </subsection>
-    <subsection name="Administration">
+    <subsection name="Utils">
+      <item>tree</item>
       <item>multitail</item>
+      <item>pydf</item>
+      <item>htop</item>
+      <item>moreutils</item>
+      <item>secure-delete</item>
+    </subsection>
+    <subsection name="Administration">
       <item>fail2ban</item>
       <item>apt-file</item>
       <item>unattended-upgrades</item>
-      <item>pydf</item>
-      <item>htop</item>
       <item>nmap iptraf iftop</item>
-      <item>moreutils</item>
-      <item>galternatives</item>
-      <item>secure-delete</item>
       <item>libpam-google-authenticator</item>
     </subsection>
     <subsection name="Chiffrement">
       <item>cryptsetup</item>
       <item>cryptkeeper</item>
     </subsection>
+    <subsection name="Android">
+      <item>android-tools-adb</item>
+      <item>android-tools-fastboot</item>
+      <item>android-tools-fsutils</item>
+    </subsection>
     <subsection name="FS">
+      <item>exfat-fuse exfat-utils</item>
       <item>autofs</item>
       <item>smbfs</item>
       <item>sshfs</item>
       <item>mdadm</item>
       <item>lvm2</item>
       <item>gparted</item>
+      <item>smartmontools</item>
     </subsection>
     <subsection name="Virtualization">
       <item>wine</item>
       <item>virtualbox</item>
       <item>qemu</item>
-      <item>docker</item>
+      <item>docker.io</item>
     </subsection>
     <subsection name="Remote controle">
       <item>xnest</item>
+      <item>synergy</item>
       <item>x2x</item>
     </subsection>
     <subsection name="Date and time">
