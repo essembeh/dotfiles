@@ -207,13 +207,14 @@
       <item>mdadm</item>
       <item>lvm2</item>
       <item>gparted</item>
+	  <item>fatsort</item>
       <item>smartmontools</item>
     </subsection>
     <subsection name="Virtualization">
       <item>wine</item>
       <item>virtualbox</item>
       <item>qemu</item>
-      <item>docker.io</item>
+      <item>docker-engine</item>
     </subsection>
     <subsection name="Remote controle">
       <item>xnest</item>
