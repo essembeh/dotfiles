@@ -101,7 +101,7 @@ type = authenticated
 type = filesystem
 
 # Folder for storing local collections, created if not present
-filesystem_folder = /data/radicale/collections
+filesystem_folder = /data/collections
 
 
 [logging]

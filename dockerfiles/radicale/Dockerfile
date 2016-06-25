@@ -13,13 +13,14 @@ RUN pip install radicale
 RUN adduser -h /home/radicale -D radicale
 
 # Radicale configuration
-COPY users.htpasswd /data/radicale/
-COPY config /data/radicale/
-RUN chown -R radicale:radicale /data/radicale
+COPY users.htpasswd /data/
+COPY config /data/
+COPY collections /data/collections/
+RUN chown -R radicale:radicale /data/
 
 # Container info
 USER radicale
-WORKDIR	/home/radicale
-VOLUME /data/radicale
+WORKDIR	/data/
+VOLUME /data/
 EXPOSE 5232
-CMD ["radicale", "-D", "-C", "/data/radicale/config"]
+CMD ["radicale", "-D", "-C", "/data/config"]
