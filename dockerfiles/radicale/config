@@ -77,7 +77,7 @@ carddav = '/%(user)s/carddav/'
 type = htpasswd
 
 # Htpasswd filename
-htpasswd_filename = /data/radicale/users.htpasswd
+htpasswd_filename = /data/users.htpasswd
 
 # Htpasswd encryption method
 # Value: plain | sha1 | ssha | crypt | bcrypt | md5
