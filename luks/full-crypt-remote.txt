@@ -1,0 +1,193 @@
+See: https://xn3.wiki/debian/deb_kimsufi_atom_srv_luks
+
+Copy SSH key
+============
+
+ssh-copy-id root@kimsufi
+
+
+Partitionning
+=============
+
+# write new dos partition table
+parted /dev/sda mklabel msdos
+
+# create the unencrypted boot partition
+parted --align=optimal /dev/sda mkpart primary 0% 100
+parted /dev/sda set 1 boot on
+mkfs.ext4 -L boot /dev/sda1
+
+# create the encrypted partition for lvm
+parted --align=optimal /dev/sda mkpart primary 100 100%
+
+# check the prozesor for AES-NI support
+[ "$(grep aes /proc/cpuinfo)" ] && echo YES || echo NO
+
+# -> only with AES-NI support
+cryptsetup -s 512 -c aes-xts-plain64 luksFormat /dev/sda2
+# -> only if AES-NI is *NOT* supported
+cryptsetup -s 512 -c  serpent-xts-plain64 luksFormat /dev/sda2
+
+# open the encrypted partition
+cryptsetup luksOpen /dev/sda2 sda2_crypt
+
+# create lvm volume group
+pvcreate /dev/mapper/sda2_crypt
+vgcreate vg0 /dev/mapper/sda2_crypt
+
+# create required volumes
+lvcreate -L 4g -n swap vg0
+lvcreate -l 100%FREE -n root vg0
+
+# format any lvm volumes with exception from swap
+for DEVICE in $(ls /dev/mapper/vg0-*| grep -v swap) ; do mkfs.ext4 -L ${DEVICE##*-} ${DEVICE}; done
+
+# make swap
+mkswap -L swap /dev/mapper/vg0-swap
+
+
+Installation
+============
+
+# create target directory and mount / directory
+mkdir -p /target && mount /dev/mapper/vg0-root /target
+
+# minimal structure for /
+mkdir -p /target/boot
+mount /dev/sda1 /target/boot
+
+# activate swap
+swapon /dev/mapper/vg0-swap
+
+# if possible, use the internal mirror of the Kimsufi/OVH datacenter
+debootstrap --arch amd64 --components=main,contrib,non-free jessie /target http://debian.mirrors.ovh.net/debian
+
+# wiring hardware access 
+mount -o bind /dev /target/dev ; mount -t proc proc /target/proc ; mount -t sysfs sys /target/sys
+
+# check if /dev/sda an SSD
+[ "$(cat /sys/block/sda/queue/rotational)" == "0" ] && echo YES || echo NO
+
+# create encryption configuration
+# -> only normal *HDD*
+echo sda2_crypt UUID=$(cryptsetup luksDump /dev/sda2| grep ^UUID:| awk '{print $2}') none luks >/target/etc/crypttab
+# -> only when *SSD* !! reduces something the security, but it is absolutely necessary for TRIM !!
+echo sda2_crypt UUID=$(cryptsetup luksDump /dev/sda2| grep ^UUID:| awk '{print $2}') none luks,discard >/target/etc/crypttab
+
+# copy adjtime
+cp /etc/adjtime /target/etc/
+
+# copy authorized_keys
+mkdir /target/root/.ssh ; cp /root/.ssh/authorized_keys /target/root/.ssh/
+
+# activate the automatic file-system repair !! optional, but without the boot console a must !!
+echo FSCKFIX=yes >>/target/etc/default/rcS
+
+# switch to newly installed system
+XTERM=xterm-color LANG=C.UTF-8 chroot /target /bin/bash
+
+# fstab
+---------- BEGIN: /etc/fstab ----------
+/dev/sda1             /boot  ext4  defaults           0  2
+/dev/mapper/vg0-root  /      ext4  errors=remount-ro  0  1
+/dev/mapper/vg0-swap  none   swap  sw                 0  0
+
+---------- END: /etc/fstab ----------
+
+# extend the mount options **ONLY** for an SSD!!!
+sed -i 's/ext4    /ext4    discard,/g' /etc/fstab && sed -i 's/swap    /swap    discard,/g' /etc/fstab
+
+
+# workaround for the /etc/mtab refresh problem
+ln -sf /proc/mounts /etc/mtab
+
+# /etc/network/interfaces
+---------- BEGIN: /etc/network/interfaces ----------
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+    source /etc/network/interfaces.d/*
+     
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+     
+    # The primary network interface
+    allow-hotplug eth0
+    iface eth0 inet static
+          address x.x.x.x
+          netmask 255.255.255.0
+          network x.x.x.0
+          broadcast x.x.x.255
+          gateway x.x.x.254
+          # dns-* options are implemented by the resolvconf package, if installed
+          dns-nameservers 213.186.33.99
+          dns-search ovh.net
+          pre-up /sbin/ip addr flush dev eth0 || true
+
+---------- END: /etc/network/interfaces ----------
+
+# set hostname
+hostname abc123.ovh.net && hostname -f >/etc/hostname
+
+# apt install
+echo APT::Install-Recommends "False"\; >/etc/apt/apt.conf.d/02recommends
+apt update
+apt install cryptsetup lvm2 makedev dropbear busybox ssh initramfs-tools linux-base linux-image-amd64 grub-pc console-setup bash-completion kbd locales ntpdate
+dpkg-reconfigure tzdata locales
+
+# prepare initramfs
+mkdir -p /etc/initramfs-tools/root/.ssh/
+cp /root/.ssh/authorized_keys /etc/initramfs-tools/root/.ssh/
+
+# grub configuration
+sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=.*$/GRUB_CMDLINE_LINUX_DEFAULT=""/' /etc/default/grub
+sed -i 's/^#GRUB_TERMINAL=.*$/GRUB_TERMINAL=console/' /etc/default/grub
+
+# Configure network at boot: ip=<client-ip>:<server-ip>:<gw-ip>:<netmask>:<hostname>:<device>:<autoconf>
+ifconfig eth0
+sed -i 's/^GRUB_CMDLINE_LINUX=.*$/GRUB_CMDLINE_LINUX="ip=x.x.x.x::x.x.x.254:255.255.255.0::eth0:none"/' /etc/default/grub
+update-grub2
+
+# -> only with SSD required!!!
+sed -i 's/^ *issue_discards =.*$/    issue_discards = 1/' /etc/lvm/lvm.conf
+
+# synchronize the ssh host keys between openssh and dropbear 
+/usr/lib/dropbear/dropbearconvert openssh dropbear /etc/ssh/ssh_host_rsa_key /etc/initramfs-tools/etc/dropbear/dropbear_rsa_host_key
+/usr/lib/dropbear/dropbearconvert openssh dropbear /etc/ssh/ssh_host_dsa_key /etc/initramfs-tools/etc/dropbear/dropbear_dss_host_key
+
+# and update initramfs
+update-initramfs -u
+
+# Check
+zcat /boot/initrd.img-* | cpio -t sbin/cryptsetup conf/conf.d/cryptroot etc/lvm/lvm.conf root/.ssh/authorized_keys etc/dropbear/\* sbin/dropbear
+ -> conf/conf.d/cryptroot
+ -> sbin/cryptsetup
+ -> sbin/dropbear
+ -> root/.ssh/authorized_keys
+ -> etc/dropbear/dropbear_rsa_host_key
+ -> etc/dropbear/dropbear_dss_host_key
+ -> etc/lvm/lvm.conf
+
+zcat /boot/initrd.img-* | cpio -i --to-stdout conf/conf.d/cryptroot
+ -> target=sda2_crypt,source=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx,key=none,rootdev,lvm=vg0-root
+
+# Umount & reboot
+exit
+umount /target/{dev,proc,sys,boot}
+swapoff -a
+vgchange -an vg0
+cryptsetup luksClose sda2_crypt
+
+# !! deactivate the Rescue-Boot-System !! and boot in the new installed system
+reboot
+
+
+Boot-Up
+======= 
+
+# Once logged as root via SSH
+echo -n YOUR_LUKS_PASSWORD >/lib/cryptsetup/passfifo
+
+# Batch mode
+ssh -o BatchMode=yes root@kimsufi echo -n YOUR_LUKS_PASSWORD >/lib/cryptsetup/passfifo
+
