@@ -25,8 +25,8 @@ alias gg="mgit.sh"
 alias f="fossil"
 
 ## APT
-alias ai="sudo apt install"
-alias au="sudo apt update && sudo apt full-upgrade"
+alias ai="sudo apt-get install"
+alias au="sudo apt-get update && sudo apt-get dist-upgrade"
 
 ## Docker
 dockertmp () {
