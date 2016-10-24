@@ -1,10 +1,14 @@
 ## Debian Official
-deb http://ftp.fr.debian.org/debian/ jessie main contrib non-free
-deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
-deb http://security.debian.org/ jessie/updates main contrib non-free
+deb http://ftp.fr.debian.org/debian/ jessie main 
+deb http://ftp.fr.debian.org/debian/ jessie-updates main
+deb http://security.debian.org/ jessie/updates main
+#deb http://ftp.fr.debian.org/debian/ jessie contrib non-free
+#deb http://ftp.fr.debian.org/debian/ jessie-updates contrib non-free
+#deb http://security.debian.org/ jessie/updates contrib non-free
 
 ## Backports
-deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
+deb http://ftp.fr.debian.org/debian/ jessie-backports main 
+#deb http://ftp.fr.debian.org/debian/ jessie-backports contrib non-free
 
 ## Mozilla
 # apt-get install pkg-mozilla-archive-keyring
@@ -21,6 +25,6 @@ deb http://mozilla.debian.net/ jessie-backports firefox-release
 #deb https://apt.dockerproject.org/repo debian-jessie main
 
 ## Syncthing
-# curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+# curl -s https://syncthing.net/release-key.txt | apt-key add -
 #deb http://apt.syncthing.net/ syncthing release
 
