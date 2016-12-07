@@ -30,5 +30,6 @@
 	commit-reusemessage = commit --reedit-message=HEAD --reset-author
 	rebase-upstream = rebase -i @{u}
 	spull = !git stash && git pull && git stash pop
+	please = push --force-with-lease
 [status]
 	showUntrackedFiles = all
