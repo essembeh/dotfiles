@@ -13,7 +13,7 @@ alias diff="diff -u -r"
 alias fax="tar vfax"
 alias fac="tar vfac"
 
-alias genpass="apg -a 0 -n1 -m 16 -M NCLS"
+alias genpass="head -c30 /dev/random | base64"
 alias subdl="subdl.pl --force --noautosrt"
 alias subdl2="subdl --site=tvnet"
 alias freetv="vlc http://mafreebox.freebox.fr/freeboxtv/playlist.m3u"
