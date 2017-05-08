@@ -25,3 +25,6 @@
 [submodule "submodules/SearchComplete"]
 	path = submodules/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete
+[submodule "submodules/vim-airline-themes"]
+	path = submodules/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
