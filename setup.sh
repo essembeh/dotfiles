@@ -22,7 +22,7 @@ cd `dirname "$0"`
 git submodule sync --recursive
 git submodule update --init --recursive
 
-createLinks 3rdparty/oh-my-zsh
+createLinks submodules/oh-my-zsh
 createLinks bash/bashrc bash/alias bash/profile bash/custompath
 createLinks zsh/zshrc zsh/zshenv
 createLinks git/gitconfig
