@@ -9,7 +9,7 @@ ontop="1"
 
 ## VIdeo
 vo="xv,gl2,gl,x11"
-monitoraspect="16:10"
+#monitoraspect="16:10"
 geometry="50%:50%"
 
 ## Audio
