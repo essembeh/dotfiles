@@ -1,0 +1,25 @@
+## Debian Official
+deb http://ftp.fr.debian.org/debian/ stretch main 
+deb http://ftp.fr.debian.org/debian/ stretch-updates main
+deb http://security.debian.org/ stretch/updates main
+#deb http://ftp.fr.debian.org/debian/ stretch contrib non-free
+#deb http://ftp.fr.debian.org/debian/ stretch-updates contrib non-free
+#deb http://security.debian.org/ stretch/updates contrib non-free
+
+## Backports
+deb http://ftp.fr.debian.org/debian/ stretch-backports main 
+#deb http://ftp.fr.debian.org/debian/ stretch-backports contrib non-free
+
+## Mozilla
+# apt-get install pkg-mozilla-archive-keyring
+#deb http://mozilla.debian.net/ stretch-backports firefox-release
+
+## Docker
+# apt-get install apt-transport-https ca-certificates
+# apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+#deb https://apt.dockerproject.org/repo debian-stretch main
+
+## Syncthing
+# curl -s https://syncthing.net/release-key.txt | apt-key add -
+#deb http://apt.syncthing.net/ syncthing release
+
