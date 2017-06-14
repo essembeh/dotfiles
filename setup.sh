@@ -35,8 +35,8 @@ git submodule sync --recursive
 git submodule update --init --recursive
 
 __createHomeLinks submodules/oh-my-zsh
-__createHomeLinks bash/bashrc bash/alias bash/profile bash/custompath
-__createHomeLinks zsh/zshrc zsh/zshenv
+__createHomeLinks shell/bashrc shell/alias shell/profile shell/custompath
+__createHomeLinks shell/zshrc shell/zshenv
 __createHomeLinks git/gitconfig
 __createHomeLinks tmux/tmux.conf
 __createHomeLinks vim
