@@ -7,7 +7,7 @@ deb http://security.debian.org/ stretch/updates main
 #deb http://security.debian.org/ stretch/updates contrib non-free
 
 ## Backports
-deb http://ftp.fr.debian.org/debian/ stretch-backports main 
+#deb http://ftp.fr.debian.org/debian/ stretch-backports main 
 #deb http://ftp.fr.debian.org/debian/ stretch-backports contrib non-free
 
 ## Mozilla

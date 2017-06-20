@@ -3,41 +3,29 @@
 <content>
   <!--       Multimedia  -->
   <section name="Multimedia">
-    <subsection name="Codecs">
-      <item>gstreamer1.0-ffmpeg</item>
+    <subsection name="Audio">
+      <item>gstreamer1.0-libav</item>
       <item>gstreamer1.0-fluendo-mp3</item>
       <item>gstreamer1.0-plugins-bad</item>
       <item>gstreamer1.0-plugins-ugly</item>
-      <item>lame</item>
-      <item>libdvdcss2</item>
+      <item>audacious audacious-plugins</item>
+      <item>quodlibet</item>
+      <item>eyed3</item>
+      <item>exfalso</item>
     </subsection>
-    <subsection name="Video players">
-      <item>mplayer2</item>
+    <subsection name="Video">
+      <item>mpv</item>
       <item>vlc</item>
       <item>kodi</item>
-    </subsection>
-    <subsection name="Video utils">
-      <item>avidemux</item>
       <item>ffmpeg</item>
       <item>handbrake</item>
       <item>openshot</item>
+      <item>subtitleeditor gaupol gnome-subtitles</item>
+    </subsection>
+    <subsection name="Image">
       <item>libimage-exiftool-perl imagemagick</item>
-      <item>subtitleeditor</item>
-      <item>gaupol gnome-subtitles</item>
-    </subsection>
-    <subsection name="Audio players">
-      <item>audacious audacious-plugins</item>
-      <item>quodlibet quodlibet-plugins</item>
-      <item>decibel-audio-player</item>
-    </subsection>
-    <subsection name="Audio utils">
-      <item>eyed3</item>
-      <item>exfalso</item>
-      <item>mp3splt</item>
-    </subsection>
-    <subsection name="Pictures">
       <item>gthumb</item>
-      <item desc="Thumbs.db viewer">vinetto</item>
+      <item>gimp gimp-plugin-registry gimp-gmic</item>
     </subsection>
   </section>
   <!--       Development  -->
@@ -45,18 +33,7 @@
     <subsection name="Base">
       <item>build-essential</item>
       <item>manpages manpages-dev</item>
-    </subsection>
-    <subsection name="SCM">
       <item>git tig</item>
-      <item>git-gui gitk</item>
-      <item>github-cli</item>
-    </subsection>
-    <subsection name="Web dev">
-      <item desc="XML tools">xmlindent xmlstarlet</item>
-      <item>xsltproc</item>
-      <item desc="JSON tools">jq libjson-pp-perl</item>
-    </subsection>
-    <subsection name="Editors">
       <item>vim vim-syntastic</item>
       <item>geany geany-plugins</item>
       <item>gedit-plugins</item>
@@ -64,37 +41,37 @@
       <item>meld</item>
       <item>bvi</item>
     </subsection>
+    <subsection name="Xml">
+      <item>xmlindent xmlstarlet</item>
+      <item>xsltproc</item>
+      <item>jq libjson-pp-perl</item>
+    </subsection>
     <subsection name="Java">
       <item>openjdk-8-jre</item>
       <item>openjdk-8-jdk openjdk-8-source</item>
-      <item>eclipse</item>
       <item>ant</item>
       <item>maven</item>
     </subsection>
   </section>
   <!--       Networking  -->
   <section name="Networking">
-    <subsection name="FTP">
+    <subsection name="Utils">
       <item>lftp</item>
       <item>filezilla</item>
-    </subsection>
-    <subsection name="Download">
       <item>aria2</item>
       <item>youtube-dl</item>
       <item>curl</item>
-      <item>pan</item>
-      <item>rtorrent</item>
       <item>transmission-gtk</item>
       <item>transmission-cli transmission-daemon</item>
     </subsection>
     <subsection name="IRC">
-      <item>irssi irssi-scripts</item>
-      <item>xchat-gnome</item>
+      <item>weechat</item>
+      <item>weechat-plugins weechat-scripts</item>
     </subsection>
-    <subsection name="Web browsers">
+    <subsection name="Apps">
       <item>chromium pepperflashplugin-nonfree</item>
-      <item>firefox firefox-l10n-fr</item>
-      <item>flashplugin-nonfree</item>
+      <item>thunderbird thunderbird-l10n-fr</item>
+      <item>lightning lightning-l10n-fr</item>
     </subsection>
     <subsection name="Servers">
       <item>nfs-kernel-server</item>
@@ -103,7 +80,7 @@
       <item>apache2</item>
       <item>nginx-full</item>
       <item>php5 php5-cli php5-mysql php5-sqlite php5-gd php5-curl php5-fpm php5-xsl</item>
-      <item>mysql-server mysql-client</item>
+      <item>mariadb-server mariadb-client</item>
       <item>phpmyadmin</item>
       <item>adminer</item>
     </subsection>
@@ -119,51 +96,30 @@
   </section>
   <!--       Desktop  -->
   <section name="Desktop">
-    <subsection name="Office">
-      <item>abiword-gnome abiword-plugins-gnome</item>
-      <item>gnumeric</item>
-      <item>grisbi</item>
-      <item>pdftk</item>
-    </subsection>
-    <subsection name="Mail">
-      <item>icedove icedove-l10n-fr</item>
-      <item>iceowl-extension iceowl-l10n-fr</item>
-    </subsection>
-    <subsection name="LaTeX">
-      <item>tetex-bin tetex-extra</item>
-      <item>texmaker</item>
-      <item>lyx</item>
-    </subsection>
-    <subsection name="Burning">
-      <item>gnomebaker</item>
-      <item>brasero</item>
-      <item>graveman</item>
-    </subsection>
     <subsection name="Archives">
       <item>unrar</item>
       <item>p7zip-full</item>
-      <item>atool</item>
-      <item>cabextract</item>
-      <item>par2 gpar2</item>
-      <item>cksfv</item>
-    </subsection>
-    <subsection name="Backup">
       <item>borgbackup</item>
       <item>rdiff-backup</item>
-      <item>deja-dup</item>
-      <item>git-annex</item>
+      <item>syncthing</item>
+      <item>backupninja</item>
     </subsection>
     <subsection name="Utils">
-      <item>gnome-schedule</item>
-      <item>pyrenamer gprename</item>
+      <item>pdftk</item>
+      <item>pyrenamer</item>
       <item>galternatives</item>
     </subsection>
     <subsection name="Look">
       <item>gnome-tweak-tool</item>
       <item>gnome-brave-icon-theme</item>
-      <item>clearlooks-phenix-theme</item>
-      <item>metacity-themes</item>
-      <item>shiki-colors</item>
+      <item>gtk3-engines-breeze</item>
+      <item>gnome-shell-extension-dashtodock gnome-shell-extension-better-volume gnome-shell-extension-impatience gnome-shell-extension-suspend-button gnome-shell-extension-top-icons-plus</item>
+      <item>gnome-shell-extension-multi-monitors gnome-shell-extension-pixelsaver gnome-shell-extension-remove-dropdown-arrows</item>
+    </subsection>
+    <subsection name="Remote controle">
+      <item>xnest</item>
+      <item>synergy</item>
+      <item>x2x</item>
     </subsection>
   </section>
   <!--       System  -->
@@ -172,58 +128,41 @@
       <item>bash bash-completion</item>
       <item>zsh</item>
       <item>tmux</item>
-      <item>screen</item>
       <item>schroot</item>
     </subsection>
     <subsection name="Utils">
-      <item>tree</item>
-      <item>multitail</item>
-      <item>pydf</item>
-      <item>htop</item>
-      <item>moreutils</item>
+      <item>tree multitail pydf htop moreutils net-tools</item>
+      <item>ncdu</item>
+      <item>ntp</item>
       <item>secure-delete</item>
+      <item>android-tools-adb android-tools-fastboot android-tools-fsutils</item>
     </subsection>
     <subsection name="Administration">
+      <item>shorewall</item>
       <item>fail2ban</item>
       <item>apt-file</item>
       <item>unattended-upgrades</item>
       <item>nmap iptraf iftop</item>
       <item>libpam-google-authenticator</item>
     </subsection>
-    <subsection name="Chiffrement">
+    <subsection name="Crypt">
       <item>cryptsetup</item>
-      <item>cryptkeeper</item>
-    </subsection>
-    <subsection name="Android">
-      <item>android-tools-adb</item>
-      <item>android-tools-fastboot</item>
-      <item>android-tools-fsutils</item>
+      <item>keepassx</item>
+      <item>steghide qrencode</item>
+      <item>sirikali</item>
     </subsection>
     <subsection name="FS">
-      <item>exfat-fuse exfat-utils</item>
-      <item>autofs</item>
-      <item>smbfs</item>
-      <item>sshfs</item>
-      <item>mdadm</item>
-      <item>lvm2</item>
+      <item>fatsort exfat-fuse exfat-utils</item>
+      <item>autofs smbnetfs sshfs</item>
+      <item>mdadm lvm2</item>
       <item>gparted</item>
-	  <item>fatsort</item>
-      <item>smartmontools</item>
+	    <item>smartmontools</item>
     </subsection>
     <subsection name="Virtualization">
-      <item>wine</item>
-      <item>virtualbox</item>
-      <item>qemu</item>
       <item>docker-engine</item>
-    </subsection>
-    <subsection name="Remote controle">
-      <item>xnest</item>
-      <item>synergy</item>
-      <item>x2x</item>
-    </subsection>
-    <subsection name="Date and time">
-      <item>ntp</item>
-      <item>ntpdate</item>
+      <item>wine</item>
+      <item>playonlinux wine32 winetricks</item>
+      <item>virtualbox</item>
     </subsection>
   </section>
 </content>
