@@ -1,14 +1,14 @@
-FROM debian:jessie
-MAINTAINER Sébastien M-B <essembeh@gmail.com>
+FROM debian:stretch
+MAINTAINER Sébastien M-B <seb@essembeh.org>
 
 ## Base packages
-ADD https://raw.githubusercontent.com/essembeh/dotfiles/master/apt/debian/jessie.list /etc/apt/sources.list
+ADD https://raw.githubusercontent.com/essembeh/dotfiles/master/apt/debian/stretch.list /etc/apt/sources.list
 RUN apt-get -q update
 RUN apt-get install -y -q \
 	locales bash-completion curl wget file man manpages sudo \
 	&& apt-get clean
 RUN apt-get install -y -q \
-	zsh tmux git vim tig lftp tree moreutils realpath p7zip-full rsync rdiff-backup \
+	zsh tmux git vim tig lftp tree moreutils realpath p7zip-full rsync borgbackup \
 	&& apt-get clean
 
 ## Devel packages

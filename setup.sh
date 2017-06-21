@@ -13,6 +13,7 @@ __ln () {
 
 __createConfigLinks () {
 	while test -n "$1"; do
+		mkdir -p "$HOME/.config"
 		local SOURCE="`pwd`/$1"
 		local DESTINATION="$HOME/.config/`basename "$SOURCE"`"
 		__ln "$SOURCE" "$DESTINATION"
