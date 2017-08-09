@@ -43,6 +43,8 @@ set hidden " Allow buffer switching without saving
 "set autowrite " sauvegarder à chaque :make & :next
 set updatecount=0 " pas de fichier de secours
 
+"" Crypt
+setlocal cm=blowfish2
 
 "" VARIABLES
 let g:GPGPreferSymmetric=1
