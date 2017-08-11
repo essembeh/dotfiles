@@ -10,7 +10,6 @@ alias du="du -hsl"
 alias df="df -h"
 
 alias diff="diff -u -r"
-alias fax="tar vfax"
 alias fac="tar vfac"
 
 alias genpass="head -c30 /dev/random | base64"
