@@ -43,3 +43,6 @@
 [submodule "submodules/OSX-Arc-Plus"]
 	path = submodules/OSX-Arc-Plus
 	url = https://github.com/LinxGem33/OSX-Arc-Plus
+[submodule "submodules/bitpocket"]
+	path = submodules/bitpocket
+	url = https://github.com/sickill/bitpocket
