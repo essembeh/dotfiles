@@ -33,3 +33,5 @@
 	please = push --force-with-lease
 [status]
 	showUntrackedFiles = all
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/

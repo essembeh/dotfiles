@@ -5,27 +5,24 @@ alias llt="ll -rt"
 alias lls="ll -rS"
 alias la="ll -a"
 alias l="ls -CFa"
-
 alias du="du -hsl"
 alias df="df -h"
-
 alias diff="diff -u -r"
 alias fac="tar vfac"
-
-alias genpass="head -c30 /dev/random | base64"
-alias subdl="subdl.pl --force --noautosrt"
-alias subdl2="subdl --site=tvnet"
-alias freetv="vlc http://mafreebox.freebox.fr/freeboxtv/playlist.m3u"
-
 alias last="last -n10"
 alias tt="(tmux list-sessions && tmux a) || tmux"
 alias g="git"
 alias gg="mgit.sh"
-alias f="fossil"
-
-## APT
+alias dd="dd status=progress"
+alias aa="aria2c --file-allocation=none --summary-interval=0"
 alias ai="sudo apt-get install"
 alias au="sudo apt-get update && sudo apt-get dist-upgrade"
+
+## Misc
+alias genpass="head -c30 /dev/random | base64"
+alias subdl="subdl.pl --force --noautosrt"
+alias subdl2="subdl --site=tvnet"
+alias freetv="vlc http://mafreebox.freebox.fr/freeboxtv/playlist.m3u"
 
 ## Docker
 dockertmp () {
@@ -48,3 +45,4 @@ __which() {
 __which pydf && alias df=pydf
 __which most && export PAGER=most
 __which vim  && export EDITOR=vim
+
