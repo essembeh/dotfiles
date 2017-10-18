@@ -46,3 +46,9 @@
 [submodule "submodules/bitpocket"]
 	path = submodules/bitpocket
 	url = https://github.com/sickill/bitpocket
+[submodule "submodules/gnome-shell-scroll-workspaces"]
+	path = submodules/gnome-shell-scroll-workspaces
+	url = https://github.com/timbertson/gnome-shell-scroll-workspaces
+[submodule "submodules/window-corner-preview"]
+	path = submodules/window-corner-preview
+	url = https://github.com/medenagan/window-corner-preview
