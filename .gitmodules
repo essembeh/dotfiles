@@ -52,3 +52,9 @@
 [submodule "submodules/window-corner-preview"]
 	path = submodules/window-corner-preview
 	url = https://github.com/medenagan/window-corner-preview
+[submodule "submodules/gnome-shell-extension-freon"]
+	path = submodules/gnome-shell-extension-freon
+	url = https://github.com/UshakovVasilii/gnome-shell-extension-freon
+[submodule "submodules/EasyScreenCast"]
+	path = submodules/EasyScreenCast
+	url = https://github.com/EasyScreenCast/EasyScreenCast

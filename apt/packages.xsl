@@ -11,7 +11,7 @@
       <body>
         <center>
           <h1>Command line</h1>
-          <input type="text" id="cmd" style="width:80%;" readonly="readonly" value="apt install"/>
+          <input type="text" id="cmd" style="width:80%;" readonly="readonly" value="apt-get install"/>
           <input type="button" value="clear" onclick="document.getElementById('cmd').value='apt-get install';" style="width:10%"/>
           <br/>
           <br/>

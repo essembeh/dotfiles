@@ -1,0 +1,1 @@
+../../submodules/gnome-shell-extension-freon/freon@UshakovVasilii_Github.yahoo.com

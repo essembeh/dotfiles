@@ -1,0 +1,19 @@
+Package:  *
+Pin:  release a=stable
+Pin-Priority:  800
+
+Package:  *
+Pin:  release a=stable-updates
+Pin-Priority:  800
+
+Package:  *
+Pin:  release a=stretch-backports
+Pin-Priority:  800
+
+Package:  *
+Pin:  release a=testing
+Pin-Priority:  101
+
+Package:  *
+Pin:  release a=unstable
+Pin-Priority:  99

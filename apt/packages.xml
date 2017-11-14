@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="packages.xsl"?>
 <content>
-  <!--       Multimedia  -->
+  <!-- Multimedia -->
   <section name="Multimedia">
     <subsection name="Audio">
       <item>gstreamer1.0-libav</item>
       <item>gstreamer1.0-fluendo-mp3</item>
-      <item>gstreamer1.0-plugins-bad</item>
-      <item>gstreamer1.0-plugins-ugly</item>
       <item>audacious audacious-plugins</item>
       <item>quodlibet</item>
       <item>eyed3</item>
@@ -20,15 +18,16 @@
       <item>ffmpeg</item>
       <item>handbrake</item>
       <item>openshot</item>
+	  <item>pitivi</item>
       <item>subtitleeditor gaupol gnome-subtitles</item>
     </subsection>
     <subsection name="Image">
+      <item>gimp gimp-plugin-registry gimp-gmic</item>
       <item>libimage-exiftool-perl imagemagick</item>
       <item>gthumb</item>
-      <item>gimp gimp-plugin-registry gimp-gmic</item>
     </subsection>
   </section>
-  <!--       Development  -->
+  <!-- Development -->
   <section name="Development">
     <subsection name="Base">
       <item>build-essential</item>
@@ -37,9 +36,7 @@
       <item>vim vim-syntastic</item>
       <item>geany geany-plugins</item>
       <item>gedit-plugins</item>
-      <item>most</item>
-      <item>meld</item>
-      <item>bvi</item>
+      <item>most meld bvi</item>
     </subsection>
     <subsection name="Xml">
       <item>xmlindent xmlstarlet</item>
@@ -49,31 +46,28 @@
     <subsection name="Java">
       <item>openjdk-8-jre</item>
       <item>openjdk-8-jdk openjdk-8-source</item>
-      <item>ant</item>
       <item>maven</item>
     </subsection>
   </section>
-  <!--       Networking  -->
+  <!-- Networking -->
   <section name="Networking">
     <subsection name="Utils">
-      <item>lftp</item>
+      <item>lftp aria2 curl youtube-dl</item>
       <item>filezilla</item>
-      <item>aria2</item>
-      <item>youtube-dl</item>
-      <item>curl</item>
       <item>transmission-gtk</item>
       <item>transmission-cli transmission-daemon</item>
     </subsection>
     <subsection name="IRC">
-      <item>weechat</item>
-      <item>weechat-plugins weechat-scripts</item>
+      <item>weechat weechat-plugins weechat-scripts</item>
+	  <item>irssi irssi-scripts</item>
     </subsection>
     <subsection name="Apps">
-      <item>chromium pepperflashplugin-nonfree</item>
+	  <item>firefox-esr firefox-esr-l10n-fr xul-ext-greasemonkey xul-ext-noscript xul-ext-pwdhash xul-ext-toggle-proxy xul-ext-ublock-origin</item>
       <item>thunderbird thunderbird-l10n-fr</item>
       <item>lightning lightning-l10n-fr</item>
 	  <item>xul-ext-gnome-keyring xul-ext-greasemonkey xul-ext-pwdhash xul-ext-refcontrol xul-ext-ublock-origin xul-ext-useragentswitcher</item>
 	  <item>xul-ext-downthemall xul-ext-foxyproxy-standard xul-ext-noscript xul-ext-requestpolicy xul-ext-toggle-proxy </item>
+      <item>chromium pepperflashplugin-nonfree</item>
     </subsection>
     <subsection name="Servers">
       <item>nfs-kernel-server</item>
@@ -96,7 +90,7 @@
       <item>dnsmasq</item>
     </subsection>
   </section>
-  <!--       Desktop  -->
+  <!-- Desktop -->
   <section name="Desktop">
     <subsection name="Archives">
       <item>unrar</item>
@@ -124,7 +118,7 @@
       <item>x2x</item>
     </subsection>
   </section>
-  <!--       System  -->
+  <!-- System -->
   <section name="System">
     <subsection name="Shell">
       <item>bash bash-completion</item>
@@ -133,35 +127,34 @@
       <item>schroot</item>
     </subsection>
     <subsection name="Utils">
-      <item>tree multitail pydf htop moreutils net-tools</item>
-      <item>ncdu</item>
-      <item>ntp</item>
+      <item>tree multitail pydf htop moreutils ncdu iotop</item>
+      <item>nmap iptraf iftop net-tools</item>
+      <item>apt-file</item>
       <item>secure-delete</item>
       <item>android-tools-adb android-tools-fastboot</item>
     </subsection>
     <subsection name="Administration">
       <item>shorewall</item>
+      <item>ntp</item>
+	  <item>nfs-kernel-server</item>
       <item>fail2ban</item>
-      <item>apt-file</item>
-      <item>unattended-upgrades</item>
-      <item>nmap iptraf iftop</item>
+      <item>unattended-upgrades needrestart</item>
       <item>libpam-google-authenticator</item>
     </subsection>
     <subsection name="Crypt">
       <item>cryptsetup</item>
+      <item>encfs</item>
       <item>keepassx</item>
       <item>steghide qrencode</item>
-      <item>sirikali</item>
     </subsection>
     <subsection name="FS">
       <item>fatsort exfat-fuse exfat-utils</item>
       <item>autofs smbnetfs sshfs</item>
       <item>mdadm lvm2</item>
       <item>gparted</item>
-	    <item>smartmontools</item>
+	  <item>smartmontools</item>
     </subsection>
     <subsection name="Virtualization">
-      <item>docker-engine</item>
       <item>wine</item>
       <item>playonlinux wine32 winetricks</item>
       <item>virtualbox</item>
