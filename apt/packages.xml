@@ -72,6 +72,8 @@
       <item>chromium pepperflashplugin-nonfree</item>
       <item>thunderbird thunderbird-l10n-fr</item>
       <item>lightning lightning-l10n-fr</item>
+	  <item>xul-ext-gnome-keyring xul-ext-greasemonkey xul-ext-pwdhash xul-ext-refcontrol xul-ext-ublock-origin xul-ext-useragentswitcher</item>
+	  <item>xul-ext-downthemall xul-ext-foxyproxy-standard xul-ext-noscript xul-ext-requestpolicy xul-ext-toggle-proxy </item>
     </subsection>
     <subsection name="Servers">
       <item>nfs-kernel-server</item>
@@ -135,7 +137,7 @@
       <item>ncdu</item>
       <item>ntp</item>
       <item>secure-delete</item>
-      <item>android-tools-adb android-tools-fastboot android-tools-fsutils</item>
+      <item>android-tools-adb android-tools-fastboot</item>
     </subsection>
     <subsection name="Administration">
       <item>shorewall</item>
