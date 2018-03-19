@@ -13,7 +13,7 @@ alias last="last -n10"
 alias tt="(tmux list-sessions && tmux a) || tmux"
 alias g="git"
 alias gg="mgit.sh"
-alias dd="dd status=progress"
+alias go="xdg-open"
 alias aa="aria2c --file-allocation=none --summary-interval=0"
 alias ai="sudo apt-get install"
 alias au="sudo apt-get update && sudo apt-get dist-upgrade"
@@ -22,21 +22,6 @@ alias au="sudo apt-get update && sudo apt-get dist-upgrade"
 alias genpass="head -c30 /dev/random | base64"
 alias subdl="subdl.pl --force --noautosrt"
 alias subdl2="subdl --site=tvnet"
-alias freetv="vlc http://mafreebox.freebox.fr/freeboxtv/playlist.m3u"
-
-## Docker
-dockertmp () {
-	local DOCKER_IMAGE=${1-essembeh/jessie}
-	docker run --rm -t -i \
-		--hostname $(echo $DOCKER_IMAGE | tr -cd '[[:alnum:]]') \
-		--volume $HOME:/target/home \
-		--volume /tmp:/target/tmp \
-		--volume $PWD:/target/pwd \
-		--volume /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 \
-		--env DISPLAY=:0 \
-		--workdir /target/pwd \
-		$DOCKER_IMAGE
-}
 
 # Editor and Pager
 __which() {
