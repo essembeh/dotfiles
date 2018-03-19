@@ -1,1 +1,1 @@
-../../submodules/vim-pathogen/autoload/pathogen.vim
+/usr/share/vim/addons/autoload/pathogen.vim

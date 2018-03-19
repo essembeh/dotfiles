@@ -33,7 +33,7 @@
       <item>build-essential</item>
       <item>manpages manpages-dev</item>
       <item>git tig</item>
-      <item>vim vim-syntastic</item>
+      <item>vim vim-pathogen vim-syntastic</item>
       <item>geany geany-plugins</item>
       <item>gedit-plugins</item>
       <item>most meld bvi</item>
