@@ -34,10 +34,7 @@ __createCustomLinks "." \
 __createCustomLinks ".config/" \
 	mpv
 __createCustomLinks ".themes/" \
-	submodules/OSX-Arc-Darker \
-	submodules/OSX-Arc-Plus \
-	submodules/OSX-Arc-Shadow \
-	submodules/OSX-Arc-White
+	submodules/OSX-Arc-Darker 
 __createCustomLinks ".local/share/gnome-shell/" \
 	gnome3/extensions
 

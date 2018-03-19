@@ -31,21 +31,9 @@
 [submodule "submodules/Tomb"]
 	path = submodules/Tomb
 	url = https://github.com/dyne/Tomb
-[submodule "submodules/OSX-Arc-Shadow"]
-	path = submodules/OSX-Arc-Shadow
-	url = https://github.com/LinxGem33/OSX-Arc-Shadow/
-[submodule "submodules/OSX-Arc-White"]
-	path = submodules/OSX-Arc-White
-	url = https://github.com/LinxGem33/OSX-Arc-White
 [submodule "submodules/OSX-Arc-Darker"]
 	path = submodules/OSX-Arc-Darker
 	url = https://github.com/LinxGem33/OSX-Arc-Darker
-[submodule "submodules/OSX-Arc-Plus"]
-	path = submodules/OSX-Arc-Plus
-	url = https://github.com/LinxGem33/OSX-Arc-Plus
-[submodule "submodules/bitpocket"]
-	path = submodules/bitpocket
-	url = https://github.com/sickill/bitpocket
 [submodule "submodules/gnome-shell-scroll-workspaces"]
 	path = submodules/gnome-shell-scroll-workspaces
 	url = https://github.com/timbertson/gnome-shell-scroll-workspaces
