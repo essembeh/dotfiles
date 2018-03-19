@@ -58,3 +58,6 @@
 [submodule "submodules/EasyScreenCast"]
 	path = submodules/EasyScreenCast
 	url = https://github.com/EasyScreenCast/EasyScreenCast
+[submodule "submodules/twitchlive-extension"]
+	path = submodules/twitchlive-extension
+	url = https://github.com/maweki/twitchlive-extension
