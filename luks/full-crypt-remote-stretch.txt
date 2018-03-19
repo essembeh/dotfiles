@@ -1,0 +1,111 @@
+See: https://xn3.wiki/debian/deb_kimsufi_atom_srv_luks
+See: https://blog.tincho.org/posts/Setting_up_my_server:_re-installing_on_an_encripted_LVM/
+
+
+ssh-copy-id root@kimsufi
+
+parted /dev/sda mklabel msdos
+parted --align=optimal /dev/sda mkpart primary 0% 100
+parted /dev/sda set 1 boot on
+mkfs.ext4 -L boot /dev/sda1
+parted --align=optimal /dev/sda mkpart primary 100 100%
+
+cryptsetup luksFormat /dev/sda2
+cryptsetup luksOpen /dev/sda2 sda2_crypt
+
+pvcreate /dev/mapper/sda2_crypt
+vgcreate vg0 /dev/mapper/sda2_crypt
+lvcreate -L 4g -n swap vg0
+lvcreate -l 100%FREE -n debian vg0
+
+mkfs.ext4 -L debian /dev/mapper/vg0-debian
+mkswap -L swap /dev/mapper/vg0-swap
+
+mkdir /target
+mount /dev/mapper/vg0-debian /target
+mkdir /target/boot
+mount /dev/sda1 /target/boot
+swapon /dev/mapper/vg0-swap
+chmod 1777 /target/tmp
+
+debootstrap --arch amd64 --components=main stretch /target http://debian.mirrors.ovh.net/debian
+
+echo "sda2_crypt UUID=$(cryptsetup luksDump /dev/sda2 | grep "^UUID:" | awk '{print $2}') none luks" > /target/etc/crypttab
+mkdir /target/root/.ssh
+cp /root/.ssh/authorized_keys /target/root/.ssh/
+
+mount -o bind /dev /target/dev
+mount -t proc proc /target/proc
+mount -t sysfs sys /target/sys
+XTERM=xterm-color LANG=C.UTF-8 chroot /target /bin/bash
+
+cat >> /etc/fstab << EOF
+/dev/sda1             /boot  ext4  defaults           0  2
+/dev/mapper/vg0-root  /      ext4  errors=remount-ro  0  1
+/dev/mapper/vg0-swap  none   swap  sw                 0  0
+EOF
+
+ln -sf /proc/mounts /etc/mtab
+cat >> /etc/network/interfaces << EOF
+auto lo
+iface lo inet loopback
+auto enp1s0
+iface enp1s0 inet dhcp
+EOF
+
+cat >> /etc/sysctl.conf << EOF
+# Disable IPv6 autoconf 
+net.ipv6.conf.all.autoconf = 0
+net.ipv6.conf.default.autoconf = 0
+net.ipv6.conf.eth0.autoconf = 0
+net.ipv6.conf.all.accept_ra = 0
+net.ipv6.conf.default.accept_ra = 0
+net.ipv6.conf.eth0.accept_ra = 0
+EOF
+
+echo $HOSTNAME > /etc/hostname
+hostname $HOSTNAME
+echo "127.0.1.1 $HOSTNAME.$DOMAIN $HOSTNAME" >> /etc/hosts
+
+cp /etc/adjtime /target/etc/
+echo FSCKFIX=yes >>/target/etc/default/rcS
+
+echo APT::Install-Recommends "False"\; >/etc/apt/apt.conf.d/02recommends
+apt-get update
+apt-get install cryptsetup lvm2 makedev dropbear busybox ssh initramfs-tools linux-base linux-image-amd64 grub-pc console-setup bash-completion kbd locales ntpdate
+dpkg-reconfigure tzdata locales
+
+cp /root/.ssh/authorized_keys /etc/dropbear-initramfs/authorized_keys
+/usr/lib/dropbear/dropbearconvert openssh dropbear /etc/ssh/ssh_host_rsa_key /etc/initramfs-tools/etc/dropbear/dropbear_rsa_host_key
+/usr/lib/dropbear/dropbearconvert openssh dropbear /etc/ssh/ssh_host_dsa_key /etc/initramfs-tools/etc/dropbear/dropbear_dss_host_key
+update-initramfs -u
+zcat /boot/initrd.img-* | cpio -t conf/conf.d/cryptroot etc/lvm/lvm.conf etc/dropbear/\* root\*/.ssh/authorized_keys sbin/dropbear | sort
+    conf/conf.d/cryptroot
+    etc/dropbear/config
+    etc/dropbear/dropbear_dss_host_key
+    etc/dropbear/dropbear_ecdsa_host_key
+    etc/dropbear/dropbear_rsa_host_key
+    etc/lvm/lvm.conf
+    root-l2oUNW/.ssh/authorized_keys
+    sbin/dropbear
+zcat /boot/initrd.img-* | cpio -i --to-stdout conf/conf.d/cryptroot
+    target=sda2_crypt,source=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx,key=none,rootdev,lvm=vg0-debian
+
+sed -i 's/^GRUB_CMDLINE_LINUX=.*$/GRUB_CMDLINE_LINUX="ip=:::::eth0:dhcp"/' /etc/default/grub
+sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=.*$/GRUB_CMDLINE_LINUX_DEFAULT=""/' /etc/default/grub
+sed -i 's/^#GRUB_TERMINAL=.*$/GRUB_TERMINAL=console/' /etc/default/grub
+update-grub2
+
+exit
+umount /target/{dev,proc,sys,boot}
+umount /target/
+swapoff -a
+lvchange -an /dev/mapper/vg0-*
+cryptsetup luksClose sda2_crypt
+reboot
+
+stty -echo; ssh -o UserKnownHostsFile=$HOME/.ssh/known_hosts.initramfs -o BatchMode=yes root@"$HOST" 'cat > /lib/cryptsetup/passfifo'; stty echo
+## CTRL-D twice
+echo -n YOUR_LUKS_PASSWORD >/lib/cryptsetup/passfifo
+ssh -o BatchMode=yes root@kimsufi echo -n YOUR_LUKS_PASSWORD >/lib/cryptsetup/passfifo
+

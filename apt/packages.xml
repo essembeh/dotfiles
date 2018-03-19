@@ -67,7 +67,7 @@
       <item>lightning lightning-l10n-fr</item>
 	  <item>xul-ext-gnome-keyring xul-ext-greasemonkey xul-ext-pwdhash xul-ext-refcontrol xul-ext-ublock-origin xul-ext-useragentswitcher</item>
 	  <item>xul-ext-downthemall xul-ext-foxyproxy-standard xul-ext-noscript xul-ext-requestpolicy xul-ext-toggle-proxy </item>
-      <item>chromium pepperflashplugin-nonfree</item>
+      <item>chromium</item>
     </subsection>
     <subsection name="Servers">
       <item>nfs-kernel-server</item>
@@ -75,7 +75,7 @@
       <item>mosh</item>
       <item>apache2</item>
       <item>nginx-full</item>
-      <item>php5 php5-cli php5-mysql php5-sqlite php5-gd php5-curl php5-fpm php5-xsl</item>
+      <item>php7.0 php7.0-cli php7.0-mysql php7.0-sqlite php7.0-gd php7.0-curl php7.0-fpm php7.0-xsl</item>
       <item>mariadb-server mariadb-client</item>
       <item>phpmyadmin</item>
       <item>adminer</item>
