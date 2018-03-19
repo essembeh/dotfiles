@@ -8,7 +8,7 @@ RUN apt-get install -y -q \
 	locales bash-completion curl wget file man manpages sudo \
 	&& apt-get clean
 RUN apt-get install -y -q \
-	zsh tmux git vim tig lftp tree moreutils realpath p7zip-full rsync borgbackup \
+	zsh tmux git vim vim-pathogen vim-syntastic tig lftp tree moreutils realpath p7zip-full rsync borgbackup \
 	&& apt-get clean
 
 ## Devel packages
