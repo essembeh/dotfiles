@@ -38,7 +38,10 @@ plugins=(git brew gnu-utils docker)
 test -e "$ZSH/oh-my-zsh.sh" && source "$ZSH/oh-my-zsh.sh"
 
 ## Customize to your needs...
-test -f "$HOME/.alias" && source "$HOME/.alias"
+test -r "$HOME/.alias" && \
+	source "$HOME/.alias"
+test -r "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" && \
+	source "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
 
 # Colors for ls
 dircolors --version > /dev/null 2>&1 && eval `dircolors --sh`
