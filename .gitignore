@@ -1,4 +1,4 @@
 /bin/local/*
+/vim/.netrwhist
 .DS_Store
-
 !.gitempty

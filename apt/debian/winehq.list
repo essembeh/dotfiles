@@ -1,0 +1,2 @@
+# wget -q https://dl.winehq.org/wine-builds/Release.key -O - | sudo apt-key add -
+deb https://dl.winehq.org/wine-builds/debian/ stretch main

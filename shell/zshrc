@@ -33,15 +33,9 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew gnu-utils docker)
+plugins=(git docker jira python pip vi-mode)
 
 test -e "$ZSH/oh-my-zsh.sh" && source "$ZSH/oh-my-zsh.sh"
 
 ## Customize to your needs...
-test -r "$HOME/.alias" && \
-	source "$HOME/.alias"
-test -r "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" && \
-	source "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
-
-# Colors for ls
-dircolors --version > /dev/null 2>&1 && eval `dircolors --sh`
+test -r "$HOME/.sebrc" && source "$HOME/.sebrc"

@@ -16,24 +16,21 @@
 	interactive = auto
 	status = auto
 [alias]
+	r = review -l -l
 	b = branch -a -vv
 	co = checkout
 	s = status
 	f = fetch --tags
 	cp = cherry-pick
-	ls = log --oneline --graph --decorate
-	ll = log --pretty=format:%C(yellow)%h\\ %C(blue)%ai\\ %C(cyan)[%cn]\\ %Creset%s\\ %Cred%d --decorate 
-	find = !git ls-files | grep -i
+	ifind = !git ls-files | grep -i
+	find = !git ls-files | grep
 	undo = reset --soft HEAD^
 	amend = commit --amend --date now
-	fixup = commit --fixup=HEAD 
 	commit-reusemessage = commit --reedit-message=HEAD --reset-author
+	iw = commit --all --message='in work'
 	spull = !git stash && git pull && git stash pop
 	please = push --force-with-lease
 [status]
 	showUntrackedFiles = all
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
-[gitreview]
-	remote = origin
-	username = smassot

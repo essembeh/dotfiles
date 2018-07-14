@@ -19,21 +19,3 @@
 [submodule "submodules/Tomb"]
 	path = submodules/Tomb
 	url = https://github.com/dyne/Tomb
-[submodule "submodules/OSX-Arc-Darker"]
-	path = submodules/OSX-Arc-Darker
-	url = https://github.com/LinxGem33/OSX-Arc-Darker
-[submodule "submodules/gnome-shell-scroll-workspaces"]
-	path = submodules/gnome-shell-scroll-workspaces
-	url = https://github.com/timbertson/gnome-shell-scroll-workspaces
-[submodule "submodules/window-corner-preview"]
-	path = submodules/window-corner-preview
-	url = https://github.com/medenagan/window-corner-preview
-[submodule "submodules/gnome-shell-extension-freon"]
-	path = submodules/gnome-shell-extension-freon
-	url = https://github.com/UshakovVasilii/gnome-shell-extension-freon
-[submodule "submodules/EasyScreenCast"]
-	path = submodules/EasyScreenCast
-	url = https://github.com/EasyScreenCast/EasyScreenCast
-[submodule "submodules/twitchlive-extension"]
-	path = submodules/twitchlive-extension
-	url = https://github.com/maweki/twitchlive-extension

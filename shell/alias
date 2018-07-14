@@ -7,27 +7,30 @@ alias la="ll -a"
 alias l="ls -CFa"
 alias du="du -hsl"
 alias df="df -h"
-alias diff="diff -u -r"
+alias diff="diff -ur"
 alias fac="tar vfac"
-alias last="last -n10"
-alias tt="(tmux list-sessions && tmux a) || tmux"
+alias fax="tar vfax"
+alias tt="if tmux list-sessions 2>/dev/null; then tmux a; else tmux; fi"
 alias g="git"
 alias gg="mgit.sh"
 alias go="xdg-open"
 alias aa="aria2c --file-allocation=none --summary-interval=0"
 alias ai="sudo apt-get install"
 alias au="sudo apt-get update && sudo apt-get dist-upgrade"
+test -x '/usr/bin/pydf' && alias df=pydf
 
 ## Misc
 alias genpass="head -c30 /dev/random | base64"
 alias subdl="subdl.pl --force --noautosrt"
 alias subdl2="subdl --site=tvnet"
 
-# Editor and Pager
-__which() {
-	which $1 > /dev/null 2>&1
-} 
-__which pydf && alias df=pydf
-__which most && export PAGER=most
-__which vim  && export EDITOR=vim
+## Exports
+export EDITOR=vim
+export LESS="-F -X $LESS"
+test -x '/usr/bin/most' && export PAGER=most
+
+## PATH
+export PATH="$PATH:$HOME/dotfiles/submodules/script-utils"
+export PATH="$PATH:$HOME/dotfiles/bin"
+export PATH="$PATH:$HOME/dotfiles/bin/local"
 
