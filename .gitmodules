@@ -19,3 +19,6 @@
 [submodule "submodules/Tomb"]
 	path = submodules/Tomb
 	url = https://github.com/dyne/Tomb
+[submodule "submodules/g810-led"]
+	path = submodules/g810-led
+	url = https://github.com/MatMoul/g810-led
