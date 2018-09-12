@@ -1,6 +1,6 @@
 # seb's profiles
 
-g logo aa00aa
+g logo 330033
 g indicators ff00ff
 g multimedia 0000bb
 
