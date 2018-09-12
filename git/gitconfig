@@ -20,14 +20,13 @@
 	b = branch -a -vv
 	co = checkout
 	s = status
-	f = fetch --tags
+	f = fetch --tags --all
 	cp = cherry-pick
-	ifind = !git ls-files | grep -i
-	find = !git ls-files | grep
+	find = !git ls-files | grep -i
 	undo = reset --soft HEAD^
 	amend = commit --amend --date now
 	commit-reusemessage = commit --reedit-message=HEAD --reset-author
-	iw = commit --all --message='in work'
+	iw = commit --all --message='DO NOT MERGE: in work'
 	spull = !git stash && git pull && git stash pop
 	please = push --force-with-lease
 [status]
