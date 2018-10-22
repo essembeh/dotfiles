@@ -62,11 +62,12 @@
 	  <item>irssi irssi-scripts</item>
     </subsection>
     <subsection name="Apps">
-	  <item>firefox-esr firefox-esr-l10n-fr xul-ext-greasemonkey xul-ext-noscript xul-ext-pwdhash xul-ext-toggle-proxy xul-ext-ublock-origin</item>
+      <item>firefox-esr firefox-esr-l11n-fr</item>
+      <item>xul-ext-greasemonkey xul-ext-noscript xul-ext-pwdhash xul-ext-ublock-origin</item>
+	  <item>xul-ext-gnome-keyring xul-ext-refcontrol xul-ext-useragentswitcher</item>
+	  <item>xul-ext-downthemall xul-ext-foxyproxy-standard xul-ext-requestpolicy xul-ext-toggle-proxy </item>
       <item>thunderbird thunderbird-l10n-fr</item>
       <item>lightning lightning-l10n-fr</item>
-	  <item>xul-ext-gnome-keyring xul-ext-greasemonkey xul-ext-pwdhash xul-ext-refcontrol xul-ext-ublock-origin xul-ext-useragentswitcher</item>
-	  <item>xul-ext-downthemall xul-ext-foxyproxy-standard xul-ext-noscript xul-ext-requestpolicy xul-ext-toggle-proxy </item>
       <item>chromium</item>
     </subsection>
     <subsection name="Servers">
@@ -95,6 +96,7 @@
     <subsection name="Archives">
       <item>unrar</item>
       <item>p7zip-full</item>
+	  <item>cabextract</item>
       <item>borgbackup</item>
       <item>rdiff-backup</item>
       <item>syncthing</item>
