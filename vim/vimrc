@@ -65,3 +65,5 @@ nnoremap <silent> <cr> :nohlsearch<Bar>:echo<CR>
 
 "" Nerd Tree
 map <C-t> :NERDTreeToggle<CR>
+
+nmap =j :%!python -m json.tool<CR>
