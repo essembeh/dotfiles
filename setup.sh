@@ -29,10 +29,16 @@ cd "$(dirname "$0")"
 git submodule sync --recursive
 git submodule update --init --recursive
 
+# Handle .bashrc overide
+if ! test -L $HOME/.bashrc; then
+	mv -nv $HOME/.bashrc{,.orig}
+fi
+
 __createCustomLinks "." \
 	submodules/oh-my-zsh \
-	shell/sebrc shell/zshrc shell/bashrc \
-	git/gitconfig tmux/tmux.conf vim lftp 
+	shell/zshrc shell/bashrc shell/shell.d \
+	git/gitconfig tmux/tmux.conf vim lftp \
+	
 __createCustomLinks ".config/" \
 	mpv
 

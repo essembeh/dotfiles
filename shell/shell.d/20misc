@@ -1,0 +1,13 @@
+## If not running interactively, don't do anything
+test -z "$PS1" && return
+
+## Raid status
+if test -f /proc/mdstat; then
+	echo "============================  Raid Status  ================================"
+	egrep --color -A1 "^md[0-9]+" /proc/mdstat
+	echo "==========================================================================="
+fi
+
+## 256 colors
+#echo "$TERM" | grep -q "256color" || export TERM="xterm-256color"
+

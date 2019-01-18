@@ -1,6 +1,3 @@
-## Seb's custom
-test -f "$HOME/.sebrc" && source "$HOME/.sebrc"
-
 ## better history logging
 HISTCONTROL=ignorespace:ignoreboth
 shopt -s histappend
@@ -35,11 +32,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-## Raid status
-if test -f /proc/mdstat; then
-	echo "============================  Raid Status  ================================"
-	egrep --color -A1 "^md[0-9]+" /proc/mdstat
-	echo "==========================================================================="
+## Source custom config
+if test -e "$HOME/.shell.d"; then
+	for SOURCE_FILE in $HOME/.shell.d/*; do
+		source "$SOURCE_FILE"
+	done
 fi
-true
-

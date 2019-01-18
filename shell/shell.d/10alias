@@ -1,36 +1,36 @@
-# Aliases
+## If not running interactively, don't do anything
+test -z "$PS1" && return
+
+## ls aliases
 alias ls="ls --color=auto"
+alias l="ls -CFa"
+alias la="ll -a"
 alias ll="ls -hl"
 alias llt="ll -rt"
 alias lls="ll -rS"
-alias la="ll -a"
-alias l="ls -CFa"
-alias du="du -hsl"
-alias df="df -h"
-alias diff="diff -ur"
+## Tar operations
 alias fac="tar vfac"
 alias fax="tar vfax"
+## System
 alias tt="if tmux list-sessions 2>/dev/null; then tmux a; else tmux; fi"
+alias ai="sudo apt-get install"
+alias au="sudo apt-get update && sudo apt-get dist-upgrade"
+alias genpass="head -c30 /dev/random | base64"
+alias du="du -hsl"
+alias df="df -h"
+test -x '/usr/bin/pydf' && alias df=pydf
+## Git stuff
 alias g="git"
 alias gg="mgit.sh"
 alias go="xdg-open"
-alias aa="aria2c --file-allocation=none --summary-interval=0"
-alias ai="sudo apt-get install"
-alias au="sudo apt-get update && sudo apt-get dist-upgrade"
-test -x '/usr/bin/pydf' && alias df=pydf
-
+alias diff="diff -ur"
 ## Misc
-alias genpass="head -c30 /dev/random | base64"
+alias aa="aria2c --file-allocation=none --summary-interval=0"
 alias subdl="subdl.pl --force --noautosrt"
 alias subdl2="subdl --site=tvnet"
-
 ## Exports
 export EDITOR=vim
 export LESS="-F -X $LESS"
 test -x '/usr/bin/most' && export PAGER=most
 
-## PATH
-export PATH="$PATH:$HOME/dotfiles/submodules/script-utils"
-export PATH="$PATH:$HOME/dotfiles/bin"
-export PATH="$PATH:$HOME/dotfiles/bin/local"
 
