@@ -1,2 +1,0 @@
-# curl -L https://riot.im/packages/debian/repo-key.asc | sudo apt-key add -
-deb https://riot.im/packages/debian/ stretch main
