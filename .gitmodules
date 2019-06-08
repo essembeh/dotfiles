@@ -22,3 +22,6 @@
 [submodule "submodules/g810-led"]
 	path = submodules/g810-led
 	url = https://github.com/MatMoul/g810-led
+[submodule "submodules/termicolor"]
+	path = submodules/termicolor
+	url = https://github.com/essembeh/termicolor
