@@ -28,6 +28,15 @@ alias diff="diff -ur"
 alias aa="aria2c --file-allocation=none --summary-interval=0"
 alias subdl="subdl.pl --force --noautosrt"
 alias subdl2="subdl --site=tvnet"
+## Rsync
+rsyncfrom () {
+	test -n "$1" || return 1
+	rsync -Pa --delete $1:"$(pwd)/" "$(pwd)/"
+}
+rsyncto () {
+	test -n "$1" || return 1
+	rsync -Pa --delete "$(pwd)/" $1:"$(pwd)/"
+}
 ## Exports
 export EDITOR=vim
 export LESS="-F -X $LESS"
