@@ -13,30 +13,21 @@ alias fac="tar vfac"
 alias fax="tar vfax"
 ## System
 alias tt="if tmux list-sessions 2>/dev/null; then tmux a; else tmux; fi"
-alias ai="sudo apt-get install"
-alias au="sudo apt-get update && sudo apt-get dist-upgrade"
+alias ai="sudo apt install"
+alias au="sudo apt update && sudo apt full-upgrade"
 alias genpass="head -c30 /dev/random | base64"
 alias du="du -hsl"
 alias df="df -h"
 test -x '/usr/bin/pydf' && alias df=pydf
 ## Git stuff
 alias g="git"
-alias gg="mgit.sh"
+alias gg="mgit"
 alias go="xdg-open"
 alias diff="diff -ur"
 ## Misc
 alias aa="aria2c --file-allocation=none --summary-interval=0"
 alias subdl="subdl.pl --force --noautosrt"
 alias subdl2="subdl --site=tvnet"
-## Rsync
-rsyncfrom () {
-	test -n "$1" || return 1
-	rsync -Pa --delete $1:"$(pwd)/" "$(pwd)/"
-}
-rsyncto () {
-	test -n "$1" || return 1
-	rsync -Pa --delete "$(pwd)/" $1:"$(pwd)/"
-}
 ## Exports
 export EDITOR=vim
 export LESS="-F -X $LESS"
