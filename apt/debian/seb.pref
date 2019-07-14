@@ -7,7 +7,7 @@ Pin:  release a=stable-updates
 Pin-Priority:  800
 
 Package:  *
-Pin:  release a=stretch-backports
+Pin:  release a=buster-backports
 Pin-Priority:  800
 
 Package:  *
