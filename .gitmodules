@@ -4,24 +4,12 @@
 [submodule "submodules/script-utils"]
 	path = submodules/script-utils
 	url = https://github.com/essembeh/script-utils
-[submodule "submodules/vim-airline"]
-	path = submodules/vim-airline
-	url = https://github.com/bling/vim-airline
-[submodule "submodules/vim-airline-themes"]
-	path = submodules/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
 [submodule "submodules/vim-sensible"]
 	path = submodules/vim-sensible
 	url = https://github.com/tpope/vim-sensible
 [submodule "submodules/SearchComplete"]
 	path = submodules/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete
-[submodule "submodules/Tomb"]
-	path = submodules/Tomb
-	url = https://github.com/dyne/Tomb
-[submodule "submodules/g810-led"]
-	path = submodules/g810-led
-	url = https://github.com/MatMoul/g810-led
 [submodule "submodules/termicolor"]
 	path = submodules/termicolor
 	url = https://github.com/essembeh/termicolor

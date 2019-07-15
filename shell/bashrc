@@ -35,6 +35,6 @@ fi
 ## Source custom config
 if test -e "$HOME/.shell.d"; then
 	for SOURCE_FILE in $HOME/.shell.d/*; do
-		source "$SOURCE_FILE"
+		test -e "$SOURCE_FILE" && source "$SOURCE_FILE"
 	done
 fi

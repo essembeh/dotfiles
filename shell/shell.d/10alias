@@ -2,12 +2,26 @@
 test -z "$PS1" && return
 
 ## ls aliases
-alias ls="ls --color=auto"
-alias l="ls -CFa"
-alias la="ll -a"
-alias ll="ls -hl"
-alias llt="ll -rt"
-alias lls="ll -rS"
+EXA_ENABLE=0
+if test -x /usr/bin/exa -a "$EXA_ENABLE" = "1"; then
+	unset LS_COLORS
+	alias ls="exa --color-scale --classify"
+	alias l="ls --all"
+	alias ll="ls --long"
+	alias la="ll --all"
+	alias llt="ll --sort=modified"
+	alias lls="ll --sort=size"
+	alias tree="ls --tree"
+else
+	alias ls="ls --color=auto"
+	alias l="ls -CFa"
+	alias la="ll -a"
+	alias ll="ls -hl"
+	alias llt="ll -rt"
+	alias lls="ll -rS"
+fi
+## SSH
+alias sshhhhhut="ssh -o UserKnownHostsFile=/dev/null"
 ## Tar operations
 alias fac="tar vfac"
 alias fax="tar vfax"
@@ -17,20 +31,29 @@ alias ai="sudo apt install"
 alias au="sudo apt update && sudo apt full-upgrade"
 alias genpass="head -c30 /dev/random | base64"
 alias du="du -hsl"
-alias df="df -h"
-test -x '/usr/bin/pydf' && alias df=pydf
+if test -x '/usr/bin/pydf'; then
+	alias df=pydf
+else
+	alias df="df -h"
+fi
 ## Git stuff
 alias g="git"
 alias gg="mgit"
-alias go="xdg-open"
 alias diff="diff -ur"
 ## Misc
 alias aa="aria2c --file-allocation=none --summary-interval=0"
 alias subdl="subdl.pl --force --noautosrt"
 alias subdl2="subdl --site=tvnet"
-## Exports
+## Editors
 export EDITOR=vim
 export LESS="-F -X $LESS"
 test -x '/usr/bin/most' && export PAGER=most
-
+## Functions
+go () {
+	if test $# -eq 0; then
+		xdg-open .
+	else
+		xdg-open "$@"
+	fi
+}
 
