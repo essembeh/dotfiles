@@ -10,6 +10,3 @@
 [submodule "submodules/SearchComplete"]
 	path = submodules/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete
-[submodule "submodules/termicolor"]
-	path = submodules/termicolor
-	url = https://github.com/essembeh/termicolor

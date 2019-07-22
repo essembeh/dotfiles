@@ -42,3 +42,6 @@ __createCustomLinks "." \
 __createCustomLinks ".config/" \
 	mpv
 
+if test -x /usr/bin/pip3; then
+	pip3 install --user pytput
+fi
