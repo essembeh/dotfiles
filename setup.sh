@@ -43,5 +43,5 @@ __createCustomLinks ".config/" \
 	mpv
 
 if test -x /usr/bin/pip3; then
-	pip3 install --user pytput
+	pip3 install --upgrade --user pytput virenamer
 fi
