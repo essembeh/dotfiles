@@ -43,5 +43,5 @@ __createCustomLinks ".config/" \
 	mpv
 
 if test -x /usr/bin/pip3; then
-	pip3 install --upgrade --user pytput virenamer ezfuse
+	pip3 install --upgrade --user pytput virenamer ezfuse RegexTagForMusic
 fi
