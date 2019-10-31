@@ -42,7 +42,7 @@ alias gg="mgit"
 alias diff="diff -ur"
 ## Misc
 alias aa="aria2c --file-allocation=none --summary-interval=0"
-alias subdl="subdl.pl --force --noautosrt"
+alias subdl="subdl --force --noautosrt"
 alias subdl2="subdl --site=tvnet"
 ## Editors
 export EDITOR=vim
