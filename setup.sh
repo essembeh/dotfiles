@@ -43,5 +43,10 @@ __createCustomLinks ".config/" \
 	mpv
 
 if test -x /usr/bin/pip3; then
-	pip3 install --upgrade --user pytput virenamer ezfuse RegexTagForMusic
+	pip3 install --upgrade --user \
+		pytput \
+		virenamer \
+		ezfuse \
+		RegexTagForMusic \
+		git+https://github.com/essembeh/kimsufi-checker
 fi
