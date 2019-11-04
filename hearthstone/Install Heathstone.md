@@ -6,18 +6,21 @@
 ```sh
 sudo dpkg --add-architecture i386
 sudo apt update
-sudo apt install wine winetricks cabextract
+sudo apt install wine cabextract
 ```
 
 ## Prepare wine
+
+>Note: You need to install [Winetricks]([winetricks](https://github.com/Winetricks/winetricks)) from the sources to fix a `vcrun` issue.
 
 ```sh
 export WINEPREFIX=~/.wine-hs
 mkdir -p $WINEPREFIX
 wineboot
-winetricks fonts corefonts
-winetricks dlls vcrun2017
-winetricks settings win10
+git clone https://github.com/Winetricks/winetricks ~/.winetricks
+~/.winetricks/src/winetricks fonts corefonts
+~/.winetricks/src/winetricks dlls vcrun2017
+~/.winetricks/src/winetricks settings win10
 ```
 
 ## Install Battle.net
