@@ -24,7 +24,7 @@ fi
 alias sshhhhhut="ssh -o UserKnownHostsFile=/dev/null"
 ## Tar operations
 alias fac="tar vfac"
-alias fax="tar vfax"
+#alias fax="tar vfax"
 ## System
 alias tt="if tmux list-sessions 2>/dev/null; then tmux a; else tmux; fi"
 alias ai="sudo apt install"
