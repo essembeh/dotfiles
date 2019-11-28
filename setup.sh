@@ -48,5 +48,7 @@ if test -x /usr/bin/pip3; then
 		virenamer \
 		ezfuse \
 		RegexTagForMusic \
-		git+https://github.com/essembeh/kimsufi-checker
+		git+https://github.com/essembeh/kimsufi-checker \
+		bs4 \
+		python-Levenshtein
 fi
