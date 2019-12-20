@@ -44,11 +44,11 @@ __createCustomLinks ".config/" \
 
 if test -x /usr/bin/pip3; then
 	pip3 install --upgrade --user \
-		pytput \
-		virenamer \
-		ezfuse \
-		RegexTagForMusic \
+		git+https://github.com/essembeh/pytput \
+		git+https://github.com/essembeh/virenamer \
+		git+https://github.com/essembeh/ezfuse \
+		git+https://github.com/essembeh/RegexTagForMusic \
 		git+https://github.com/essembeh/kimsufi-checker \
-		bs4 \
-		python-Levenshtein
+		bs4 python-Levenshtein \
+		youtube-dl
 fi
