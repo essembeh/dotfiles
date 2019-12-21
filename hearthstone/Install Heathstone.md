@@ -45,3 +45,8 @@ borg create -p -s ::{now} ~/.wine-hs
 Some older wine needed to add `-force-d3d9` as extra argument to Hearthstone in Battle.net. I don't need this anymore but it might be useful in case of black screen.
 
 ![Setup D3D9](d3d.gif)
+
+If your mouse & keyboard become inactive when you ALT-TAB and change focus, try:
+- open regedit with `WINEPREFIX=~/.wine-hs regedit`
+- go to `HKEY_CURRENT_USER\Software\Wine\X11 Driver`
+- create a new entry named `UseTakeFocus` with value `N`
