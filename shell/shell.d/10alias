@@ -42,8 +42,7 @@ alias gg="mgit"
 alias diff="diff -ur"
 ## Misc
 alias aa="aria2c --file-allocation=none --summary-interval=0"
-alias subdl="subdl --force --noautosrt"
-alias subdl2="subdl --site=tvnet"
+alias youtube-dl-ffmpeg="youtube-dl --hls-prefer-ffmpeg"
 ## Editors
 export EDITOR=vim
 export LESS="-F -X $LESS"
