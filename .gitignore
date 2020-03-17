@@ -1,6 +1,6 @@
 /shell/shell.d/9*
 /bin/local/*
 /vim/.netrwhist
-.DS_Store
 !.gitempty
 /.vscode/
+/venv/
