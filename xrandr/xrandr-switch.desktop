@@ -2,7 +2,7 @@
 Name=XRandR-Switch
 Type=Application
 Exec=/home/seb/dotfiles/bin/xrandr-switch.sh
-Terminal=false
+Terminal=true
 Icon=video-display
 Comment=Change display configuration
 NoDisplay=false
