@@ -1,17 +1,14 @@
-## Available as Debian packages
-https://extensions.gnome.org/extension/15/alternatetab/
-https://extensions.gnome.org/extension/6/applications-menu/
-https://extensions.gnome.org/extension/307/dash-to-dock/
-https://extensions.gnome.org/extension/1465/desktop-icons/
-https://extensions.gnome.org/extension/690/easyscreencast/
-https://extensions.gnome.org/extension/277/impatience/
+## Mandatory
+https://extensions.gnome.org/extension/1160/dash-to-panel/
 https://extensions.gnome.org/extension/1031/topicons/
-https://extensions.gnome.org/extension/21/workspace-indicator/
+https://extensions.gnome.org/extension/15/alternatetab/
+https://extensions.gnome.org/extension/1465/desktop-icons/
 
-## To install via website
+# Optionnal
+https://extensions.gnome.org/extension/21/workspace-indicator/
+https://extensions.gnome.org/extension/277/impatience/
 https://extensions.gnome.org/extension/1227/window-corner-preview/
+https://extensions.gnome.org/extension/690/easyscreencast/
 https://extensions.gnome.org/extension/841/freon/
 https://extensions.gnome.org/extension/771/proxy-switcher/
-https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/
-https://extensions.gnome.org/extension/1078/twitchlive-panel/
 

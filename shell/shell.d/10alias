@@ -43,6 +43,8 @@ alias diff="diff -ur"
 ## Misc
 alias aa="aria2c --file-allocation=none --summary-interval=0"
 alias youtube-dl-ffmpeg="youtube-dl --hls-prefer-ffmpeg"
+alias codium="codium --no-sandbox"
+alias code="codium"
 ## Editors
 export EDITOR=vim
 export LESS="-F -X $LESS"

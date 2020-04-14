@@ -23,6 +23,6 @@ for releaseFile in /var/lib/apt/lists/*Release; do
 		"`__getValue "Codename" "n"`" \
 		"`__getValue "Origin" "o"`" \
 		"`__getValue "Label" "l"`"
-	echo "Pin-Priority: 800"
+	echo "Pin-Priority: 500"
 	echo
 done

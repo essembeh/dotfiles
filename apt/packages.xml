@@ -22,8 +22,10 @@
 		</subsection>
 		<subsection name="Image">
 			<item>gimp gimp-plugin-registry gimp-gmic</item>
+			<item>glimpse</item>
 			<item>libimage-exiftool-perl imagemagick</item>
 			<item>gthumb</item>
+			<item>freecad</item>
 		</subsection>
 	</section>
 <!-- Development -->
@@ -37,7 +39,7 @@
 			<item>gedit-plugins</item>
 			<item>most meld bvi</item>
 		</subsection>
-		<subsection name="Xml">
+		<subsection name="XML">
 			<item>xmlindent xmlstarlet</item>
 			<item>xsltproc</item>
 			<item>jq libjson-pp-perl</item>
@@ -65,6 +67,36 @@
 			<item>weechat weechat-plugins weechat-scripts</item>
 			<item>irssi irssi-scripts</item>
 		</subsection>
+		<subsection name="Server">
+			<item>nfs-kernel-server</item>
+			<item>openssh-server</item>
+			<item>mosh</item>
+			<item>apache2</item>
+			<item>nginx-full</item>
+			<item>php php-cli php-fpm</item>
+			<item>php-mysql php-sqlite php-gd php-curl php-xsl</item>
+			<item>mariadb-server mariadb-client</item>
+			<item>phpmyadmin</item>
+			<item>adminer</item>
+		</subsection>
+		<subsection name="VPN">
+			<item>wireguard</item>
+			<item>openvpn</item>
+			<item>network-manager-openvpn-gnome</item>
+		</subsection>
+	</section>
+<!-- Desktop -->
+	<section name="Desktop">
+		<subsection name="Archives">
+			<item>p7zip-full</item>
+			<item>pigz</item>
+			<item>unrar</item>
+			<item>cabextract</item>
+			<item>borgbackup</item>
+			<item>rdiff-backup</item>
+			<item>syncthing</item>
+			<item>backupninja</item>
+		</subsection>
 		<subsection name="Apps">
 			<item>firefox-esr firefox-esr-l10n-fr</item>
 			<item>xul-ext-noscript xul-ext-ublock-origin</item>
@@ -72,44 +104,15 @@
 			<item>lightning lightning-l10n-fr</item>
 			<item>chromium</item>
 		</subsection>
-		<subsection name="Servers">
-			<item>nfs-kernel-server</item>
-			<item>openssh-server</item>
-			<item>mosh</item>
-			<item>apache2</item>
-			<item>nginx-full</item>
-			<item>php php-cli php-mysql php-sqlite php-gd php-curl php-fpm php-xsl</item>
-			<item>mariadb-server mariadb-client</item>
-			<item>phpmyadmin</item>
-			<item>adminer</item>
-		</subsection>
-		<subsection name="VPN">
-			<item>network-manager-openvpn-gnome</item>
-			<item>network-manager-pptp-gnome</item>
-			<item>network-manager-openconnect-gnome</item>
-			<item>network-manager-vpnc-gnome</item>
-			<item>openvpn</item>
-			<item>bind9</item>
-			<item>dnsmasq</item>
-		</subsection>
-	</section>
-<!-- Desktop -->
-	<section name="Desktop">
-		<subsection name="Archives">
-			<item>unrar</item>
-			<item>p7zip-full</item>
-			<item>cabextract</item>
-			<item>borgbackup</item>
-			<item>rdiff-backup</item>
-			<item>syncthing</item>
-			<item>backupninja</item>
-		</subsection>
 		<subsection name="Look">
 			<item>gnome-tweak-tool</item>
 			<item>gnome-brave-icon-theme</item>
 			<item>gtk3-engines-breeze</item>
 			<item>gnome-shell-extension-dashtodock gnome-shell-extension-desktop-icons gnome-shell-extension-easyscreencast gnome-shell-extension-impatience gnome-shell-extension-no-annoyance gnome-shell-extension-redshift gnome-shell-extension-remove-dropdown-arrows gnome-shell-extension-top-icons-plus</item>
 			<item>g810-led</item>
+		</subsection>
+		<subsection name="Utils">
+			<item>barrier</item>
 		</subsection>
 	</section>
 <!-- System -->
@@ -128,8 +131,10 @@
 			<item>android-tools-adb android-tools-fastboot</item>
 			<item>lm-sensors</item>
 			<item>exa</item>
+			<item>logwatch</item>
 		</subsection>
 		<subsection name="Administration">
+			<item>ufw gufw</item>
 			<item>shorewall</item>
 			<item>ntp</item>
 			<item>fail2ban</item>
