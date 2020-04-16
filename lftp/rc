@@ -1,11 +1,17 @@
-alias du du -hs
-alias ll cls -lF
+alias ll rels -a
 alias llt ll -rt
-alias lll !ls -hl --color
-alias console debug 4
+alias du du -hs
 
+set cmd:default-protocol sftp
+set cmd:parallel 1
+set cmd:queue-parallel 1
 set cmd:save-cwd-history false
 set cmd:save-rl-history false
+
+set cache:cache-empty-listings false
+set cache:enable yes
+set cache:expire 1m
+
 set xfer:log no
 set xfer:clobber off
 set ssl:verify-certificate no
