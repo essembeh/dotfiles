@@ -186,7 +186,7 @@ zcat /boot/initrd.img-* | cpio -i --to-stdout cryptroot/crypttab
 	--- stdout ---
 	sda2_crypt UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX none luks
 
-rescue:/etc/network/interfaces.d# zcat /boot/initrd.img-* | cpio -i --to-stdout root-\*/.ssh/authorized_keys
+zcat /boot/initrd.img-* | cpio -i --to-stdout root-\*/.ssh/authorized_keys
 	--- stdout ---
 	ssh-rsa AAAAB3[...]== me@MyComputer
 
