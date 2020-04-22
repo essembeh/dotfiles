@@ -56,10 +56,13 @@ mkfs.ext4 -L home -m 0 /dev/mapper/vg0-home
 
 Create the *chroot* environment
 ```
-mkdir /target /target/boot /target/home /target/tmp
+mkdir /target
 mount /dev/mapper/vg0-system /target
+mkdir /target/boot
 mount /dev/sda1 /target/boot
+mkdir /target/home
 mount /dev/mapper/vg0-home /target/home
+mkdir /target/tmp
 chmod 1777 /target/tmp
 ```
 
