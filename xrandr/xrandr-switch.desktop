@@ -1,10 +1,7 @@
 [Desktop Entry]
-Name=XRandR-Switch
 Type=Application
-Exec=/home/seb/dotfiles/bin/xrandr-switch.sh
-Terminal=true
-Icon=video-display
+Name=XRandR-Switch
 Comment=Change display configuration
-NoDisplay=false
-Categories=Development;IDE
-Name[en]=eclipse.desktop
+Icon=video-display
+Exec=/home/seb/dotfiles/bin/xrandr-switch.sh auto
+Terminal=true

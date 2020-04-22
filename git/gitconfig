@@ -7,7 +7,6 @@
 [fetch]
 	prune = true
 [pull]
-	rebase = preserve
 [push]
 	default = simple
 [color]
