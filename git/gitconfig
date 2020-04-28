@@ -7,6 +7,10 @@
 [fetch]
 	prune = true
 [pull]
+	rebase = merges
+	autoStash = true
+[rebase]
+	autoStash = true
 [push]
 	default = simple
 [color]
@@ -15,7 +19,6 @@
 	interactive = auto
 	status = auto
 [alias]
-	r = review -l -l
 	b = branch -a -vv
 	co = checkout
 	s = status
@@ -23,12 +26,13 @@
 	cp = cherry-pick
 	find = !git ls-files | grep -i
 	undo = reset --soft HEAD^
-	amend = commit --amend --date now
-	commit-reusemessage = commit --reedit-message=HEAD --reset-author
+	amend = commit --amend --date now --reset-author
+	recommit = commit --reedit-message=HEAD --reset-author
 	iw = commit --all --message='DO NOT MERGE: in work'
-	spull = !git stash && git pull && git stash pop
 	please = push --force-with-lease
 [status]
 	showUntrackedFiles = all
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
+[url "git@gitlab.com:"]
+	pushInsteadOf = https://gitlab.com/
