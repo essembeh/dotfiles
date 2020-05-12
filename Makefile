@@ -1,6 +1,6 @@
 .PHONY: submodules pip links desktop
 
-all: submodules links desktop
+all: desktop pip
 
 submodules:
 	git submodule sync --recursive
@@ -17,7 +17,7 @@ pip:
 		bs4 python-Levenshtein \
 		youtube-dl
 
-links:
+headless: submodules
 	test -L $(HOME)/.bashrc || mv -nv $(HOME)/.bashrc $(HOME)/.bashrc.orig
 	ln -rnfs $(PWD)/submodules/oh-my-zsh $(HOME)/.oh-my-zsh
 	ln -rnfs $(PWD)/shell/zshrc $(HOME)/.zshrc
@@ -28,8 +28,8 @@ links:
 	ln -rnfs $(PWD)/vim $(HOME)/.vim
 	ln -rnfs $(PWD)/lftp $(HOME)/.lftp
 
-desktop:
-	mkdir -p $(HOME)/.config/ $(PWD)/.local/share/applications/ 
+desktop: headless
+	mkdir -p $(HOME)/.config/ $(HOME)/.local/share/applications/ 
 	ln -rnfs $(PWD)/mpv $(HOME)/.config/mpv
 	ln -rnfs $(PWD)/xrandr/xrandr-switch.desktop $(HOME)/.local/share/applications/
 	./gnome3/install-themes.sh
