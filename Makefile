@@ -14,6 +14,7 @@ pip:
 		git+https://github.com/essembeh/ezfuse \
 		git+https://github.com/essembeh/RegexTagForMusic \
 		git+https://github.com/essembeh/kimsufi-checker \
+		git+https://github.com/essembeh/gnome-extensions-cli \
 		bs4 python-Levenshtein \
 		youtube-dl
 
