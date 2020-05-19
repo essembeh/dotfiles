@@ -14,7 +14,8 @@ gnome-extensions-cli --version
 # https://extensions.gnome.org/extension/690/easyscreencast/
 # https://extensions.gnome.org/extension/841/freon/
 # https://extensions.gnome.org/extension/771/proxy-switcher/
+# https://extensions.gnome.org/extension/1319/gsconnect/
 
 gnome-extensions-cli update --install \
-    1160 1031 15 1465 21 277 1227 690 841
+    1160 1031 15 1465 21 277 1227 690 841 1319
 
