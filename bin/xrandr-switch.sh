@@ -1,1 +1,1 @@
-../xrandr/xrandr-switch.sh
+../gnome3/xrandr-switch.sh
