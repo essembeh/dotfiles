@@ -93,6 +93,7 @@
 			<item>unrar</item>
 			<item>cabextract</item>
 			<item>borgbackup</item>
+			<item>rsync</item>
 			<item>rdiff-backup</item>
 			<item>syncthing</item>
 			<item>backupninja</item>
@@ -125,7 +126,7 @@
 		</subsection>
 		<subsection name="Utils">
 			<item>tree multitail pydf htop moreutils ncdu iotop</item>
-			<item>nmap iptraf iftop net-tools</item>
+			<item>nmap iptraf iftop net-tools dnsutils</item>
 			<item>apt-file</item>
 			<item>secure-delete</item>
 			<item>android-tools-adb android-tools-fastboot</item>

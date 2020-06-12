@@ -1,16 +1,16 @@
 Package: *
-Pin: release o=Debian,n=buster
-Pin-Priority: 510
+Pin: release n=buster
+Pin-Priority: 900
 
 Package: *
-Pin: release o=Debian,n=buster-updates
-Pin-Priority: 510
+Pin: release n=buster-updates
+Pin-Priority: 900
 
 Package: *
-Pin: release o=Debian Backports,n=buster-backports
-Pin-Priority: 490
+Pin: release n=buster-backports
+Pin-Priority: 500
 
-Package: linux-image-amd64 git wireguard
-Pin: release o=Debian Backports,n=buster-backports
-Pin-Priority: 520
+Package: linux-* git git-* wireguard* borgbackup 
+Pin: release n=buster-backports
+Pin-Priority: 1000
 
