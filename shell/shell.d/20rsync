@@ -1,4 +1,4 @@
-mirrort () {
+pra_to () {
 	RSYNC_ARGS=("-Prav")
 	while [[ FOO$1 = FOO-* ]]; do
 		RSYNC_ARGS+=("$1")
@@ -8,7 +8,7 @@ mirrort () {
 	rsync $RSYNC_ARGS "$PWD/" "$1:$PWD/"
 }
 
-mirrorf () {
+pra_from () {
 	RSYNC_ARGS=("-Prav")
 	while [[ FOO$1 = FOO-* ]]; do
 		RSYNC_ARGS+=("$1")
