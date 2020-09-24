@@ -154,6 +154,7 @@
 			<item>mdadm lvm2</item>
 			<item>gparted</item>
 			<item>smartmontools</item>
+			<item>libimobiledevice-utils libimobiledevice6 ifuse</item>
 		</subsection>
 		<subsection name="Virtualization">
 			<item>wine</item>
