@@ -19,11 +19,16 @@ headless: submodules apt/packages.html \
 			$(HOME)/.gitconfig
 	if pip3 --version; then \
 		pip3 install --upgrade --user \
+			pip \
+			bs4 \
+			python-Levenshtein \
+			youtube-dl \
+		&& pip3 install --upgrade --user \
 		 	git+https://github.com/essembeh/pytput \
 			git+https://github.com/essembeh/virenamer \
 			git+https://github.com/essembeh/ezfuse \
 			git+https://github.com/essembeh/RegexTagForMusic \
-			bs4 python-Levenshtein youtube-dl ;\
+			git+https://github.com/essembeh/photomatools ; \
 	fi
 
 
