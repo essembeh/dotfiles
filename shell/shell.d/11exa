@@ -1,0 +1,11 @@
+EXA_ENABLE=0
+if test -x /usr/bin/exa -a "$EXA_ENABLE" = "1"; then
+	unset LS_COLORS
+	alias ls="exa --color-scale --classify"
+	alias l="ls --all"
+	alias ll="ls --long"
+	alias la="ll --all"
+	alias llt="ll --sort=modified"
+	alias lls="ll --sort=size"
+	alias tree="ls --tree"
+fi

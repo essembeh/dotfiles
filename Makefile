@@ -1,89 +1,41 @@
 
-.PHONY: submodules headless desktop apt
-
 LN := ln -nfsv
+
+.PHONY: submodules headless desktop apt
 
 all: submodules
 
 submodules:
 	git submodule sync --recursive
 	git submodule update --init --recursive
-	
-headless: submodules apt/packages.html \
-			$(HOME)/.bashrc \
-			$(HOME)/.oh-my-zsh \
-			$(HOME)/.zshrc \
-			$(HOME)/.shell.d \
-			$(HOME)/.vim \
-			$(HOME)/.tmux.conf \
-			$(HOME)/.gitconfig
-	if pip3 --version; then \
-		pip3 install --upgrade --user \
-			pip \
-			bs4 \
-			python-Levenshtein \
-			youtube-dl \
-		&& pip3 install --upgrade --user \
-		 	git+https://github.com/essembeh/pytput \
-			git+https://github.com/essembeh/virenamer \
-			git+https://github.com/essembeh/ezfuse \
-			git+https://github.com/essembeh/RegexTagForMusic \
-			git+https://github.com/essembeh/photomatools ; \
-	fi
 
-
-desktop: headless \
-			$(HOME)/.config/mpv \
-			$(HOME)/.local/share/applications/xrandr-switch.desktop
-	test $(XDG_SESSION_DESKTOP) = "gnome"
-	if pip3 --version; then \
-		pip3 install --upgrade --user git+https://github.com/essembeh/gnome-extensions-cli && \
-		gnome-extensions-cli update --install 1160 1031 15 1465 21 277 1227 841 1319 ;\
-	fi
-	./gnome3/install-themes.sh
-	
-apt: apt/packages.html
-	test $(shell id -u) -eq 0
-	cp -nv apt/preferences.d/seb.pref /etc/apt/preferences.d/
-	cp -nv apt/sources.list.d/buster.list /etc/apt/sources.list.d/
-	apt update
-	
-apt/packages.html: apt/packages.xsl apt/packages.xml
-	if xsltproc --version; then \
-		xsltproc $^ > $@; \
-	fi
-	
-$(HOME)/.bashrc: shell/bashrc
+headless: submodules
 	test -L $(HOME)/.bashrc || mv -nv $(HOME)/.bashrc $(HOME)/.bashrc.orig
-	$(LN) $(shell realpath $^) $@
+	$(LN) $(PWD)/shell/bashrc $(HOME)/.bashrc
+	$(LN) $(PWD)/shell/zshrc $(HOME)/.zshrc
+	$(LN) $(PWD)/shell/shell.d $(HOME)/.shell.d
+	$(LN) $(PWD)/submodules/oh-my-zsh $(HOME)/.oh-my-zsh
+	$(LN) $(PWD)/vim $(HOME)/.vim
+	$(LN) $(PWD)/lftp $(HOME)/.lftp
+	$(LN) $(PWD)/tmux/tmux.conf $(HOME)/.tmux.conf
+	$(LN) $(PWD)/git/gitconfig $(HOME)/.gitconfig
 
-$(HOME)/.oh-my-zsh: submodules/oh-my-zsh
-	$(LN) $(shell realpath $^) $@
+desktop: headless 
+	mkdir -p $(HOME)/.config $(HOME)/.local/share/applications
+	$(LN) $(PWD)/mpv $(HOME)/.config/mpv
+	$(LN) $(PWD)/gnome3/xrandr-switch.desktop $(HOME)/.local/share/applications/xrandr-switch.desktop
+	which pip3 || sudo apt install python3-pip
+	pip3 install -U --user \
+		pip bs4 python-Levenshtein youtube-dl
+	pip3 install -U --user \
+		git+https://github.com/essembeh/virenamer \
+		git+https://github.com/essembeh/ezfuse \
+		git+https://github.com/essembeh/photomatools \
+		git+https://github.com/essembeh/gnome-extensions-cli
+	./gnome3/install-themes.sh
+	gnome-extensions-cli update --install 1160 1031 15 1465 21 277 1227 841 1319
 
-$(HOME)/.zshrc: shell/zshrc
-	$(LN) $(shell realpath $^) $@
-	
-$(HOME)/.shell.d: shell/shell.d
-	$(LN) $(shell realpath $^) $@
-	
-$(HOME)/.vim: vim
-	$(LN) $(shell realpath $^) $@
-	
-$(HOME)/.lftp: lftp
-	$(LN) $(shell realpath $^) $@
-	
-$(HOME)/.tmux.conf: tmux/tmux.conf
-	$(LN) $(shell realpath $^) $@
-	
-$(HOME)/.gitconfig: git/gitconfig
-	$(LN) $(shell realpath $^) $@
-	
-$(HOME)/.config/mpv: mpv
-	mkdir -p $(HOME)/.config
-	$(LN) $(shell realpath $^) $@
-	
-$(HOME)/.local/share/applications/xrandr-switch.desktop: gnome3/xrandr-switch.desktop
-	mkdir -p $(HOME)/.local/share/applications/
-	$(LN) $(shell realpath $^) $@
-
-
+apt: apt/packages.xsl apt/packages.xml
+	sudo apt update
+	sudo apt install zsh git tig tmux vim vim-pathogen rsync xsltproc
+	xsltproc $^ > apt/packages.html

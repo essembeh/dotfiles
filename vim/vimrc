@@ -67,3 +67,9 @@ nnoremap <silent> <cr> :nohlsearch<Bar>:echo<CR>
 map <C-t> :NERDTreeToggle<CR>
 
 nmap =j :%!python -m json.tool<CR>
+
+"" Format json/xml
+com! FormatXML :%!xmlindent
+com! FormatJSON :%!python -m json.tool
+nnoremap = :FormatXML<Cr>
+nnoremap = :FormatJSON<Cr>
