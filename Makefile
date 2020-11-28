@@ -20,11 +20,14 @@ headless: submodules
 	$(LN) $(PWD)/tmux/tmux.conf $(HOME)/.tmux.conf
 	$(LN) $(PWD)/git/gitconfig $(HOME)/.gitconfig
 
-desktop: headless 
+desktop: headless apps
 	mkdir -p $(HOME)/.config $(HOME)/.local/share/applications
 	$(LN) $(PWD)/mpv $(HOME)/.config/mpv
 	$(LN) $(PWD)/gnome3/xrandr-switch.desktop $(HOME)/.local/share/applications/xrandr-switch.desktop
-	which pip3 || sudo apt install python3-pip
+	./gnome3/install-themes.sh
+	gnome-extensions-cli update --install 1160 1031 15 1465 21 277 1227 841 1319
+
+apps:
 	pip3 install -U --user \
 		pip bs4 python-Levenshtein youtube-dl
 	pip3 install -U --user \
@@ -32,10 +35,8 @@ desktop: headless
 		git+https://github.com/essembeh/ezfuse \
 		git+https://github.com/essembeh/photomatools \
 		git+https://github.com/essembeh/gnome-extensions-cli
-	./gnome3/install-themes.sh
-	gnome-extensions-cli update --install 1160 1031 15 1465 21 277 1227 841 1319
 
 apt: apt/packages.xsl apt/packages.xml
 	sudo apt update
-	sudo apt install zsh git tig tmux vim vim-pathogen rsync xsltproc
+	sudo apt install zsh git tig tmux vim vim-pathogen rsync xsltproc python3-pip
 	xsltproc $^ > apt/packages.html
