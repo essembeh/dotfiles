@@ -1,6 +1,5 @@
 #!/bin/sh
-set -e
-set -x
+set -eux
 
 cp -vn "`dirname "$0"`/rc.local" /etc/rc.local
 chmod +x /etc/rc.local

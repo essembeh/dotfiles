@@ -1,2 +1,0 @@
-## wget -q https://dl.winehq.org/wine-builds/winehq.key -O - | sudo apt-key add -
-deb https://dl.winehq.org/wine-builds/debian/ buster main

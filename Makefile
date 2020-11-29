@@ -1,9 +1,13 @@
 
 LN := ln -nfsv
 
-.PHONY: submodules headless desktop apt
+.PHONY: submodules headless desktop apps install
 
 all: submodules
+
+install:
+	which zsh || (sudo apt update && sudo apt install zsh git tig tmux vim vim-pathogen rsync python3-pip)
+	test -n "$(ZSH)" || chsh --shell /bin/zsh
 
 submodules:
 	git submodule sync --recursive
@@ -35,8 +39,3 @@ apps:
 		git+https://github.com/essembeh/ezfuse \
 		git+https://github.com/essembeh/photomatools \
 		git+https://github.com/essembeh/gnome-extensions-cli
-
-apt: apt/packages.xsl apt/packages.xml
-	sudo apt update
-	sudo apt install zsh git tig tmux vim vim-pathogen rsync xsltproc python3-pip
-	xsltproc $^ > apt/packages.html
