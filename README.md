@@ -112,13 +112,15 @@ $ sudo dpkg --add-architecture i386
 * gnome-brave-icon-theme
 ```sh
 $ pip3 install -U --user git+https://github.com/essembeh/gnome-extensions-cli
-$ gnome-extensions-cli update --install 1160 1031 15 1465 21 277 1227 841 1319
+$ gnome-extensions-cli update --install 1160 1031 15 2087 21 277 1227 841 1319
 ```
 
 ### Flatpak
 * flatpak gnome-software-plugin-flatpak
 ```sh
 $ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# to support user themes
+$ sudo flatpak override --filesystem=~/.themes
 ```
 
 ### Image
