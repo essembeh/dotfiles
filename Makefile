@@ -24,11 +24,12 @@ headless: submodules
 	$(LN) $(PWD)/tmux/tmux.conf $(HOME)/.tmux.conf
 	$(LN) $(PWD)/git/gitconfig $(HOME)/.gitconfig
 
-desktop: headless apps
+desktop: headless
 	mkdir -p $(HOME)/.config $(HOME)/.local/share/applications
 	$(LN) $(PWD)/mpv $(HOME)/.config/mpv
 	$(LN) $(PWD)/gnome3/xrandr-switch.desktop $(HOME)/.local/share/applications/xrandr-switch.desktop
 	./gnome3/install-themes.sh
+	pip3 install -U --user git+https://github.com/essembeh/gnome-extensions-cli
 	gnome-extensions-cli update --install 1160 1031 15 1465 21 277 1227 841 1319
 
 apps:
@@ -36,6 +37,4 @@ apps:
 		pip bs4 python-Levenshtein youtube-dl
 	pip3 install -U --user \
 		git+https://github.com/essembeh/virenamer \
-		git+https://github.com/essembeh/ezfuse \
-		git+https://github.com/essembeh/photomatools \
-		git+https://github.com/essembeh/gnome-extensions-cli
+		git+https://github.com/essembeh/ezfuse 
