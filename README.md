@@ -196,8 +196,9 @@ $ flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community
 $ pip3 install --user -U poetry
 ```
 
-### XML/Json
+### Misc
 * xmlindent xmlstarlet
-* xsltproc
+* xsltproc libsaxonb-java
 * jq libjson-pp-perl
 * httpie
+* rerun

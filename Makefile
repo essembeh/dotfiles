@@ -25,12 +25,13 @@ headless: submodules
 	$(LN) $(PWD)/git/gitconfig $(HOME)/.gitconfig
 
 desktop: headless
-	mkdir -p $(HOME)/.config $(HOME)/.local/share/applications
+	mkdir -p $(HOME)/.config 
 	$(LN) $(PWD)/mpv $(HOME)/.config/mpv
-	$(LN) $(PWD)/gnome3/xrandr-switch.desktop $(HOME)/.local/share/applications/xrandr-switch.desktop
 	./gnome3/install-themes.sh
-	pip3 install -U --user git+https://github.com/essembeh/gnome-extensions-cli
-	gnome-extensions-cli update --install 1160 1031 15 1465 21 277 1227 841 1319
+	if test "$(XDG_CURRENT_DESKTOP)" = "GNOME"; then \
+		pip3 install -U --user git+https://github.com/essembeh/gnome-extensions-cli && \
+		grep "^[^#]" gnome3/extensions.txt | xargs gnome-extensions-cli install ;\
+	fi
 
 apps:
 	pip3 install -U --user \
