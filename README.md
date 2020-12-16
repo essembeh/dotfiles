@@ -42,6 +42,7 @@ $ make install desktop
 * cryptsetup
 * tomb steghide qrencode
 * encfs
+* gocryptfs
 * keepassx
 
 ### Archive
