@@ -38,4 +38,5 @@ apps:
 		pip bs4 python-Levenshtein youtube-dl
 	pip3 install -U --user \
 		git+https://github.com/essembeh/virenamer \
-		git+https://github.com/essembeh/ezfuse 
+		git+https://github.com/essembeh/ezfuse \
+		git+https://github.com/essembeh/borg-find
