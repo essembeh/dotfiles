@@ -2,6 +2,6 @@
 # if interactive shell, source all files starting with a digit
 if [[ $- == *i* ]]; then
 	for SOURCE_FILE in $HOME/.shell.d/[0-9]*; do
-		source "$SOURCE_FILE"
+		test -r "$SOURCE_FILE" && source "$SOURCE_FILE"
 	done
 fi

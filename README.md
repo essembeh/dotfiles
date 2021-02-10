@@ -37,6 +37,7 @@ $ make install desktop
 * zsh
 * tmux
 * mosh
+* autojump
 
 ### Crypto
 * cryptsetup
