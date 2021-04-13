@@ -185,6 +185,10 @@ $ sudo flatpak override --filesystem=~/.themes
 $ flatpak install flathub com.vscodium.codium
 $ flatpak install flathub com.jetbrains.PyCharm-Community
 $ flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community
+$ flatpak install flathub org.signal.Signal
+$ flatpak install flathub org.shotcut.Shotcut
+$ flatpak install flathub org.pitivi.Pitivi
+$ flatpak install flathub com.spotify.Client
 ```
 
 ### Java
