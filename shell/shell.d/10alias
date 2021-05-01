@@ -34,6 +34,7 @@ alias diff="diff -ur"
 alias aa="aria2c --file-allocation=none --summary-interval=0"
 alias codium="codium --no-sandbox"
 alias code="codium"
+alias yd="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best'"
 
 ## Editors
 export EDITOR=vim

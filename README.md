@@ -120,9 +120,21 @@ $ gnome-extensions-cli update --install 1160 1031 15 2087 21 277 1227 841 1319
 ### Flatpak
 * flatpak gnome-software-plugin-flatpak
 ```sh
+# add flathub repository
 $ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # to support user themes
 $ sudo flatpak override --filesystem=~/.themes
+# install some apps
+$ flatpak install flathub com.github.tchx84.Flatseal
+$ flatpak install flathub com.vscodium.codium
+$ flatpak install flathub org.signal.Signal
+$ flatpak install flathub org.jitsi.jitsi-meet
+$ flatpak install flathub com.spotify.Client
+$ flatpak install flathub org.kde.kdenlive
+$ flatpak install flathub org.shotcut.Shotcut
+$ flatpak install flathub org.pitivi.Pitivi
+$ flatpak install flathub org.avidemux.Avidemux
+$ flatpak install flathub org.gnome.eog # to support heic format
 ```
 
 ### Image
@@ -181,18 +193,10 @@ $ sudo flatpak override --filesystem=~/.themes
 * geany geany-plugins
 * gedit gedit-plugins
 * meld bvi colordiff
-```sh
-$ flatpak install flathub com.vscodium.codium
-$ flatpak install flathub com.jetbrains.PyCharm-Community
-$ flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community
-$ flatpak install flathub org.signal.Signal
-$ flatpak install flathub org.shotcut.Shotcut
-$ flatpak install flathub org.pitivi.Pitivi
-$ flatpak install flathub com.spotify.Client
-```
 
 ### Java
-* openjdk-11-jre openjdk-11-jdk openjdk-11-source
+* openjdk-11-jre openjdk-11-jre-headless
+* openjdk-11-jdk-headless openjdk-11-jdk openjdk-11-source
 * ant maven
 
 ### Python            
