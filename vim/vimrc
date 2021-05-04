@@ -70,6 +70,6 @@ nmap =j :%!python -m json.tool<CR>
 
 "" Format json/xml
 com! FormatXML :%!xmlindent
-com! FormatJSON :%!python -m json.tool
+com! FormatJSON :%!jq
 nnoremap = :FormatXML<Cr>
 nnoremap = :FormatJSON<Cr>
