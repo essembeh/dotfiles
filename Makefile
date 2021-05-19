@@ -5,8 +5,8 @@ LN := ln -nfsv
 
 all: submodules
 
-install:
-	which zsh || (sudo apt update && sudo apt install zsh git tig tmux vim vim-pathogen rsync python3-pip)
+install: submodules
+	which zsh || (sudo apt update && sudo apt install zsh git tig tmux vim vim-pathogen rsync python3-pip python3-venv)
 	test -n "$(ZSH)" || chsh --shell /bin/zsh
 
 submodules:
@@ -29,14 +29,15 @@ desktop: headless
 	$(LN) $(PWD)/mpv $(HOME)/.config/mpv
 	./gnome3/install-themes.sh
 	if test "$(XDG_CURRENT_DESKTOP)" = "GNOME"; then \
-		pip3 install -U --user git+https://github.com/essembeh/gnome-extensions-cli && \
-		grep "^[^#]" gnome3/extensions.txt | xargs gnome-extensions-cli install ;\
+		pip3 install --user --upgrade git+https://github.com/essembeh/gnome-extensions-cli && \
+		grep "^[^#]" gnome3/extensions.txt | xargs $(HOME)/.local/bin/gnome-extensions-cli update --install ;\
 	fi
 
 apps:
-	pip3 install -U --user \
-		pip bs4 python-Levenshtein youtube-dl
-	pip3 install -U --user \
-		git+https://github.com/essembeh/virenamer \
-		git+https://github.com/essembeh/ezfuse \
-		git+https://github.com/essembeh/borg-find
+	pip3 install --user --upgrade pipx
+	pip3 install --user --upgrade bs4 python-Levenshtein colorama
+	$(HOME)/.local/bin/pipx install -f poetry
+	$(HOME)/.local/bin/pipx install -f youtube-dl
+	$(HOME)/.local/bin/pipx install -f git+https://github.com/essembeh/virenamer
+	$(HOME)/.local/bin/pipx install -f git+https://github.com/essembeh/ezfuse
+	$(HOME)/.local/bin/pipx install -f git+https://github.com/essembeh/borg-find

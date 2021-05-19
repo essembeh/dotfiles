@@ -58,7 +58,7 @@ $ make install desktop
 * cabextract
 
 ### Vitualization
-* docker.io
+* docker.io docker-compose
 * virt-manager
 * wine
 ```sh
@@ -113,7 +113,8 @@ $ sudo dpkg --add-architecture i386
 * gnome-tweak-tool
 * gnome-brave-icon-theme
 ```sh
-$ pip3 install -U --user git+https://github.com/essembeh/gnome-extensions-cli
+$ pip3 install --user --upgrade pipx
+$ pipx install git+https://github.com/essembeh/gnome-extensions-cli
 $ gnome-extensions-cli update --install 1160 1031 15 2087 21 277 1227 841 1319
 ```
 
@@ -201,9 +202,10 @@ $ flatpak install flathub org.gnome.eog # to support heic format
 
 ### Python            
 * python3-pip
-* python3-virtualenv
+* python3-venv
 ```sh
-$ pip3 install --user -U poetry
+$ pip3 install --user --upgrade pipx
+$ pipx install poetry
 ```
 
 ### Misc

@@ -1,9 +1,9 @@
-## PATH
-export PATH="$PATH:$HOME/dotfiles/submodules/script-utils/bin"
-export PATH="$PATH:$HOME/dotfiles/bin"
-export PATH="$PATH:$HOME/dotfiles/bin/local"
-
+## .local/bin path
 if [[ ":$PATH:" != *:$HOME/.local/bin:* ]]; then
     export PATH="$PATH:$HOME/.local/bin"
+fi
+## dotfiles path
+if [[ ":$PATH:" != *:$HOME/dotfiles/bin:* ]]; then
+    export PATH="$PATH:$HOME/dotfiles/submodules/script-utils/bin:$PATH:$HOME/dotfiles/bin:$PATH:$HOME/dotfiles/bin/local"
 fi
 
