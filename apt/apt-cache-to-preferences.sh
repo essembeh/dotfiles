@@ -1,28 +1,24 @@
 #!/bin/bash
 
 __getValue () {
-	attribute=$1
-	letter=$2
-
-	value="`cat $releaseFile | tr -d "\r" | egrep "^$attribute: " | sed -r -e "s/^.*?: //"`"
-	printf "%s=%s" "$letter" "$value"
+	echo "$3=$(tr -d "\r" < "$1" | grep -E "^$2: " | sed -r -e "s/^.*?: //")"
 }
 
 
 echo "Package: *"
 echo "Pin: release o=apt-build"
 echo "Pin-Priority: 900"
-echo 
-echo 
+echo ""
+echo ""
 
 for releaseFile in /var/lib/apt/lists/*Release; do 
-	echo "; `basename $releaseFile`"
+	echo "; From file: $releaseFile"
 	echo "Package: *"
 	printf "Pin: release %s, %s, %s, %s\n" \
-		"`__getValue "Suite" "a"`" \
-		"`__getValue "Codename" "n"`" \
-		"`__getValue "Origin" "o"`" \
-		"`__getValue "Label" "l"`"
+		"$(__getValue "$releaseFile" "Suite" "a")" \
+		"$(__getValue "$releaseFile" "Codename" "n")" \
+		"$(__getValue "$releaseFile" "Origin" "o")" \
+		"$(__getValue "$releaseFile" "Label" "l")"
 	echo "Pin-Priority: 500"
-	echo
+	echo ""
 done

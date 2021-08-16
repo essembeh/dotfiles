@@ -1,16 +1,16 @@
 Package: *
-Pin: release n=buster
+Pin: release n=bullseye
 Pin-Priority: 900
 
 Package: *
-Pin: release n=buster-updates
+Pin: release n=bullseye-updates
 Pin-Priority: 900
 
 Package: *
-Pin: release n=buster-backports
+Pin: release n=bullseye-backports
 Pin-Priority: 500
 
 Package: linux-* git git-* wireguard* borgbackup 
-Pin: release n=buster-backports
+Pin: release n=bullseye-backports
 Pin-Priority: 1000
 

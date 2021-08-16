@@ -1,0 +1,28 @@
+#########################################
+## Debian official repositories
+#########################################
+
+deb http://ftp.fr.debian.org/debian/ bullseye main contrib non-free
+deb http://ftp.fr.debian.org/debian/ bullseye-updates main contrib non-free
+deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+#deb http://ftp.fr.debian.org/debian/ bullseye-backports main contrib non-free
+
+## source
+
+#deb-src http://ftp.fr.debian.org/debian/ bullseye main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ bullseye-updates main contrib non-free
+#deb-src http://security.debian.org/ bullseye/updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ bullseye-backports main contrib non-free
+
+
+#########################################
+## 3rd party 
+#########################################
+
+## syncthing
+# wget -q https://syncthing.net/release-key.txt -O - | sudo apt-key add -
+#deb http://apt.syncthing.net/ syncthing release
+
+## winehq 
+# wget -q https://dl.winehq.org/wine-builds/winehq.key -O - | sudo apt-key add -
+#deb https://dl.winehq.org/wine-builds/debian/ bullseye main
