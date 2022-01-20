@@ -30,6 +30,7 @@
 	recommit = commit --reedit-message=HEAD --reset-author
 	iw = commit --all --message='DO NOT MERGE: in work'
 	please = push --force-with-lease
+	commit-release = commit -a -m '🔖 New release'
 [status]
 	showUntrackedFiles = all
 [url "git@github.com:"]
@@ -38,3 +39,5 @@
 	pushInsteadOf = https://gitlab.com/
 [merge]
 	tool = meld
+[init]
+	defaultBranch = main
