@@ -28,7 +28,7 @@
 	undo = reset --soft HEAD^
 	amend = commit --amend --date now --reset-author
 	recommit = commit --reedit-message=HEAD --reset-author
-	iw = commit --all --message='DO NOT MERGE: in work'
+	iw = commit --message='💩 DO NOT MERGE: in work'
 	please = push --force-with-lease
 	commit-release = commit -a -m '🔖 New release'
 [status]
