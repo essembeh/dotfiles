@@ -1,6 +1,9 @@
 alias dc="docker-compose"
+alias dcu="dc up -d --remove-orphans"
+alias dcd="dc down --volumes --remove-orphans"
+alias dcl="dc logs --follow --tail=1"
 
-if ! $(id | fgrep -q '(docker)'); then
+if $(id | fgrep -vq '(docker)') && $(id | fgrep -q '(sudo)'); then
     alias docker="sudo docker"
 fi
 
