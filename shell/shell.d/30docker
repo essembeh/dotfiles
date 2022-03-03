@@ -1,4 +1,3 @@
-alias dc="docker-compose"
 alias dcu="dc up -d --remove-orphans"
 alias dcd="dc down --volumes --remove-orphans"
 alias dcl="dc logs --follow --tail=1"
@@ -8,8 +7,18 @@ if $(id | fgrep -vq '(docker)') && $(id | fgrep -q '(sudo)'); then
 fi
 
 function dorun {
-    docker run --rm -t -i --volume "$HOME:/target/home:ro" --volume /tmp:/target/tmp --volume "$PWD:/target/pwd" --workdir /target/pwd "$@"
+    docker run --rm -t -i \
+		--volume "$HOME:/target/home:ro" \
+		--volume /tmp:/target/tmp \
+		--volume "$PWD:/target/pwd" \
+		--workdir /target/pwd \
+		"$@"
 }
+
 function dorunX {
-    dorun --volume /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 --env DISPLAY=:0 "$@"
+    dorun \
+		--volume /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 \
+		--env DISPLAY \
+		"$@"
 }
+

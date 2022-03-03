@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+if test -f docker-compose.yml; then
+	DC_ARGS=""
+	for DC_YML in $(find . -mindepth 1 -maxdepth 1 -name "docker-compose*.yml"); do
+		DC_ARGS="$DC_ARGS -f $DC_YML"
+	done
+	set -x
+	docker-compose $DC_ARGS "$@"
+else
+	echo "Cannot find docker-compose.yml in $PWD"
+	exit 1
+fi
+
