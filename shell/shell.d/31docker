@@ -3,9 +3,6 @@ if $(id | fgrep -vq '(docker)') && $(id | fgrep -q '(sudo)'); then
     alias docker="sudo docker"
 fi
 
-# dc runs docker-compose with all docker-compose YML files found in current folder
-alias dc='docker-compose $(find . -mindepth 1 -maxdepth 1 -type f -name "docker-compose*yml" | xargs -I{} echo -n " -f {}")'
-
 alias dcu="dc up -d --remove-orphans"
 alias dcd="dc down --volumes --remove-orphans"
 alias dcl="dc logs --follow --tail=1"
