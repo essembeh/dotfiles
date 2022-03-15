@@ -42,8 +42,8 @@ $ make install desktop
 ### Crypto
 * cryptsetup
 * tomb steghide qrencode
-* encfs
 * gocryptfs
+* age
 * keepassx
 
 ### Archive
@@ -185,7 +185,7 @@ $ flatpak install flathub org.gnome.eog # to support heic format
 ## Development
 
 ### Base
-* git tig
+* git tig git-crypt
 * build-essential
 * manpages manpages-dev
 
@@ -214,3 +214,4 @@ $ pipx install poetry
 * jq libjson-pp-perl
 * httpie
 * rerun
+* shellcheck
