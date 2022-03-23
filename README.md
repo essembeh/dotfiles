@@ -89,6 +89,7 @@ $ sudo dpkg --add-architecture i386
 * secure-delete
 * logwatch
 * exa
+* sysfsutils
 
 ### Server
 * openssh-server
