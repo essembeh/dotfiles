@@ -6,7 +6,7 @@ LN := ln -nfsv
 all: submodules
 
 install: submodules
-	test -L $(HOME)/.bashrc || mv -nv $(HOME)/.bashrc $(HOME)/.bashrc.orig
+	test -f $(HOME)/.bashrc && mv -nv $(HOME)/.bashrc $(HOME)/.bashrc.orig || true
 	$(LN) $(PWD)/shell/bashrc $(HOME)/.bashrc
 	$(LN) $(PWD)/shell/zshrc $(HOME)/.zshrc
 	$(LN) $(PWD)/shell/shell.d $(HOME)/.shell.d
