@@ -4,6 +4,6 @@ if [[ ":$PATH:" != *:$HOME/.local/bin:* ]]; then
 fi
 ## dotfiles path
 if [[ ":$PATH:" != *:$HOME/dotfiles/bin:* ]]; then
-    export PATH="$PATH:$HOME/dotfiles/submodules/script-utils/bin:$PATH:$HOME/dotfiles/bin:$PATH:$HOME/dotfiles/bin/local"
+    export PATH="$PATH:$HOME/dotfiles/submodules/brew/bin:$HOME/dotfiles/submodules/script-utils/bin:$PATH:$HOME/dotfiles/bin:$PATH:$HOME/dotfiles/bin/local"
 fi
 

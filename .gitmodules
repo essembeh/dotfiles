@@ -10,3 +10,6 @@
 [submodule "submodules/SearchComplete"]
 	path = submodules/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete
+[submodule "submodules/brew"]
+	path = submodules/brew
+	url = https://github.com/Homebrew/brew
