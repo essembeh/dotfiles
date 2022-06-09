@@ -23,3 +23,5 @@ function dorunX {
 		"$@"
 }
 
+
+alias kk=k9s
