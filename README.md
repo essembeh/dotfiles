@@ -12,19 +12,10 @@ $ sudo apt install make git
 $ git clone https://github.com/essembeh/dotfiles
 $ cd dotfiles
 
-# sync the git submodules
-$ make
 # install mandatory packages and use zsh
+$ make init
+# install configuration 
 $ make install
-# install configuration for a headless server
-$ make headless
-# install configuration for Gnome3 desktop
-$ make desktop
-# install useful python apps
-$ make apps
-
-# typical setup
-$ make install desktop
 ```
 
 
@@ -48,8 +39,7 @@ $ make install desktop
 
 ### Archive
 - p7zip-full
-- lftp
-- borgbackup
+- borgbackup borgmatic
 - syncthing
 - backupninja
 - unrar-nonfree
@@ -72,7 +62,8 @@ $ sudo dpkg --add-architecture i386
 - android-tools-adb android-tools-fastboot
 
 ### Network
-- rsync aria2 curl wget httpie
+- lftp
+- rsync aria2 curl wget
 - wireguard
 - openvpn network-manager-openvpn-gnome
 - fail2ban
@@ -80,27 +71,16 @@ $ sudo dpkg --add-architecture i386
 - shorewall
 - ntp
 - libpam-google-authenticator
+- openssh-server
+- nfs-kernel-server
 
 ### Utils
 - unattended-upgrades needrestart apt-file
-- tree multitail pydf htop moreutils ncdu iotop
-- nmap iptraf iftop net-tools dnsutils
-- schroot
+- tree multitail pydf htop moreutils ncdu 
+- nmap iptraf iftop iotop net-tools dnsutils
 - secure-delete
 - logwatch
-- exa
 - sysfsutils
-
-### Server
-- openssh-server
-- nfs-kernel-server
-- apache2
-- nginx-full
-- php php-cli php-fpm
-- php-mysql php-sqlite php-gd php-curl php-xsl
-- mariadb-server mariadb-client
-- phpmyadmin
-- adminer
 
 ### Hardware
 - smartmontools
@@ -113,18 +93,12 @@ $ sudo dpkg --add-architecture i386
 ### Gnome
 - gnome-tweak-tool
 - gnome-brave-icon-theme
-```sh
-$ pip3 install --user --upgrade pipx
-$ pipx install git+https://github.com/essembeh/gnome-extensions-cli
-$ gnome-extensions-cli update --install 1160 1031 15 2087 21 277 1227 841 1319
-```
 
 ### Flatpak
 - flatpak gnome-software-plugin-flatpak
 
 ### Image
 - gimp gimp-plugin-registry gimp-gmic
-- glimpse
 - libimage-exiftool-perl imagemagick
 - gthumb
 - freecad
@@ -139,31 +113,15 @@ $ gnome-extensions-cli update --install 1160 1031 15 2087 21 277 1227 841 1319
 ### Video
 - mpv
 - vlc
-- kodi
 - ffmpeg
-- handbrake
-- openshot
-- pitivi
 
 ### Subtitles
 - subtitleeditor
 - gaupol
 - gnome-subtitles
 
-### Networking
-- firefox-esr firefox-esr-l10n-fr
-- xul-ext-noscript xul-ext-ublock-origin
-- thunderbird thunderbird-l10n-fr
-- lightning lightning-l10n-fr
-- chromium
-- telegram-dektop
-- transmission-gtk
-- filezilla
-- barrier
-
 ### IRC 
 - weechat weechat-plugins weechat-scripts
-- irssi irssi-scripts
 
 
 ## Development
@@ -182,7 +140,6 @@ $ gnome-extensions-cli update --install 1160 1031 15 2087 21 277 1227 841 1319
 ### Java
 - openjdk-11-jre openjdk-11-jre-headless
 - openjdk-11-jdk-headless openjdk-11-jdk openjdk-11-source
-- ant maven
 
 ### Python            
 - python3-pip
@@ -194,9 +151,14 @@ $ gnome-extensions-cli update --install 1160 1031 15 2087 21 277 1227 841 1319
 - jq libjson-pp-perl
 - rerun
 - shellcheck
+- httpie
+
+
 
 # Flatpack packages
 ```sh
+# install flatpak
+sudo apt install flatpak gnome-software-plugin-flatpak
 # add flathub repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # to support user themes
@@ -219,6 +181,30 @@ flatpak install ...
 - com.spotify.Client
 - com.valvesoftware.Steam
 
+
+
+# Gnome extensions
+
+```sh
+# install gnome-extensions-cli
+pip3 install --user --upgrade gnome-extensions-cli
+# to install extensions
+$ gnome-extensions-cli install ...
+```
+
+- [`user-theme@gnome-shell-extensions.gcampax.github.com`](https://extensions.gnome.org/extension/19/) 
+- [`dash-to-panel@jderose9.github.com`](https://extensions.gnome.org/extension/1160/)
+- [`TopIcons@phocean.net`](https://extensions.gnome.org/extension/1031/)
+- [`alternate-tab@gnome-shell-extensions.gcampax.github.com`](https://extensions.gnome.org/extension/15/)
+- [`ding@rastersoft.com`](https://extensions.gnome.org/extension/2087/)
+- [`workspace-indicator@gnome-shell-extensions.gcampax.github.com`](https://extensions.gnome.org/extension/21/)
+- [`impatience@gfxmonk.net`](https://extensions.gnome.org/extension/277/)
+- [`window-corner-preview@fabiomereu.it`](https://extensions.gnome.org/extension/1227/)
+- [`freon@UshakovVasilii_Github.yahoo.com`](https://extensions.gnome.org/extension/841/)
+- [`gsconnect@andyholmes.github.io`](https://extensions.gnome.org/extension/1319/)
+
+
+
 # Python packages
 
 ```sh
@@ -230,6 +216,8 @@ pipx install ...
 - poetry
 - black
 - ezfuse virenamer properties-tools
+- borg-find
+- gnome-extensions-cli
 - youtube-dl yt-dlp
 
 
