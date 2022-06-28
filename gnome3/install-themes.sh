@@ -10,10 +10,10 @@ for ARCHIVE in *; do
 		DEST="$HOME/.themes/$NAME"
 		if test -d "$DEST"; then
 			echo "Theme already installed $DEST"
-		else
-			echo "Install theme $ARCHIVE in $DEST"
-			tar -C "$HOME/.themes" -xaf "$ARCHIVE"
+			mv -nv "$DEST" "/tmp/$NAME.$RANDOM"
 		fi
+		echo "Install theme $ARCHIVE in $DEST"
+		tar -C "$HOME/.themes" -xaf "$ARCHIVE"
 	else
 		echo "Invalid archive $ARCHIVE"
 	fi
