@@ -26,11 +26,13 @@
 	cp = cherry-pick
 	find = !git ls-files | grep -i
 	undo = reset --soft HEAD^
+	UNDO = reset --hard HEAD^
+	iw = commit --message='💩 DO NOT MERGE: in work'
 	amend = commit --amend --date now --reset-author
 	recommit = commit --reedit-message=HEAD --reset-author
-	iw = commit --message='💩 DO NOT MERGE: in work'
+	commit-release = commit -am '🔖 New release'
+	commit-deps = commit -am '⬆️  Update dependencies' 
 	please = push --force-with-lease
-	commit-release = commit -a -m '🔖 New release'
 [status]
 	showUntrackedFiles = all
 [url "git@github.com:"]
@@ -41,3 +43,5 @@
 	tool = meld
 [init]
 	defaultBranch = main
+[log]
+	follow = true
