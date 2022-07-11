@@ -26,7 +26,7 @@
 	cp = cherry-pick
 	find = !git ls-files | grep -i
 	undo = reset --soft HEAD^
-	UNDO = reset --hard HEAD^
+	undo-hard = reset --hard HEAD^
 	iw = commit --message='💩 DO NOT MERGE: in work'
 	amend = commit --amend --date now --reset-author
 	recommit = commit --reedit-message=HEAD --reset-author
