@@ -7,7 +7,7 @@ alias llt="ll -rt"
 alias lls="ll -rS"
 
 ## SSH
-alias sshhhhhut="ssh -o UserKnownHostsFile=/dev/null"
+alias sshq="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
 ## Tar operations
 alias fac="tar vfac"
