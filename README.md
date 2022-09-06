@@ -32,7 +32,7 @@ $ make install
 
 ### Crypto
 - cryptsetup
-- tomb steghide qrencode
+- tomb steghide qrencode zbar-tools
 - gocryptfs
 - age
 - keepassx
