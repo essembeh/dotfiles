@@ -1,4 +1,4 @@
-# My *dotfiles*
+# My _dotfiles_
 
 Repository containing most of my configuration files
 
@@ -14,16 +14,14 @@ $ cd dotfiles
 
 # install mandatory packages and use zsh
 $ make init
-# install configuration 
+# install configuration
 $ make install
 ```
 
-
 # Debian packages
 
-## Base
-
 ### Shell
+
 - bash bash-completion
 - zsh
 - tmux
@@ -31,6 +29,7 @@ $ make install
 - autojump
 
 ### Crypto
+
 - cryptsetup
 - tomb steghide qrencode zbar-tools
 - gocryptfs
@@ -38,6 +37,7 @@ $ make install
 - keepassx
 
 ### Archive
+
 - p7zip-full
 - borgbackup borgmatic
 - syncthing
@@ -47,14 +47,17 @@ $ make install
 - cabextract
 
 ### Vitualization
+
 - docker.io docker-compose
 - virt-manager
 - wine
+
 ```sh
 $ sudo dpkg --add-architecture i386
 ```
 
 ### Filesystems
+
 - mdadm lvm2
 - gparted
 - fatsort exfat-fuse exfat-utils
@@ -62,48 +65,45 @@ $ sudo dpkg --add-architecture i386
 - android-tools-adb android-tools-fastboot
 
 ### Network
-- lftp
-- rsync aria2 curl wget
+
+- lftp rsync aria2 curl wget
 - wireguard
 - openvpn network-manager-openvpn-gnome
-- fail2ban
 - ufw gufw
 - shorewall
-- ntp
 - libpam-google-authenticator
-- openssh-server
 - nfs-kernel-server
+- fail2ban
 
 ### Utils
+
 - unattended-upgrades needrestart apt-file
-- tree multitail pydf htop moreutils ncdu 
+- tree multitail pydf htop moreutils ncdu
 - nmap iptraf iftop iotop net-tools dnsutils
 - secure-delete
 - logwatch
 - sysfsutils
 
 ### Hardware
+
 - smartmontools
 - lm-sensors
 - g810-led
 
-
-## Desktop 
-
 ### Gnome
+
 - gnome-tweak-tool
 - gnome-brave-icon-theme
 
-### Flatpak
-- flatpak gnome-software-plugin-flatpak
-
 ### Image
+
 - gimp gimp-plugin-registry gimp-gmic
 - libimage-exiftool-perl imagemagick
 - gthumb
 - freecad
 
 ### Audio
+
 - gstreamer1.0-libav
 - audacious audacious-plugins
 - quodlibet
@@ -111,41 +111,46 @@ $ sudo dpkg --add-architecture i386
 - exfalso
 
 ### Video
+
 - mpv
 - vlc
 - ffmpeg
 
 ### Subtitles
+
 - subtitleeditor
 - gaupol
 - gnome-subtitles
 
-### IRC 
+### IRC
+
 - weechat weechat-plugins weechat-scripts
 
+### Development
 
-## Development
-
-### Base
 - git tig git-crypt
 - build-essential
 - manpages manpages-dev
 
 ### Editors
+
 - vim vim-pathogen vim-syntastic vim-airline vim-airline-themes
 - geany geany-plugins
 - gedit gedit-plugins
 - meld bvi colordiff
 
 ### Java
+
 - openjdk-11-jre openjdk-11-jre-headless
 - openjdk-11-jdk-headless openjdk-11-jdk openjdk-11-source
 
-### Python            
+### Python
+
 - python3-pip
 - python3-venv
 
 ### Misc
+
 - xmlindent xmlstarlet
 - xsltproc libsaxonb-java
 - jq libjson-pp-perl
@@ -153,9 +158,8 @@ $ sudo dpkg --add-architecture i386
 - shellcheck
 - httpie
 
-
-
 # Flatpack packages
+
 ```sh
 # install flatpak
 sudo apt install flatpak gnome-software-plugin-flatpak
@@ -167,7 +171,8 @@ $ sudo flatpak override --filesystem=~/.themes
 flatpak install ...
 ```
 
-## Free
+Free apps:
+
 - com.github.tchx84.Flatseal
 - com.vscodium.codium
 - org.signal.Signal
@@ -177,11 +182,10 @@ flatpak install ...
 - org.kde.kdenlive
 - fr.handbrake.ghb
 
-## Non-free
+Non-free apps:
+
 - com.spotify.Client
 - com.valvesoftware.Steam
-
-
 
 # Gnome extensions
 
@@ -192,18 +196,17 @@ pip3 install --user --upgrade gnome-extensions-cli
 $ gnome-extensions-cli install ...
 ```
 
-- [`user-theme@gnome-shell-extensions.gcampax.github.com`](https://extensions.gnome.org/extension/19/) 
-- [`dash-to-panel@jderose9.github.com`](https://extensions.gnome.org/extension/1160/)
-- [`TopIcons@phocean.net`](https://extensions.gnome.org/extension/1031/)
-- [`alternate-tab@gnome-shell-extensions.gcampax.github.com`](https://extensions.gnome.org/extension/15/)
-- [`ding@rastersoft.com`](https://extensions.gnome.org/extension/2087/)
-- [`workspace-indicator@gnome-shell-extensions.gcampax.github.com`](https://extensions.gnome.org/extension/21/)
-- [`impatience@gfxmonk.net`](https://extensions.gnome.org/extension/277/)
-- [`window-corner-preview@fabiomereu.it`](https://extensions.gnome.org/extension/1227/)
-- [`freon@UshakovVasilii_Github.yahoo.com`](https://extensions.gnome.org/extension/841/)
-- [`gsconnect@andyholmes.github.io`](https://extensions.gnome.org/extension/1319/)
-
-
+- `user-theme@gnome-shell-extensions.gcampax.github.com`: [(link)](https://extensions.gnome.org/extension/19/)
+- `dash-to-panel@jderose9.github.com`: [(link)](https://extensions.gnome.org/extension/1160/)
+- `TopIcons@phocean.net`: [(link)](https://extensions.gnome.org/extension/1031/)
+- `trayIconsReloaded@selfmade.pl`: [(link)](https://extensions.gnome.org/extension/2890/)
+- `alternate-tab@gnome-shell-extensions.gcampax.github.com`: [(link)](https://extensions.gnome.org/extension/15/)
+- `ding@rastersoft.com`: [(link)](https://extensions.gnome.org/extension/2087/)
+- `workspace-indicator@gnome-shell-extensions.gcampax.github.com`: [(link)](https://extensions.gnome.org/extension/21/)
+- `impatience@gfxmonk.net`: [(link)](https://extensions.gnome.org/extension/277/)
+- `window-corner-preview@fabiomereu.it`: [(link)](https://extensions.gnome.org/extension/1227/)
+- `freon@UshakovVasilii_Github.yahoo.com`: [(link)](https://extensions.gnome.org/extension/841/)
+- `gsconnect@andyholmes.github.io`: [(link)](https://extensions.gnome.org/extension/1319/)
 
 # Python packages
 
@@ -213,13 +216,13 @@ pip3 install --user --upgrade pipx
 # to install packages
 pipx install ...
 ```
+
 - poetry
 - black
 - ezfuse virenamer properties-tools
 - borg-find
 - gnome-extensions-cli
 - youtube-dl yt-dlp
-
 
 # Brew packages
 
@@ -228,4 +231,4 @@ pipx install ...
 brew install ...
 ```
 
-- kubectl k9s helm kustomize sops age 
+- kubectl k9s helm kustomize sops age
