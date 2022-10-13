@@ -1,3 +1,8 @@
+##
+## This file is meant to be sourced by your current shell
+##  $ source kc_activate.sh
+##  $ kc_activate --help
+##
 
 _kc_usage() {
     echo "
@@ -84,6 +89,10 @@ kc_activate() {
         if head -1 "$_KC_AGE_KEY_FILE" | grep -q 'BEGIN AGE ENCRYPTED FILE'; then
             echo "🔐 Using passphrase protected age key file: $_KC_AGE_KEY_FILE"
             SOPS_AGE_KEY=$(age -d "$_KC_AGE_KEY_FILE")
+            if [ -z "$SOPS_AGE_KEY" ]; then
+                echo "💥 Cound not decrypt Age key: $_KC_AGE_KEY_FILE"
+                return 2
+            fi
             export SOPS_AGE_KEY
         else
             echo "🔓 Using clear age key file: $_KC_AGE_KEY_FILE"
