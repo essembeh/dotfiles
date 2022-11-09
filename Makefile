@@ -10,7 +10,7 @@ install: submodules
 	$(LN) $(PWD)/shell/bashrc $(HOME)/.bashrc
 	$(LN) $(PWD)/shell/zshrc $(HOME)/.zshrc
 	$(LN) $(PWD)/shell/shell.d $(HOME)/.shell.d
-	$(LN) $(PWD)/submodules/oh-my-zsh $(HOME)/.oh-my-zsh
+	$(LN) $(PWD)/submodules/ohmyzsh $(HOME)/.ohmyzsh
 	$(LN) $(PWD)/vim $(HOME)/.vim
 	$(LN) $(PWD)/lftp $(HOME)/.lftp
 	$(LN) $(PWD)/tmux/tmux.conf $(HOME)/.tmux.conf

@@ -1,6 +1,3 @@
-[submodule "submodules/oh-my-zsh"]
-	path = submodules/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh
 [submodule "submodules/script-utils"]
 	path = submodules/script-utils
 	url = https://github.com/essembeh/script-utils
@@ -13,3 +10,6 @@
 [submodule "submodules/brew"]
 	path = submodules/brew
 	url = https://github.com/Homebrew/brew
+[submodule "submodules/ohmyzsh"]
+	path = submodules/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh
