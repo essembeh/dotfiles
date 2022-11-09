@@ -4,9 +4,6 @@
 [submodule "submodules/vim-sensible"]
 	path = submodules/vim-sensible
 	url = https://github.com/tpope/vim-sensible
-[submodule "submodules/SearchComplete"]
-	path = submodules/SearchComplete
-	url = https://github.com/vim-scripts/SearchComplete
 [submodule "submodules/brew"]
 	path = submodules/brew
 	url = https://github.com/Homebrew/brew
