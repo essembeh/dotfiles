@@ -19,7 +19,7 @@ install: submodules
 	$(LN) $(PWD)/mpv $(HOME)/.config/mpv
 
 init: submodules
-	which zsh || (sudo apt update && sudo apt install zsh git tig tmux vim vim-pathogen rsync python3-pip python3-venv)
+	which zsh || (sudo apt update && sudo apt install zsh git tig tmux vim rsync python3-pip python3-venv)
 	test -n "$(ZSH)" || chsh --shell /bin/zsh
 
 submodules:

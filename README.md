@@ -134,7 +134,7 @@ $ sudo dpkg --add-architecture i386
 
 ### Editors
 
-- vim vim-pathogen vim-syntastic vim-airline vim-airline-themes
+- vim vim-syntastic vim-airline vim-airline-themes
 - geany geany-plugins
 - gedit gedit-plugins
 - meld bvi colordiff
