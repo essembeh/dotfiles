@@ -30,8 +30,8 @@
 	iw = commit --message='💩 DO NOT MERGE: in work'
 	amend = commit --amend --date now --reset-author
 	recommit = commit --reedit-message=HEAD --reset-author
-	commit-release = commit -am '🔖 New release'
-	commit-deps = commit -am '⬆️  Update dependencies' 
+	commit-release = commit --message '🔖 New release'
+	commit-deps = commit --message '⬆️  Update dependencies' 
 	please = push --force-with-lease
 [status]
 	showUntrackedFiles = all
