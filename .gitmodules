@@ -4,9 +4,6 @@
 [submodule "submodules/vim-sensible"]
 	path = submodules/vim-sensible
 	url = https://github.com/tpope/vim-sensible
-[submodule "submodules/brew"]
-	path = submodules/brew
-	url = https://github.com/Homebrew/brew
 [submodule "submodules/ohmyzsh"]
 	path = submodules/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh
