@@ -181,6 +181,7 @@ Free apps:
 - org.jitsi.jitsi-meet
 - org.kde.kdenlive
 - fr.handbrake.ghb
+- dev.k8slens.OpenLens
 
 Non-free apps:
 
