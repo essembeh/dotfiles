@@ -18,7 +18,7 @@ function dorun {
 
 function dorunX {
     dorun \
-		--volume /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 \
+		--volume /tmp/.X11-unix:/tmp/.X11-unix \
 		--env DISPLAY \
 		"$@"
 }

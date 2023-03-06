@@ -5,28 +5,8 @@ DEFAULT="gui"
 DEFAULT_SINGLE="single-left"
 DEFAULT_DUAL="dual-right"
 
-LEFT="HDMI-1"
-RIGHT="HDMI-2"
-
-WALLPAPER_DIR="$HOME/.cache/wallpapers"
-WALLPAPER_LEFT="$WALLPAPER_DIR/${WALLPAPER:-default}/left"
-WALLPAPER_RIGHT="$WALLPAPER_DIR/${WALLPAPER:-default}/right"
-WALLPAPER_DUAL="$WALLPAPER_DIR/${WALLPAPER:-default}/dual"
-WALLPAPER_SINGLE="$WALLPAPER_DIR/${WALLPAPER:-default}/single"
-
-__set_wallpaper() {
-	OPTION=$1
-	shift
-	while test $# -gt 0; do
-		if test -f "$1"; then
-			FILE=$(readlink -f "$1")
-			gsettings set org.gnome.desktop.background picture-uri "file://$FILE"
-			gsettings set org.gnome.desktop.background picture-options $OPTION
-			break
-		fi
-		shift
-	done
-}
+LEFT="XWAYLAND0"
+RIGHT="XWAYLAND1"
 
 MODE="$DEFAULT"
 if test $# -eq 1; then
@@ -58,12 +38,10 @@ case "$MODE" in
 	"single-left")
 		xrandr --output $LEFT --auto --primary
 		xrandr --output $RIGHT --off
-		__set_wallpaper zoom "$WALLPAPER_SINGLE" "$WALLPAPER_LEFT"
 		;;
 	"single-right")
 		xrandr --output $RIGHT --auto --primary
 		xrandr --output $LEFT --off
-		__set_wallpaper zoom "$WALLPAPER_SINGLE" "$WALLPAPER_RIGHT"
 		;;
 	"dual-left")
 		# Generate dual wallpaper if needed
@@ -72,7 +50,6 @@ case "$MODE" in
 		fi
 		xrandr --output $LEFT --auto --primary
 		xrandr --output $RIGHT --auto --right-of $LEFT
-		__set_wallpaper spanned "$WALLPAPER_DUAL" 
 		;;
 	"dual-right")
 		# Generate dual wallpaper if needed
@@ -81,7 +58,6 @@ case "$MODE" in
 		fi
 		xrandr --output $RIGHT --auto --primary
 		xrandr --output $LEFT --auto --left-of $RIGHT
-		__set_wallpaper spanned "$WALLPAPER_DUAL" 
 		;;
 	*)
 		echo "Usage $0 single-left|single-right|dual-left|dual-right"

@@ -1,72 +1,38 @@
+set background=dark 
+set encoding=utf-8
+set expandtab
+set fileencoding=utf-8 
+set hidden 
+set history=20
+set hlsearch 
+set laststatus=2
+set mouse=
 set nocompatible
+set ruler 
+set shiftwidth=4
+set showcmd 
+set showmatch 
+set smartcase
+set smartindent
+set tabstop=4
+set updatecount=0 
+set virtualedit=onemore
 syntax on
 filetype plugin indent on
 
-
-"" Color
-set background=dark 
-colorscheme essembeh
-syntax on
-
-"" File encoding
-set encoding=utf-8
-set fileencoding=utf-8 
-
-"" Tab parameters
-set tabstop=4
-set shiftwidth=4
-set noexpandtab
-
-"" Indentation
-"set cindent
-"set autoindent
-set smartindent
-
-" General settings
-set showmatch " Verifications des {} () []
-set hlsearch " Highlight search
-set smartcase " recherche selon la casse la plus approchante
-set ruler " afficher la position
-set showcmd " affiche les commandes incomplète 
-set laststatus=2
-set virtualedit=onemore " Allow for cursor beyond last character
-set history=1000 " Store a ton of history (default is 20)
-set hidden " Allow buffer switching without saving
-"set spell " Spell checking on
-
-"" Mouse
-"set mouse=a
-"set ttymouse=xterm2
-
-"" Saving
-"set autowrite " sauvegarder à chaque :make & :next
-set updatecount=0 " pas de fichier de secours
-
-"" Crypt
-setlocal cm=blowfish2
-
-"" VARIABLES
-let g:GPGPreferSymmetric=1
-let g:GPGUsePipes=1
-let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='luna' 
-
-"" ALIAS
-
-"" CTRL+L to show line numbers
 imap <C-l> <esc>:set nu<cr>i
 map <C-l> :set nu<cr>
-map <C-p> :bprev<cr>
 map <C-n> :bnext<cr>
-
-"" unhiglight search on ENTER
+map <C-p> :bprev<cr>
 nnoremap <silent> <cr> :nohlsearch<Bar>:echo<CR>
 
-"" Nerd Tree
-map <C-t> :NERDTreeToggle<CR>
 
-"" Format json/xml
-com! FormatXML :%!xmllint --format -
-com! FormatJSON :%!jq
-nnoremap = :FormatXML<Cr>
-nnoremap = :FormatJSON<Cr>
+" install themes:
+"   awesome-vim-colorschemes: https://github.com/rafi/awesome-vim-colorschemes
+colorscheme purify
+
+" install plugins
+"   airline: https://github.com/vim-airline/vim-airline
+"   airline-themes: https://github.com/vim-airline/vim-airline-themes
+let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='luna' 

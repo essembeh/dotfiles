@@ -1,6 +1,9 @@
+#!/bin/sh
+set -eu
+
 ## Raid status
-if test -f /proc/mdstat && egrep -q "^md[0-9]+" /proc/mdstat; then
+if test -f /proc/mdstat && grep -E -q "^md[0-9]+" /proc/mdstat; then
 	echo "============================  Raid Status  ================================"
-	egrep --color -A1 "^md[0-9]+" /proc/mdstat
+	grep -E --color -A1 "^md[0-9]+" /proc/mdstat
 	echo "==========================================================================="
 fi

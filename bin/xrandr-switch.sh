@@ -1,1 +1,0 @@
-../gnome3/xrandr-switch.sh
