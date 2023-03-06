@@ -1,9 +1,0 @@
-[submodule "submodules/script-utils"]
-	path = submodules/script-utils
-	url = https://github.com/essembeh/script-utils
-[submodule "submodules/vim-sensible"]
-	path = submodules/vim-sensible
-	url = https://github.com/tpope/vim-sensible
-[submodule "submodules/ohmyzsh"]
-	path = submodules/ohmyzsh
-	url = https://github.com/ohmyzsh/ohmyzsh
