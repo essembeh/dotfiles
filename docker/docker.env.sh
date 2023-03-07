@@ -22,6 +22,3 @@ function dorunX {
 		--env DISPLAY \
 		"$@"
 }
-
-
-alias kk=k9s
