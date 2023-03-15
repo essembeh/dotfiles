@@ -2,7 +2,8 @@
 
 Repository containing most of my configuration files
 
-See [Debian](./debian/apt.md) for Debian specific configuration
+> See [Debian specific configuration](./debian/apt.md) documentation.
+
 
 # Flatpack packages
 
@@ -76,7 +77,6 @@ pipx install ...
 
 - poetry
 - black
-- ezfuse virenamer properties-tools
-- borg-find
+- essembeh-tools
 - gnome-extensions-cli
 - youtube-dl yt-dlp
