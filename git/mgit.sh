@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 MGIT_PAGER="less -r"
 MGIT_CONF="./mgit.conf"
 MGIT_LIST="conf"
 MGIT_QUIET="false"
 
-GIT="/usr/bin/git"
+GIT="git"
 
 function customOut {
 	while test $# -gt 0; do 
