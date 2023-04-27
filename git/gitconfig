@@ -4,6 +4,8 @@
 [core]
 	editor = vim
 	pager = less
+[pager]
+    branch = false
 [fetch]
 	prune = true
 [pull]
