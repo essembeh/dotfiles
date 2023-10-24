@@ -2,26 +2,20 @@
 set -eu
 
 ROOT=$(dirname "$0")
-TOOL_BIN="$ROOT/g810-led"
-TMPDIR=$(mktemp -d)
 REPO_URL="https://github.com/MatMoul/g810-led"
-PROFILE_NIGHT="$ROOT/g810-dark.profile"
-PROFILE_DAY="$ROOT/g810-light.profile"
+SRC_DIR="$ROOT/g810-led"
 
-if ! test -x "$TOOL_BIN"; then
-    echo "⏳ Build $REPO_URL ..."
-    git clone --quiet "$REPO_URL" "$TMPDIR"
-    nix-shell -p hidapi gnumake --run "cd \"$TMPDIR\" && make clean all"
-    cp -av "$TMPDIR/bin/g810-led" "$TOOL_BIN"
-fi
-
-HOUR=$(date +%H)
-if test $HOUR -ge 8 -a $HOUR -le 20; then
-    echo "☀ Set day profile"
-    "$TOOL_BIN" -p "$PROFILE_DAY"
+echo "🧲 Fetch $REPO_URL -> $SRC_DIR ..."
+if [ -d "$SRC_DIR" ]; then
+    git -C "$SRC_DIR" pull
 else
-    echo "🌙 Set night profile"
-    "$TOOL_BIN" -p "$PROFILE_NIGHT"
+    git clone "$REPO_URL" "$SRC_DIR"
 fi
 
+echo "⏳ Build $SRC_DIR ..."
+nix-shell -p hidapi gnumake --run "cd \"$SRC_DIR\" && make clean all"
+
+echo "🚥 Set profile"
+test -x "$SRC_DIR/bin/g810-led"
+"$SRC_DIR/bin/g810-led" -p "$ROOT/g810-light.profile"
 
