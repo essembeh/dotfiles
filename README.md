@@ -4,7 +4,6 @@ Repository containing most of my configuration files
 
 > See [Debian specific configuration](./debian/apt.md) documentation.
 
-
 # Flatpack packages
 
 ```sh
@@ -20,31 +19,33 @@ flatpak install ...
 
 Free apps:
 
-- [Authenticator](https://flathub.org/apps/details/com.belmoussaoui.Authenticator)
-- [Avidemux](https://flathub.org/apps/details/org.avidemux.Avidemux)
-- [Barrier](https://flathub.org/apps/details/com.github.debauchee.barrier)
-- [bsnes](https://flathub.org/apps/details/dev.bsnes.bsnes)
-- [Ferdium](https://flathub.org/apps/details/org.ferdium.Ferdium)
-- [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal)
-- [GIMP](https://flathub.org/apps/details/org.gimp.GIMP)
+- [com.belmoussaoui.Authenticator](https://flathub.org/apps/details/com.belmoussaoui.Authenticator)
+- [org.avidemux.Avidemux](https://flathub.org/apps/details/org.avidemux.Avidemux)
+- [dev.bsnes.bsnes](https://flathub.org/apps/details/dev.bsnes.bsnes)
+- [org.ferdium.Ferdium](https://flathub.org/apps/details/org.ferdium.Ferdium)
+- [com.github.tchx84.Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal)
+- [org.gimp.GIMP](https://flathub.org/apps/details/org.gimp.GIMP)
   - `org.gimp.GIMP.Plugin.GMic`
   - `org.gimp.GIMP.Plugin.LiquidRescale`
   - `org.gimp.GIMP.Plugin.Resynthesizer`
-- [HandBrake](https://flathub.org/apps/details/fr.handbrake.ghb)
-- [IntelliJ IDEA Community](https://flathub.org/apps/details/com.jetbrains.IntelliJ-IDEA-Community)
-- [Jitsi Meet](https://flathub.org/apps/details/org.jitsi.jitsi-meet)
-- [Kdenlive](https://flathub.org/apps/details/org.kde.kdenlive)
-- [LibreOffice](https://flathub.org/apps/details/org.libreoffice.LibreOffice)
-- [mpv](https://flathub.org/apps/details/io.mpv.Mpv)
-- [Open Lens](https://flathub.org/apps/details/dev.k8slens.OpenLens)
-- [OpenArena](https://flathub.org/apps/details/io.github.ec_.Quake3e.OpenArena)
-- [Remmina](https://flathub.org/apps/details/org.remmina.Remmina)
-- [Signal](https://flathub.org/apps/details/org.signal.Signal)
-- [Slack](https://flathub.org/apps/details/com.slack.Slack)
-- [Spotify](https://flathub.org/apps/details/com.spotify.Client)
-- [Steam](https://flathub.org/apps/details/com.valvesoftware.Steam)
-- [Telegram Desktop](https://flathub.org/apps/details/org.telegram.desktop)
-- [VSCodium](https://flathub.org/apps/details/com.vscodium.codium)
+- [fr.handbrake.ghb](https://flathub.org/apps/details/fr.handbrake.ghb)
+- [org.jitsi.jitsi-meet](https://flathub.org/apps/details/org.jitsi.jitsi-meet)
+- [org.kde.kdenlive](https://flathub.org/apps/details/org.kde.kdenlive)
+- [org.libreoffice.LibreOffice](https://flathub.org/apps/details/org.libreoffice.LibreOffice)
+- [io.mpv.Mpv](https://flathub.org/apps/details/io.mpv.Mpv)
+- [dev.k8slens.OpenLens](https://flathub.org/apps/details/dev.k8slens.OpenLens)
+- [io.github.ec\_.Quake3e.OpenArena](https://flathub.org/apps/details/io.github.ec_.Quake3e.OpenArena)
+- [org.remmina.Remmina](https://flathub.org/apps/details/org.remmina.Remmina)
+- [org.signal.Signal](https://flathub.org/apps/details/org.signal.Signal)
+- [org.telegram.desktop](https://flathub.org/apps/details/org.telegram.desktop)
+- [com.vscodium.codium](https://flathub.org/apps/details/com.vscodium.codium)
+
+Non-free apps:
+
+- [com.jetbrains.IntelliJ-IDEA-Community](https://flathub.org/apps/details/com.jetbrains.IntelliJ-IDEA-Community)
+- [com.slack.Slack](https://flathub.org/apps/details/com.slack.Slack)
+- [com.spotify.Client](https://flathub.org/apps/details/com.spotify.Client)
+- [com.valvesoftware.Steam](https://flathub.org/apps/details/com.valvesoftware.Steam)
 
 # Gnome extensions
 
@@ -55,28 +56,19 @@ pip3 install --user --upgrade gnome-extensions-cli
 $ gnome-extensions-cli install ...
 ```
 
-- [user-theme@gnome-shell-extensions.gcampax.github.com](https://extensions.gnome.org/extension/19/)
-- [dash-to-panel@jderose9.github.com](https://extensions.gnome.org/extension/1160/)
-- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/)
-- [alternate-tab@gnome-shell-extensions.gcampax.github.com](https://extensions.gnome.org/extension/15/)
-- [ding@rastersoft.com](https://extensions.gnome.org/extension/2087/)
-- [workspace-indicator@gnome-shell-extensions.gcampax.github.com](https://extensions.gnome.org/extension/21/)
-- [impatience@gfxmonk.net](https://extensions.gnome.org/extension/277/)
-- [window-corner-preview@fabiomereu.it](https://extensions.gnome.org/extension/1227/)
-- [freon@UshakovVasilii_Github.yahoo.com](https://extensions.gnome.org/extension/841/)
-- [gsconnect@andyholmes.github.io](https://extensions.gnome.org/extension/1319/)
-
-# Python packages
-
-```sh
-# to install pipx
-pip3 install --user --upgrade pipx
-# to install packages
-pipx install ...
-```
-
-- poetry
-- black
-- essembeh-tools
-- gnome-extensions-cli
-- youtube-dl yt-dlp
+- [App Icons Taskbar](https://extensions.gnome.org/extension/4944/app-icons-taskbar/)
+  - [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
+- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+- [Forge](https://extensions.gnome.org/extension/4481/forge/)
+- [Freon](https://extensions.gnome.org/extension/841/freon/)
+- [Grand Theft Focus](https://extensions.gnome.org/extension/5410/grand-theft-focus/)
+- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/)
+- [Tailscale Status](https://extensions.gnome.org/extension/5112/tailscale-status/)
+- [Todo.txt](https://extensions.gnome.org/extension/570/todotxt/)
+- [Syncthing Indicator](https://extensions.gnome.org/extension/1070/syncthing-indicator/)
+- [Emoji Selector](https://extensions.gnome.org/extension/1162/emoji-selector/)
+  - [Emoji Copy](https://extensions.gnome.org/extension/6242/emoji-copy/)
+- [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
+- [Top Panel Workspace Scroll](https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/)
+- [Impatience](https://extensions.gnome.org/extension/277/impatience/)
+- [Wallpaper Switcher](https://extensions.gnome.org/extension/4812/wallpaper-switcher/)
