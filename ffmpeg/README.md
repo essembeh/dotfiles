@@ -1,8 +1,11 @@
 # Rotate video without reencoding
 
 ```sh
-ffmpeg -i input.mp4 -c copy -metadata:s:v:0 rotate=90 output.mp4
+ffmpeg -i input.mp4 \
+   -c copy -metadata:s:v:0 rotate=90 \
+   output.mp4
 ```
+
 
 # Create a 16:9 from a video with blured fill
 
@@ -12,9 +15,29 @@ ffmpeg -i input.mp4 \
    output.mp4
 ```
 
+
 # 10-bit/12-bit HEVC to 8-bit H.264
 
 ```sh
-ffmpeg -i input -map 0 -c:v libx264 -crf 18 -vf format=yuv420p -c:a copy output.mkv
+ffmpeg -i input.mkv \
+   -map 0 -c:v libx264 -crf 18 -vf format=yuv420p -c:a copy \
+   output.mkv
 ```
 
+# Video loop
+
+```sh
+ffmpeg -stream_loop 10 \
+   -i input.mp4 \
+   -c copy \
+   output.mp4
+```
+
+
+# Remove audio
+
+```sh
+ffmpeg -i input.mp4 \
+   -c copy -an \
+   output.mp4
+```
