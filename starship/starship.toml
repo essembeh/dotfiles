@@ -1,0 +1,53 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+[username]
+disabled = false
+style_user = 'green'
+style_root = 'red'
+format = '[$user]($style)'
+show_always = true
+
+[hostname]
+disabled = false
+ssh_only = false
+format = '[@$hostname](green)[$ssh_symbol](blue)'
+
+[directory]
+format = ':[$path]($style)[$read_only]($read_only_style) '
+style = 'yellow bold'
+truncate_to_repo = false
+truncation_length = 8
+truncation_symbol = '…/'
+
+[git_branch]
+format = '[$symbol$branch]($style) '
+style = 'cyan'
+
+[git_status]
+conflicted = 'C'
+ahead = "A"
+behind = "B"
+modified = '*'
+renamed = ">"
+deleted = "-"
+style = 'cyan'
+
+[package]
+disabled = true
+
+[python]
+format = '[(\($symbol$virtualenv\) )](dimmed)'
+
+[line_break]
+disabled = false
+
+[status]
+disabled = false
+format = '[\[return  $status\]]($style) '
+
+[character]
+success_symbol = '[\$]()'
+error_symbol = '[\$](bold red) '
