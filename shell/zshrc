@@ -1,0 +1,43 @@
+# Vim keybindings
+bindkey -v
+
+# No duplicate history 
+bindkey '^R' history-incremental-search-backward
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=5000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Case insensitive completion
+autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+
+# Completion
+unsetopt menu_complete
+setopt auto_menu
+setopt complete_in_word
+setopt always_to_end
+
+# bindkey -M menuselect '^o' accept-and-infer-next-history
+zstyle ':completion:*:*:*:*:*' menu select
+
+# set completion colors to be the same as `ls`, after theme has been loaded
+[[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Aliases
+alias df="pydf"
+alias du="du -hs"
+alias g="git"
+alias kk="k9s"
+alias ll="ls -hl --color"
+alias ssh-noStrictHostKeyChecking="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+alias tt="if tmux list-sessions 2>/dev/null; then tmux a; else tmux; fi"
+

@@ -5,15 +5,16 @@ add_newline = true
 
 [username]
 disabled = false
+show_always = true
+format = '[$user]($style)'
 style_user = 'green'
 style_root = 'red'
-format = '[$user]($style)'
-show_always = true
 
 [hostname]
 disabled = false
 ssh_only = false
-format = '[@$hostname](green)[$ssh_symbol](blue)'
+format = '[@$hostname]($style)[$ssh_symbol](blue)'
+style = 'green'
 
 [directory]
 format = ':[$path]($style)[$read_only]($read_only_style) '
@@ -24,7 +25,7 @@ truncation_symbol = '…/'
 
 [git_branch]
 format = '[$symbol$branch]($style) '
-style = 'cyan'
+#style = 'cyan'
 
 [git_status]
 conflicted = 'C'
@@ -33,7 +34,7 @@ behind = "B"
 modified = '*'
 renamed = ">"
 deleted = "-"
-style = 'cyan'
+#style = 'cyan'
 
 [package]
 disabled = true
