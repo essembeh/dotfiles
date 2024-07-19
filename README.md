@@ -72,3 +72,4 @@ $ gnome-extensions-cli install ...
   - [Top Panel Workspace Scroll](https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/)
 - [Impatience](https://extensions.gnome.org/extension/277/impatience/)
 - [Syncthing Indicator](https://extensions.gnome.org/extension/1070/syncthing-indicator/)
+- [Legacy (GTK3) Theme Scheme Auto Switcher](https://extensions.gnome.org/extension/4998/legacy-gtk3-theme-scheme-auto-switcher/)
