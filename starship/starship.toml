@@ -45,6 +45,9 @@ format = '[(\($symbol$virtualenv\) )](dimmed)'
 [line_break]
 disabled = false
 
+[battery]
+disabled = true
+
 [status]
 disabled = false
 format = '[\[return  $status\]]($style) '
