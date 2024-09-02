@@ -41,3 +41,5 @@ alias ll="ls -hl --color"
 alias ssh-noStrictHostKeyChecking="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 alias tt="if tmux list-sessions 2>/dev/null; then tmux a; else tmux; fi"
 
+# Raid status
+[ -x $HOME/Projects/dotfiles/mdadm/status.sh ] && $HOME/Projects/dotfiles/mdadm/status.sh
