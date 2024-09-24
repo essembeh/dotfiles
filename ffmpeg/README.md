@@ -41,3 +41,11 @@ ffmpeg -i input.mp4 \
    -c copy -an \
    output.mp4
 ```
+
+# iPhone HDR Video to SDR
+
+```sh
+ffmpeg -i INPUT.MOV \
+    -vf zscale=transfer=linear,tonemap=hable:peak=5,zscale=transfer=bt709,format=yuv420p,colorspace=all=bt709 \
+    output.mp4
+```
