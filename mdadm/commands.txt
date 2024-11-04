@@ -16,6 +16,10 @@ mdadm --stop /dev/md5
 mdadm --manage /dev/md5 --fail --remove /dev/sdb
 mdadm --manage /dev/md5 --add /dev/sde
 mdadm --assemble --run /dev/md5 /dev/sd{b,c}
+
+## Check / repair
+echo "check" > /sys/block/md1/md/sync_action
+echo "repair" > /sys/block/md1/md/sync_action
 echo "idle" > /sys/block/md1/md/sync_action
 
 ## Reset
