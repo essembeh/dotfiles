@@ -40,6 +40,7 @@ alias kk="k9s"
 alias ll="ls -hl --color"
 alias ssh-noStrictHostKeyChecking="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 alias tt="if tmux list-sessions 2>/dev/null; then tmux a; else tmux; fi"
+alias yt-dlp-mp4="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
 
 # Raid status
 [ -x $HOME/Projects/dotfiles/mdadm/status.sh ] && $HOME/Projects/dotfiles/mdadm/status.sh
