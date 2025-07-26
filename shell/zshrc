@@ -17,7 +17,7 @@ setopt hist_find_no_dups
 
 # Case insensitive completion
 autoload -U compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 
 # Completion
@@ -31,6 +31,25 @@ zstyle ':completion:*:*:*:*:*' menu select
 
 # set completion colors to be the same as `ls`, after theme has been loaded
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Better completion behavior
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*' group-name ''
+
+# Smart case completion (lowercase matches both cases)
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Directory stack navigation  
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushd_minus
+
+# Better globbing
+setopt extended_glob
+setopt glob_dots
 
 # Aliases
 alias df="pydf"
