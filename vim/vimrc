@@ -25,10 +25,7 @@ map <C-n> :bnext<cr>
 map <C-p> :bprev<cr>
 nnoremap <silent> <cr> :nohlsearch<Bar>:echo<CR>
 
-
-" install themes:
-"   awesome-vim-colorschemes: https://github.com/rafi/awesome-vim-colorschemes
-colorscheme purify
+colorscheme default
 
 " install plugins
 "   airline: https://github.com/vim-airline/vim-airline
